@@ -24,12 +24,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="493e80e4-301d-4e87-b5a7-19a0a7f8a3c3" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.SU19-Exercises/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SU19-Exercises/.idea/indexLayout.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DIKUArcade" beforeDir="false" afterPath="$PROJECT_DIR$/../DIKUArcade" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.SU19-Exercises/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SU19-Exercises/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.SU19-Exercises/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SU19-Exercises/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Galaga-Exercise -1/Galaga-Exercise -1.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Galaga-Exercise -1/Galaga-Exercise -1.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Galaga-Exercise -1/Game.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Galaga-Exercise -1/Game.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Galaga-Exercise -1/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Galaga-Exercise -1/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/OpenTK.2.0.0/.signature.p7s" beforeDir="false" afterPath="$PROJECT_DIR$/packages/OpenTK.2.0.0/.signature.p7s" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/OpenTK.2.0.0/content/OpenTK.dll.config" beforeDir="false" afterPath="$PROJECT_DIR$/packages/OpenTK.2.0.0/content/OpenTK.dll.config" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/OpenTK.2.0.0/lib/net20/OpenTK.dll" beforeDir="false" afterPath="$PROJECT_DIR$/packages/OpenTK.2.0.0/lib/net20/OpenTK.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/OpenTK.2.0.0/lib/net20/OpenTK.xml" beforeDir="false" afterPath="$PROJECT_DIR$/packages/OpenTK.2.0.0/lib/net20/OpenTK.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Galaga-Exercise -1/bin/Debug/Galaga_Exercise__1.exe" beforeDir="false" afterPath="$PROJECT_DIR$/Galaga-Exercise -1/bin/Debug/Galaga_Exercise__1.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Galaga-Exercise -1/bin/Debug/Galaga_Exercise__1.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Galaga-Exercise -1/bin/Debug/Galaga_Exercise__1.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Galaga-Exercise -1/obj/Debug/Galaga-Exercise -1.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Galaga-Exercise -1/obj/Debug/Galaga-Exercise -1.csproj.FileListAbsolute.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Galaga-Exercise -1/obj/Debug/Galaga-Exercise -1.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Galaga-Exercise -1/obj/Debug/Galaga-Exercise -1.csprojAssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Galaga-Exercise -1/obj/Debug/Galaga_Exercise__1.exe" beforeDir="false" afterPath="$PROJECT_DIR$/Galaga-Exercise -1/obj/Debug/Galaga_Exercise__1.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Galaga-Exercise -1/obj/Debug/Galaga_Exercise__1.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Galaga-Exercise -1/obj/Debug/Galaga_Exercise__1.pdb" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -39,15 +45,38 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Galaga-Exercise -1/Program.cs">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="48">
-              <caret line="4" column="48" selection-start-line="4" selection-start-column="48" selection-end-line="4" selection-end-column="48" />
+              <caret line="4" column="40" selection-start-line="4" selection-start-column="40" selection-end-line="4" selection-end-column="40" />
               <folding>
-                <marker date="1551194070871" expanded="true" signature="44:141" ph="{...}" />
-                <marker date="1551194070871" expanded="true" signature="73:139" ph="{...}" />
-                <marker date="1551194070871" expanded="true" signature="122:133" ph="{...}" />
+                <marker date="1551195805517" expanded="true" signature="44:206" ph="{...}" />
+                <marker date="1551195805517" expanded="true" signature="73:204" ph="{...}" />
+                <marker date="1551195805517" expanded="true" signature="122:198" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Galaga-Exercise -1/Game.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="216">
+              <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
+              <folding>
+                <marker date="1551196345130" expanded="true" signature="6:110" ph="..." />
+                <marker date="1551196345130" expanded="true" signature="161:1337" ph="{...}" />
+                <marker date="1551196345130" expanded="true" signature="243:340" ph="{...}" />
+                <marker date="1551196345130" expanded="true" signature="373:1022" ph="{...}" />
+                <marker date="1551196345130" expanded="true" signature="408:1016" ph="{...}" />
+                <marker date="1551196345130" expanded="true" signature="493:585" ph="{...}" />
+                <marker date="1551196345130" expanded="true" signature="629:757" ph="{...}" />
+                <marker date="1551196345130" expanded="true" signature="800:1006" ph="{...}" />
+                <marker date="1551196345130" expanded="true" signature="818:992" ph="/* 1 second has passed - display last captured ups and fps win.Title = &quot;Galaga | UPS: &quot; ... */" />
+                <marker date="1551196345130" expanded="true" signature="1060:1110" ph="{...}" />
+                <marker date="1551196345130" expanded="true" signature="1150:1200" ph="{...}" />
+                <marker date="1551196345130" expanded="true" signature="1285:1335" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -59,12 +88,16 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/../DIKUArcade/DIKUArcade/Timers/GameTimer.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Galaga-Exercise -1/Program.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../DIKUArcade/DIKUArcade/EventBus/GameEventProcessor.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Galaga-Exercise -1/Game.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/Galaga-Exercise -1/Program.cs" />
+        <option value="$PROJECT_DIR$/Galaga-Exercise -1/Game.cs" />
       </list>
     </option>
   </component>
@@ -159,12 +192,12 @@
       <workItem from="1551179001912" duration="1418000" />
       <workItem from="1551182716283" duration="18000" />
       <workItem from="1551193143307" duration="47000" />
-      <workItem from="1551193974613" duration="96000" />
+      <workItem from="1551193974613" duration="2281000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1579000" />
+    <option name="totallyTimeSpent" value="3764000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -187,11 +220,11 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32932165" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Debug" order="3" visible="true" weight="0.39941692" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="NuGet" order="7" visible="true" weight="0.32798833" />
+      <window_info anchor="bottom" id="NuGet" order="7" weight="0.32798833" />
       <window_info anchor="bottom" id="Performance Profiler" order="8" />
       <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="10" />
@@ -199,7 +232,7 @@
       <window_info anchor="bottom" id="Unit Tests" order="12" />
       <window_info anchor="bottom" id="TeamCity" order="13" />
       <window_info anchor="bottom" id="Event Log" order="14" side_tool="true" />
-      <window_info anchor="bottom" id="Build" order="15" weight="0.32932165" />
+      <window_info anchor="bottom" id="Build" order="15" weight="0.3265306" />
       <window_info anchor="bottom" id="Terminal" order="16" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -222,6 +255,19 @@
           <properties exception="System.Threading.ThreadAbortException" displayValue="System.Threading.ThreadAbortException" />
           <option name="timeStamp" value="1" />
         </breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Galaga-Exercise -1/Game.cs</url>
+          <line>43</line>
+          <properties documentPath="$PROJECT_DIR$/Galaga-Exercise -1/Game.cs" initialLine="44">
+            <startOffsets>
+              <option value="1199" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1200" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
@@ -229,14 +275,71 @@
     <entry file="file://$PROJECT_DIR$/Galaga-Exercise -1/Galaga-Exercise -1.csproj">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/../DIKUArcade/DIKUArcade/EventBus/GameEventProcessor.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="24">
+          <caret line="2" column="21" selection-start-line="2" selection-start-column="21" selection-end-line="2" selection-end-column="21" />
+          <folding>
+            <marker date="1551193769350" expanded="true" signature="29:165" ph="{...}" />
+            <marker date="1551193769350" expanded="true" signature="75:163" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Galaga-Exercise -1/Program.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="48">
-          <caret line="4" column="48" selection-start-line="4" selection-start-column="48" selection-end-line="4" selection-end-column="48" />
+          <caret line="4" column="40" selection-start-line="4" selection-start-column="40" selection-end-line="4" selection-end-column="40" />
           <folding>
-            <marker date="1551194070871" expanded="true" signature="44:141" ph="{...}" />
-            <marker date="1551194070871" expanded="true" signature="73:139" ph="{...}" />
-            <marker date="1551194070871" expanded="true" signature="122:133" ph="{...}" />
+            <marker date="1551195805517" expanded="true" signature="44:206" ph="{...}" />
+            <marker date="1551195805517" expanded="true" signature="73:204" ph="{...}" />
+            <marker date="1551195805517" expanded="true" signature="122:198" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../DIKUArcade/DIKUArcade/Timers/GameTimer.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="24">
+          <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
+          <folding>
+            <marker date="1551193769359" expanded="false" signature="6:39" ph="..." />
+            <marker date="1551193769359" expanded="true" signature="69:2942" ph="{...}" />
+            <marker date="1551193769359" expanded="true" signature="98:2940" ph="{...}" />
+            <marker date="1551193769359" expanded="true" signature="364:444" ph="/// Get the last observed UPS count ... " />
+            <marker date="1551193769359" expanded="true" signature="510:590" ph="/// Get the last observed FPS count ... " />
+            <marker date="1551193769359" expanded="true" signature="873:1594" ph="{...}" />
+            <marker date="1551193769359" expanded="true" signature="911:1071" ph="{...}" />
+            <marker date="1551193769359" expanded="true" signature="1630:1877" ph="{...}" />
+            <marker date="1551193769359" expanded="true" signature="1914:2094" ph="{...}" />
+            <marker date="1551193769359" expanded="true" signature="1983:2060" ph="{...}" />
+            <marker date="1551193769359" expanded="true" signature="2131:2390" ph="{...}" />
+            <marker date="1551193769359" expanded="true" signature="2168:2212" ph="{...}" />
+            <marker date="1551193769359" expanded="true" signature="2280:2356" ph="{...}" />
+            <marker date="1551193769359" expanded="true" signature="2400:2578" ph="/// The timer will reset if 1 second has passed. ... " />
+            <marker date="1551193769359" expanded="true" signature="2613:2934" ph="{...}" />
+            <marker date="1551193769359" expanded="true" signature="2714:2900" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Galaga-Exercise -1/Game.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
+          <folding>
+            <marker date="1551196345130" expanded="true" signature="6:110" ph="..." />
+            <marker date="1551196345130" expanded="true" signature="161:1337" ph="{...}" />
+            <marker date="1551196345130" expanded="true" signature="243:340" ph="{...}" />
+            <marker date="1551196345130" expanded="true" signature="373:1022" ph="{...}" />
+            <marker date="1551196345130" expanded="true" signature="408:1016" ph="{...}" />
+            <marker date="1551196345130" expanded="true" signature="493:585" ph="{...}" />
+            <marker date="1551196345130" expanded="true" signature="629:757" ph="{...}" />
+            <marker date="1551196345130" expanded="true" signature="800:1006" ph="{...}" />
+            <marker date="1551196345130" expanded="true" signature="818:992" ph="/* 1 second has passed - display last captured ups and fps win.Title = &quot;Galaga | UPS: &quot; ... */" />
+            <marker date="1551196345130" expanded="true" signature="1060:1110" ph="{...}" />
+            <marker date="1551196345130" expanded="true" signature="1150:1200" ph="{...}" />
+            <marker date="1551196345130" expanded="true" signature="1285:1335" ph="{...}" />
           </folding>
         </state>
       </provider>
