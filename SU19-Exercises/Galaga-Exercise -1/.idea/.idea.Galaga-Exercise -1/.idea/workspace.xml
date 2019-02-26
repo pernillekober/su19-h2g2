@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3ea44297-e7e6-4997-a6b2-c7595556652d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../../.gitignore.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Galaga-Exercise -1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Galaga-Exercise -1/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Program.cs" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -15,11 +16,12 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Program.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="48">
-              <caret line="4" column="1" lean-forward="true" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
+            <state relative-caret-position="96">
+              <caret line="8" column="5" lean-forward="true" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
               <folding>
-                <marker date="1551179868357" expanded="true" signature="29:118" ph="{...}" />
-                <marker date="1551179868357" expanded="true" signature="58:116" ph="{...}" />
+                <marker date="1551183117565" expanded="true" signature="44:220" ph="{...}" />
+                <marker date="1551183117565" expanded="true" signature="73:218" ph="{...}" />
+                <marker date="1551183117565" expanded="true" signature="122:212" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -117,12 +119,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1551181946838</updated>
-      <workItem from="1551181950653" duration="668000" />
+      <workItem from="1551181950653" duration="971000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="668000" />
+    <option name="totallyTimeSpent" value="971000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -135,6 +137,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1280" height="778" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Favorites" side_tool="true" />
       <window_info id="Image Layers" />
@@ -181,11 +184,12 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/Program.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="48">
-          <caret line="4" column="1" lean-forward="true" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
+        <state relative-caret-position="96">
+          <caret line="8" column="5" lean-forward="true" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
           <folding>
-            <marker date="1551179868357" expanded="true" signature="29:118" ph="{...}" />
-            <marker date="1551179868357" expanded="true" signature="58:116" ph="{...}" />
+            <marker date="1551183117565" expanded="true" signature="44:220" ph="{...}" />
+            <marker date="1551183117565" expanded="true" signature="73:218" ph="{...}" />
+            <marker date="1551183117565" expanded="true" signature="122:212" ph="{...}" />
           </folding>
         </state>
       </provider>
