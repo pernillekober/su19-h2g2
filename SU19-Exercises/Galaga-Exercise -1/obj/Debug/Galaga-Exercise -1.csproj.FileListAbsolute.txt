@@ -1,0 +1,5 @@
+C:\Users\Pernille\Desktop\assignmentthis\su19-h2g2\SU19-Exercises\Galaga-Exercise -1\obj\Debug\Galaga-Exercise -1.csprojResolveAssemblyReference.cache
+C:\Users\Pernille\Desktop\assignmentthis\su19-h2g2\SU19-Exercises\Galaga-Exercise -1\bin\Debug\Galaga_Exercise__1.exe
+C:\Users\Pernille\Desktop\assignmentthis\su19-h2g2\SU19-Exercises\Galaga-Exercise -1\bin\Debug\Galaga_Exercise__1.pdb
+C:\Users\Pernille\Desktop\assignmentthis\su19-h2g2\SU19-Exercises\Galaga-Exercise -1\obj\Debug\Galaga_Exercise__1.exe
+C:\Users\Pernille\Desktop\assignmentthis\su19-h2g2\SU19-Exercises\Galaga-Exercise -1\obj\Debug\Galaga_Exercise__1.pdb
