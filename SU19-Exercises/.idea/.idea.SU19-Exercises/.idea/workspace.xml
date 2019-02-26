@@ -24,8 +24,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="493e80e4-301d-4e87-b5a7-19a0a7f8a3c3" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../DIKUArcade" beforeDir="false" afterPath="$PROJECT_DIR$/../DIKUArcade" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.SU19-Exercises/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SU19-Exercises/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Galaga-Exercise -1/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Galaga-Exercise -1/Program.cs" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -39,11 +37,12 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Galaga-Exercise -1/Program.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" column="12" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="12" />
+            <state relative-caret-position="84">
+              <caret line="7" column="37" lean-forward="true" selection-start-line="7" selection-start-column="37" selection-end-line="7" selection-end-column="37" />
               <folding>
-                <marker date="1551181817249" expanded="true" signature="73:192" ph="{...}" />
-                <marker date="1551181817249" expanded="true" signature="122:172" ph="{...}" />
+                <marker date="1551193189015" expanded="true" signature="44:259" ph="{...}" />
+                <marker date="1551193189015" expanded="true" signature="73:257" ph="{...}" />
+                <marker date="1551193189015" expanded="true" signature="122:251" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -64,11 +63,10 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="927" />
-    <option name="y" value="19" />
-    <option name="width" value="974" />
-    <option name="height" value="1047" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="y" value="22" />
+    <option name="width" value="1280" />
+    <option name="height" value="778" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -76,6 +74,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="FileSystemExplorer" />
+      <pane id="AssemblyExplorer" />
       <pane id="SolutionExplorer">
         <subPane>
           <expand>
@@ -88,8 +88,6 @@
         </subPane>
         <option name="show-all-files" value="false" />
       </pane>
-      <pane id="AssemblyExplorer" />
-      <pane id="FileSystemExplorer" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -145,11 +143,12 @@
       <updated>1551178997338</updated>
       <workItem from="1551179001912" duration="1418000" />
       <workItem from="1551182716283" duration="18000" />
+      <workItem from="1551193143307" duration="47000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1436000" />
+    <option name="totallyTimeSpent" value="1483000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -161,9 +160,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="927" y="19" width="974" height="1047" extended-state="0" />
+    <frame x="0" y="22" width="1280" height="778" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.29978117" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.30452344" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Capture Tool" order="3" />
@@ -215,11 +215,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Galaga-Exercise -1/Program.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="12" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="12" />
+        <state relative-caret-position="84">
+          <caret line="7" column="37" lean-forward="true" selection-start-line="7" selection-start-column="37" selection-end-line="7" selection-end-column="37" />
           <folding>
-            <marker date="1551181817249" expanded="true" signature="73:192" ph="{...}" />
-            <marker date="1551181817249" expanded="true" signature="122:172" ph="{...}" />
+            <marker date="1551193189015" expanded="true" signature="44:259" ph="{...}" />
+            <marker date="1551193189015" expanded="true" signature="73:257" ph="{...}" />
+            <marker date="1551193189015" expanded="true" signature="122:251" ph="{...}" />
           </folding>
         </state>
       </provider>
