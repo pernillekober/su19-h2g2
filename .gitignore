@@ -1,1 +1,7 @@
 *./idea
+*.\idea
+*.xml
+*.exe
+*.gitmodules
+*.dll
+*.DL_STORE
