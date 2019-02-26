@@ -24,7 +24,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="493e80e4-301d-4e87-b5a7-19a0a7f8a3c3" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.SU19-Exercises/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SU19-Exercises/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Galaga-Exercise -1/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Galaga-Exercise -1/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/OpenTK.2.0.0/.signature.p7s" beforeDir="false" afterPath="$PROJECT_DIR$/packages/OpenTK.2.0.0/.signature.p7s" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/OpenTK.2.0.0/content/OpenTK.dll.config" beforeDir="false" afterPath="$PROJECT_DIR$/packages/OpenTK.2.0.0/content/OpenTK.dll.config" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/OpenTK.2.0.0/lib/net20/OpenTK.dll" beforeDir="false" afterPath="$PROJECT_DIR$/packages/OpenTK.2.0.0/lib/net20/OpenTK.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/OpenTK.2.0.0/lib/net20/OpenTK.xml" beforeDir="false" afterPath="$PROJECT_DIR$/packages/OpenTK.2.0.0/lib/net20/OpenTK.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -37,12 +42,12 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Galaga-Exercise -1/Program.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="84">
-              <caret line="7" column="37" lean-forward="true" selection-start-line="7" selection-start-column="37" selection-end-line="7" selection-end-column="37" />
+            <state relative-caret-position="48">
+              <caret line="4" column="48" selection-start-line="4" selection-start-column="48" selection-end-line="4" selection-end-column="48" />
               <folding>
-                <marker date="1551193189015" expanded="true" signature="44:259" ph="{...}" />
-                <marker date="1551193189015" expanded="true" signature="73:257" ph="{...}" />
-                <marker date="1551193189015" expanded="true" signature="122:251" ph="{...}" />
+                <marker date="1551194070871" expanded="true" signature="44:141" ph="{...}" />
+                <marker date="1551194070871" expanded="true" signature="73:139" ph="{...}" />
+                <marker date="1551194070871" expanded="true" signature="122:133" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -82,6 +87,16 @@
             <path>
               <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
               <item name="SU19-Exercises" type="24d0babc:SolutionExplorerModelNode" />
+            </path>
+            <path>
+              <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
+              <item name="SU19-Exercises" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="DIKUArcade" type="24d0babc:SolutionExplorerModelNode" />
+            </path>
+            <path>
+              <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
+              <item name="SU19-Exercises" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="Galaga-Exercise -1" type="24d0babc:SolutionExplorerModelNode" />
             </path>
           </expand>
           <select />
@@ -144,11 +159,12 @@
       <workItem from="1551179001912" duration="1418000" />
       <workItem from="1551182716283" duration="18000" />
       <workItem from="1551193143307" duration="47000" />
+      <workItem from="1551193974613" duration="96000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1483000" />
+    <option name="totallyTimeSpent" value="1579000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -163,7 +179,7 @@
     <frame x="0" y="22" width="1280" height="778" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.30452344" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.30936995" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Capture Tool" order="3" />
@@ -175,7 +191,7 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="NuGet" order="7" weight="0.32932165" />
+      <window_info anchor="bottom" id="NuGet" order="7" visible="true" weight="0.32798833" />
       <window_info anchor="bottom" id="Performance Profiler" order="8" />
       <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="10" />
@@ -215,12 +231,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Galaga-Exercise -1/Program.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="7" column="37" lean-forward="true" selection-start-line="7" selection-start-column="37" selection-end-line="7" selection-end-column="37" />
+        <state relative-caret-position="48">
+          <caret line="4" column="48" selection-start-line="4" selection-start-column="48" selection-end-line="4" selection-end-column="48" />
           <folding>
-            <marker date="1551193189015" expanded="true" signature="44:259" ph="{...}" />
-            <marker date="1551193189015" expanded="true" signature="73:257" ph="{...}" />
-            <marker date="1551193189015" expanded="true" signature="122:251" ph="{...}" />
+            <marker date="1551194070871" expanded="true" signature="44:141" ph="{...}" />
+            <marker date="1551194070871" expanded="true" signature="73:139" ph="{...}" />
+            <marker date="1551194070871" expanded="true" signature="122:133" ph="{...}" />
           </folding>
         </state>
       </provider>
