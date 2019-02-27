@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Runtime.InteropServices;
 using DIKUArcade;
 using DIKUArcade.Entities;
 using DIKUArcade.EventBus;
@@ -68,25 +69,19 @@ public class Game : IGameEventProcessor<object> {
             break;
         case "KEY_RIGHT":
             player.Direction(new Vec2F(0.03f,0.0f));
-            KeyRelease(key);
             break;
         case "KEY_LEFT":
             player.Direction(new Vec2F(-0.03f,0.0f));
-            KeyRelease(key);
             break;
-        /*
-         * TODO: Add cases that call player.Direction with a suitable direction.
-         * You can match on cases such as "KEY_UP", "KEY_1", "KEY_A", etc.
-         * Remember that the entire screen is 1.0f wide/tall, so choose a
-         * fittingly small number for the direction, e.g. (0.01f,0.0f).
-        }
-        */
         }
     }
     public void KeyRelease(string key) {
         switch (key) {
-        case "KEY_RELEASE":
-            player.Shape.AsStationaryShape();
+        case "KEY_LEFT":
+            player.Direction(new Vec2F(0.0f,0.0f));;
+            break;
+        case "KEY_RIGHT":
+            player.Direction(new Vec2F(0.0f,0.0f));
             break;
         }
     }
