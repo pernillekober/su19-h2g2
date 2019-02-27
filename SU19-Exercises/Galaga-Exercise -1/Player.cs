@@ -1,9 +1,7 @@
-using System;
-using DIKUArcade;
+
 using DIKUArcade.Entities;
 using DIKUArcade.Graphics;
 using DIKUArcade.Math;
-using DIKUArcade.EventBus;
 
 namespace Galaga_Exercise__1 {
     public class Player : Entity {

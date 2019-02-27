@@ -24,6 +24,7 @@ public class Game : IGameEventProcessor<object> {
             new DynamicShape(new Vec2F(0.45f, 0.1f), new Vec2F(
                 0.1f, 0.1f)), new Image(Path.Combine("Assets", "Images", "Player.png")));
         // For animated Image: new ImageStride()
+        
         eventBus = new GameEventBus<object>();
         eventBus.InitializeEventBus(new List<GameEventType>() {
             GameEventType.InputEvent, // key press / key release
@@ -32,6 +33,7 @@ public class Game : IGameEventProcessor<object> {
         win.RegisterEventBus(eventBus);
         eventBus.Subscribe(GameEventType.InputEvent, this);
         eventBus.Subscribe(GameEventType.WindowEvent, this);
+        
     }
 
     public void GameLoop() {
