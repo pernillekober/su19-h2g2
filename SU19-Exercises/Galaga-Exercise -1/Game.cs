@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using System.Drawing;
 using System.IO;
 using DIKUArcade;
 using DIKUArcade.Entities;
@@ -48,7 +47,8 @@ public class Game : IGameEventProcessor<object> {
         explosions = new AnimationContainer(28);
         
         // ScoreTable
-        scoreTable = new Score(new Vec2F(0.1f,0.9f), new Vec2F(0.1f,0.1f));
+        scoreTable = new Score(new Vec2F(0.1f,0.62f), 
+            new Vec2F(0.35f,0.35f));
 
         // EventHandling
         eventBus = new GameEventBus<object>();
@@ -110,6 +110,7 @@ public class Game : IGameEventProcessor<object> {
                         enemy.Shape.Extent.X,enemy.Shape.Extent.Y);
                     enemy.DeleteEntity();
                     shot.DeleteEntity();
+                    scoreTable.AddPoint();
                     
                 }
             }
@@ -159,6 +160,7 @@ public class Game : IGameEventProcessor<object> {
             if (gameTimer.ShouldRender()) {
                 win.Clear();
                 player.RenderEntity();
+                scoreTable.RenderScore();
 
                 foreach (var enemy in enemies) {
                     explosions.RenderAnimations();
