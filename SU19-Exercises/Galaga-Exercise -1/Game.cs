@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.IO;
 using DIKUArcade;
@@ -28,15 +29,14 @@ public class Game : IGameEventProcessor<object> {
     public Game() {
         win = new Window("Galaga", 500, 500);
         gameTimer = new GameTimer(60, 60);
+        playerShots = new List<PlayerShot>();
 
         // Player Sprite
         player = new Player(this,
             new DynamicShape(new Vec2F(0.45f, 0.1f), new Vec2F(
-                0.1f, 0.1f)), new Image(Path.Combine("Assets", "Images", "Player.png")));
-        // Player Shots
-        playerShots = new List<PlayerShot>();
+                0.1f, 0.1f)), new Image(Path.Combine("Assets", "Images", "Player.png"))); 
 
-        // Enemy 
+        // Enemy Image List
         enemyStrides = ImageStride.CreateStrides(4,
             Path.Combine("Assets", "Images", "BlueMonster.png"));
         enemies = new List<Enemy>();
@@ -160,6 +160,7 @@ public class Game : IGameEventProcessor<object> {
             if (gameTimer.ShouldRender()) {
                 win.Clear();
                 player.RenderEntity();
+                player.booster.RenderEntity();
                 scoreTable.RenderScore();
 
                 foreach (var enemy in enemies) {
@@ -197,6 +198,9 @@ public class Game : IGameEventProcessor<object> {
             break;
         case "KEY_SPACE":
             player.Shoot();
+ 
+            
+            
             break;
         }
     }
@@ -205,7 +209,6 @@ public class Game : IGameEventProcessor<object> {
         switch (key) {
         case "KEY_LEFT":
             player.Direction(new Vec2F(0.0f, 0.0f));
-            ;
             break;
         case "KEY_RIGHT":
             player.Direction(new Vec2F(0.0f, 0.0f));
