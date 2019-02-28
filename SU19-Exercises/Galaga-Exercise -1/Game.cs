@@ -59,22 +59,24 @@ public class Game : IGameEventProcessor<object> {
         enemies.Add(enemy);
     }
     public void IterateShots() {
-        foreach (var shot in playerShots) {
+        foreach (PlayerShot shot in playerShots) {
             shot.Shape.Move();
             if (shot.Shape.Position.Y > 1.0f) {
                 shot.DeleteEntity();
             }
+
             foreach (Enemy enemy in enemies) {
-                if (CollisionDetection.Aabb(shot.Shape.AsDynamicShape(), 
+                if (CollisionDetection.Aabb(shot.Shape.AsDynamicShape(),
                     enemy.Shape.AsDynamicShape()).Collision) {
-                    shot.DeleteEntity();
                     enemy.DeleteEntity();
+                    shot.DeleteEntity();
                 }
             }
-            List<Enemy> newEnemies = new List<Enemy>();
+        List<Enemy> newEnemies = new List<Enemy>();
             foreach (Enemy enemy in enemies) {
                 if (!enemy.IsDeleted()) {
                     newEnemies.Add(enemy);
+                    
                 } 
             }
             enemies = newEnemies;
@@ -85,7 +87,9 @@ public class Game : IGameEventProcessor<object> {
                 }
                 playerShots = newShots;
             }
+
         }
+        
     }
 
     public void GameLoop() {
@@ -96,9 +100,8 @@ public class Game : IGameEventProcessor<object> {
         AddEnemies(0.55f,0.7f);
         AddEnemies(0.65f,0.8f);
         AddEnemies(0.75f,0.7f);
-
         while (win.IsRunning()) {
-
+            
             gameTimer.MeasureTime();
             while (gameTimer.ShouldUpdate()) {
                 win.PollEvents();
@@ -109,14 +112,13 @@ public class Game : IGameEventProcessor<object> {
             if (gameTimer.ShouldRender()) {
                 win.Clear();
                 player.RenderEntity();
-                
+                IterateShots();
                 foreach (var enemy in enemies) {
                     enemy.RenderEntity();
                 }
                 foreach ( PlayerShot shot in playerShots) {
                     shot.RenderEntity();
                 }
-                IterateShots();
                 win.SwapBuffers();
             }
 
