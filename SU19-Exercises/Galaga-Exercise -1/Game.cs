@@ -18,6 +18,8 @@ public class Game : IGameEventProcessor<object> {
     private Enemy enemy;
     private GameEventBus<object> eventBus;
     public List<PlayerShot> playerShots { get; private set; }
+    public List<Enemy> enemies;
+    public List<Image> enemyStrides;
    
 
     public Game() {
@@ -31,6 +33,12 @@ public class Game : IGameEventProcessor<object> {
         
         // Player Shots
         playerShots = new List<PlayerShot>();
+        
+        // Enemy Sprite
+        // Look at the file and consider why we place the number '4' here.
+        enemyStrides = ImageStride.CreateStrides(4,
+            Path.Combine("Assets", "Images", "BlueMonster.png"));
+        enemies = new List<Enemy>();
 
         // EventHandling
         eventBus = new GameEventBus<object>();
@@ -40,17 +48,23 @@ public class Game : IGameEventProcessor<object> {
         });
         win.RegisterEventBus(eventBus);
         eventBus.Subscribe(GameEventType.InputEvent, this);
-        eventBus.Subscribe(GameEventType.WindowEvent, this);
-        
+        eventBus.Subscribe(GameEventType.WindowEvent, this);   
+    }
+
+    public void AddEnemies() {
+        enemy = new Enemy(this, new DynamicShape(new Vec2F(0.45f,
+                0.7f), new Vec2F(0.1f, 0.1f), new Vec2F(0.0f, 0.0f)),
+            new ImageStride(80, enemyStrides));
+        enemies.Add(enemy);
     }
 
     public void GameLoop() {
-
+        AddEnemies();
+        
         while (win.IsRunning()) {
 
             gameTimer.MeasureTime();
             while (gameTimer.ShouldUpdate()) {
-
                 win.PollEvents();
                 player.Move();
                 eventBus.ProcessEvents();
@@ -60,6 +74,9 @@ public class Game : IGameEventProcessor<object> {
             if (gameTimer.ShouldRender()) {
                 win.Clear();
                 player.RenderEntity();
+                foreach (var enemy in enemies) {
+                    enemy.RenderEntity();
+                }
                 win.SwapBuffers();
             }
 
