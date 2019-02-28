@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Drawing;
 using System.IO;
 using DIKUArcade;
 using DIKUArcade.Entities;
@@ -22,6 +23,7 @@ public class Game : IGameEventProcessor<object> {
     private Player player;
     private Window win;
     private int explosionLength = 500;
+    private Score scoreTable;
     public List<PlayerShot> playerShots { get; private set; }
 
     public Game() {
@@ -41,9 +43,12 @@ public class Game : IGameEventProcessor<object> {
         enemies = new List<Enemy>();
         
         // Enemy Explosion
-        explosionStrides = ImageStride.CreateStrides(4,
+        explosionStrides = ImageStride.CreateStrides(8,
             Path.Combine("Assets", "Images", "Explosion.png"));
-        explosions = new AnimationContainer(50);
+        explosions = new AnimationContainer(28);
+        
+        // ScoreTable
+        scoreTable = new Score(new Vec2F(0.1f,0.9f), new Vec2F(0.1f,0.1f));
 
         // EventHandling
         eventBus = new GameEventBus<object>();
@@ -101,10 +106,11 @@ public class Game : IGameEventProcessor<object> {
             foreach (var enemy in enemies) {
                 if (CollisionDetection.Aabb(shot.Shape.AsDynamicShape(),
                     enemy.Shape.AsDynamicShape()).Collision) {
-                    enemy.DeleteEntity();
-                    shot.DeleteEntity();
                     AddExplosion(enemy.Shape.Position.X,enemy.Shape.Position.Y, 
                         enemy.Shape.Extent.X,enemy.Shape.Extent.Y);
+                    enemy.DeleteEntity();
+                    shot.DeleteEntity();
+                    
                 }
             }
 
@@ -134,6 +140,13 @@ public class Game : IGameEventProcessor<object> {
         AddEnemies(0.55f, 0.7f);
         AddEnemies(0.65f, 0.8f);
         AddEnemies(0.75f, 0.7f);
+        AddEnemies(0.15f, 0.5f);
+        AddEnemies(0.25f, 0.6f);
+        AddEnemies(0.35f, 0.5f);
+        AddEnemies(0.45f, 0.6f);
+        AddEnemies(0.55f, 0.5f);
+        AddEnemies(0.65f, 0.6f);
+        AddEnemies(0.75f, 0.5f);
         while (win.IsRunning()) {
             gameTimer.MeasureTime();
             while (gameTimer.ShouldUpdate()) {
@@ -148,6 +161,7 @@ public class Game : IGameEventProcessor<object> {
                 player.RenderEntity();
 
                 foreach (var enemy in enemies) {
+                    explosions.RenderAnimations();
                     enemy.RenderEntity();
                 }
 
