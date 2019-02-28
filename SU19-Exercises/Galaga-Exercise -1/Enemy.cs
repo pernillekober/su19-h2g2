@@ -1,4 +1,5 @@
 
+using System;
 using System.IO;
 using System.Collections.Generic;
 using DIKUArcade.Entities;
@@ -8,8 +9,8 @@ using DIKUArcade.Math;
 namespace Galaga_Exercise__1 {
     public class Enemy : Entity {
         private Game game;
-        private List<Image> enemyStrides;
-        private List<Enemy> enemies;
+        public List<Image> enemyStrides;
+        public List<Enemy> enemies;
         
         public Enemy(Game game, DynamicShape shape, IBaseImage image) :
             base(shape, image) {
@@ -22,9 +23,11 @@ namespace Galaga_Exercise__1 {
         }
 
         public void AddEnemies() {
-            Enemy enemy = new Enemy(game,
-                new DynamicShape(new Vec2F(0.45f, 0.9f), new Vec2F(
-                0.1f, 0.1f)), new Image(Path.Combine("Assets", "Images", "Player.png")));
+            Enemy enemy = new Enemy(game, new DynamicShape(new Vec2F(0.0f, 
+                    0.01f),new Vec2F(0.1f,0.1f), new Vec2F(0.0f,0.0f)),
+                new ImageStride(80, enemyStrides));
+            enemies.Add(enemy);
+
         }
     }
 }

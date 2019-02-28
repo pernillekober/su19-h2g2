@@ -1,4 +1,5 @@
-
+using System.IO;
+using System.Collections.Generic;
 using DIKUArcade.Entities;
 using DIKUArcade.Graphics;
 using DIKUArcade.Math;
@@ -23,5 +24,13 @@ namespace Galaga_Exercise__1 {
                 Shape.Position.X = .92f;
             }
         }
+        // A method which instantiates a projectile for the player
+        public void Shoot() {
+                 PlayerShot shot = new PlayerShot(game, new DynamicShape(new Vec2F(0.0f, 
+                        0.01f),new Vec2F(0.008f,0.027f), new Vec2F(0.0f,0.01f)),
+                    new ImageStride(100,Path.Combine("Assets", "Images", "BulletRed2.png")));
+        }
+            
+        
     }
 }

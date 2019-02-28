@@ -14,17 +14,25 @@ public class Game : IGameEventProcessor<object> {
 
     private Window win;
     private GameTimer gameTimer;
-    private Galaga_Exercise__1.Player player;
+    private Player player;
+    private Enemy enemy;
     private GameEventBus<object> eventBus;
+    public List<PlayerShot> playerShots { get; private set; }
+   
 
     public Game() {
         win = new Window("Galaga", 500, 500);
         gameTimer = new GameTimer(10, 60);
+        
+        // Player Sprite
         player = new Player(this,
             new DynamicShape(new Vec2F(0.45f, 0.1f), new Vec2F(
                 0.1f, 0.1f)), new Image(Path.Combine("Assets", "Images", "Player.png")));
-        // For animated Image: new ImageStride()
         
+        // Player Shots
+        playerShots = new List<PlayerShot>();
+
+        // EventHandling
         eventBus = new GameEventBus<object>();
         eventBus.InitializeEventBus(new List<GameEventType>() {
             GameEventType.InputEvent, // key press / key release
@@ -46,6 +54,7 @@ public class Game : IGameEventProcessor<object> {
                 win.PollEvents();
                 player.Move();
                 eventBus.ProcessEvents();
+                player.Shoot();
             }
 
             if (gameTimer.ShouldRender()) {
@@ -74,6 +83,9 @@ public class Game : IGameEventProcessor<object> {
             break;
         case "KEY_LEFT":
             player.Direction(new Vec2F(-0.03f,0.0f));
+            break;
+        case "KEY_SPACE":
+            player.Shoot();
             break;
         }
     }
