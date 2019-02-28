@@ -17,9 +17,10 @@ public class Game : IGameEventProcessor<object> {
     private Player player;
     private Enemy enemy;
     private GameEventBus<object> eventBus;
-    public List<PlayerShot> playerShots { get; private set; }
     public List<Enemy> enemies;
     public List<Image> enemyStrides;
+    public List<PlayerShot> playerShots { get; private set; }
+    
    
 
     public Game() {
@@ -51,15 +52,21 @@ public class Game : IGameEventProcessor<object> {
         eventBus.Subscribe(GameEventType.WindowEvent, this);   
     }
 
-    public void AddEnemies() {
-        enemy = new Enemy(this, new DynamicShape(new Vec2F(0.45f,
-                0.7f), new Vec2F(0.1f, 0.1f), new Vec2F(0.0f, 0.0f)),
+    public void AddEnemies(float x, float y) {
+        enemy = new Enemy(this, new DynamicShape(new Vec2F(x,
+                y), new Vec2F(0.1f, 0.1f), new Vec2F(0.0f, 0.0f)),
             new ImageStride(80, enemyStrides));
         enemies.Add(enemy);
     }
 
     public void GameLoop() {
-        AddEnemies();
+        AddEnemies(0.15f,0.7f);
+        AddEnemies(0.25f,0.8f);
+        AddEnemies(0.35f,0.7f);
+        AddEnemies(0.45f,0.8f);
+        AddEnemies(0.55f,0.7f);
+        AddEnemies(0.65f,0.8f);
+        AddEnemies(0.75f,0.7f);
         
         while (win.IsRunning()) {
 
