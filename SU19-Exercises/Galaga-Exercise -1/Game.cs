@@ -13,10 +13,15 @@ public class Game : IGameEventProcessor<object> {
     public List<Enemy> enemies;
     private Enemy enemy;
     public List<Image> enemyStrides;
+    
+    private List<Image> explosionStrides;
+    private AnimationContainer explosions;
+    
     private GameEventBus<object> eventBus;
     private GameTimer gameTimer;
     private Player player;
     private Window win;
+    private int explosionLength = 500;
     public List<PlayerShot> playerShots { get; private set; }
 
     public Game() {
@@ -27,15 +32,18 @@ public class Game : IGameEventProcessor<object> {
         player = new Player(this,
             new DynamicShape(new Vec2F(0.45f, 0.1f), new Vec2F(
                 0.1f, 0.1f)), new Image(Path.Combine("Assets", "Images", "Player.png")));
-
         // Player Shots
         playerShots = new List<PlayerShot>();
 
-        // Enemy Sprite
-        // Look at the file and consider why we place the number '4' here.
+        // Enemy 
         enemyStrides = ImageStride.CreateStrides(4,
             Path.Combine("Assets", "Images", "BlueMonster.png"));
         enemies = new List<Enemy>();
+        
+        // Enemy Explosion
+        explosionStrides = ImageStride.CreateStrides(4,
+            Path.Combine("Assets", "Images", "Explosion.png"));
+        explosions = new AnimationContainer(50);
 
         // EventHandling
         eventBus = new GameEventBus<object>();
@@ -75,6 +83,13 @@ public class Game : IGameEventProcessor<object> {
             new ImageStride(80, enemyStrides));
         enemies.Add(enemy);
     }
+    
+    public void AddExplosion(float posX, float posY,
+        float extentX, float extentY) {
+        explosions.AddAnimation(
+            new StationaryShape(posX, posY, extentX, extentY), explosionLength,
+            new ImageStride(explosionLength / 8, explosionStrides));
+    }
 
     public void IterateShots() {
         foreach (var shot in playerShots) {
@@ -88,6 +103,8 @@ public class Game : IGameEventProcessor<object> {
                     enemy.Shape.AsDynamicShape()).Collision) {
                     enemy.DeleteEntity();
                     shot.DeleteEntity();
+                    AddExplosion(enemy.Shape.Position.X,enemy.Shape.Position.Y, 
+                        enemy.Shape.Extent.X,enemy.Shape.Extent.Y);
                 }
             }
 
