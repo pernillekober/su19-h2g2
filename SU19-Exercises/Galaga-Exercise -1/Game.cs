@@ -1,11 +1,11 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Runtime.InteropServices;
 using DIKUArcade;
 using DIKUArcade.Entities;
 using DIKUArcade.EventBus;
 using DIKUArcade.Graphics;
+using DIKUArcade.Physics;
 using DIKUArcade.Math;
 using DIKUArcade.Timers;
 using Galaga_Exercise__1;
@@ -58,6 +58,35 @@ public class Game : IGameEventProcessor<object> {
             new ImageStride(80, enemyStrides));
         enemies.Add(enemy);
     }
+    public void IterateShots() {
+        foreach (var shot in playerShots) {
+            shot.Shape.Move();
+            if (shot.Shape.Position.Y > 1.0f) {
+                shot.DeleteEntity();
+            }
+            foreach (Enemy enemy in enemies) {
+                if (CollisionDetection.Aabb(shot.Shape.AsDynamicShape(), 
+                    enemy.Shape.AsDynamicShape()).Collision) {
+                    shot.DeleteEntity();
+                    enemy.DeleteEntity();
+                }
+            }
+            List<Enemy> newEnemies = new List<Enemy>();
+            foreach (Enemy enemy in enemies) {
+                if (!enemy.IsDeleted()) {
+                    newEnemies.Add(enemy);
+                } 
+            }
+            enemies = newEnemies;
+            List<PlayerShot> newShots = new List<PlayerShot>();
+            foreach (PlayerShot shots in playerShots) {
+                if (!shot.IsDeleted()) {
+                    newShots.Add(shots);
+                }
+                playerShots = newShots;
+            }
+        }
+    }
 
     public void GameLoop() {
         AddEnemies(0.15f,0.7f);
@@ -80,12 +109,14 @@ public class Game : IGameEventProcessor<object> {
             if (gameTimer.ShouldRender()) {
                 win.Clear();
                 player.RenderEntity();
+                
                 foreach (var enemy in enemies) {
                     enemy.RenderEntity();
                 }
                 foreach ( PlayerShot shot in playerShots) {
                     shot.RenderEntity();
                 }
+                IterateShots();
                 win.SwapBuffers();
             }
 
@@ -105,13 +136,14 @@ public class Game : IGameEventProcessor<object> {
                     "", ""));
             break;
         case "KEY_RIGHT":
-            player.Direction(new Vec2F(0.03f,0.0f));
+            player.Direction(new Vec2F(0.02f,0.0f));
             break;
         case "KEY_LEFT":
-            player.Direction(new Vec2F(-0.03f,0.0f));
+            player.Direction(new Vec2F(-0.02f,0.0f));
             break;
         case "KEY_SPACE":
             player.Shoot();
+            Console.WriteLine(playerShots.Count);
             break;
         }
     }

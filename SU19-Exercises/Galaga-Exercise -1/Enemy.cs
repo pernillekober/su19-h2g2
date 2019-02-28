@@ -1,10 +1,6 @@
 
-using System;
-using System.IO;
-using System.Collections.Generic;
 using DIKUArcade.Entities;
 using DIKUArcade.Graphics;
-using DIKUArcade.Math;
 
 namespace Galaga_Exercise__1 {
     public class Enemy : Entity {
