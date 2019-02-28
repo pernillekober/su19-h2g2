@@ -7,9 +7,13 @@ using DIKUArcade.Math;
 namespace Galaga_Exercise__1 {
     public class Player : Entity {
         private Game game;
+        private List<Image> shotStrides;
         public Player(Game game, DynamicShape shape, IBaseImage image) :
             base(shape, image) {
             this.game = game;
+            
+            shotStrides = ImageStride.CreateStrides(4,
+                Path.Combine("Assets", "Images", "Bulletred2.png"));
         }
         
         public void Direction(Vec2F dir) {
@@ -28,7 +32,8 @@ namespace Galaga_Exercise__1 {
         public void Shoot() {
                  PlayerShot shot = new PlayerShot(game, new DynamicShape(new Vec2F(0.0f, 
                         0.01f),new Vec2F(0.008f,0.027f), new Vec2F(0.0f,0.01f)),
-                    new ImageStride(100,Path.Combine("Assets", "Images", "BulletRed2.png")));
+                    new ImageStride(100,shotStrides));
+                 game.playerShots.Add(shot);
         }
             
         

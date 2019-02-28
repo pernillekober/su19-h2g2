@@ -25,7 +25,7 @@ public class Game : IGameEventProcessor<object> {
 
     public Game() {
         win = new Window("Galaga", 500, 500);
-        gameTimer = new GameTimer(10, 60);
+        gameTimer = new GameTimer(60, 60);
         
         // Player Sprite
         player = new Player(this,
@@ -67,15 +67,15 @@ public class Game : IGameEventProcessor<object> {
         AddEnemies(0.55f,0.7f);
         AddEnemies(0.65f,0.8f);
         AddEnemies(0.75f,0.7f);
-        
+
         while (win.IsRunning()) {
 
             gameTimer.MeasureTime();
             while (gameTimer.ShouldUpdate()) {
                 win.PollEvents();
                 player.Move();
-                eventBus.ProcessEvents();
                 player.Shoot();
+                eventBus.ProcessEvents();
             }
 
             if (gameTimer.ShouldRender()) {
