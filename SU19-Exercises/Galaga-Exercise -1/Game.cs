@@ -74,7 +74,6 @@ public class Game : IGameEventProcessor<object> {
             while (gameTimer.ShouldUpdate()) {
                 win.PollEvents();
                 player.Move();
-                player.Shoot();
                 eventBus.ProcessEvents();
             }
 
@@ -83,6 +82,9 @@ public class Game : IGameEventProcessor<object> {
                 player.RenderEntity();
                 foreach (var enemy in enemies) {
                     enemy.RenderEntity();
+                }
+                foreach ( PlayerShot shot in playerShots) {
+                    shot.RenderEntity();
                 }
                 win.SwapBuffers();
             }

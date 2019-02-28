@@ -30,8 +30,9 @@ namespace Galaga_Exercise__1 {
         }
         // A method which instantiates a projectile for the player
         public void Shoot() {
-                 PlayerShot shot = new PlayerShot(game, new DynamicShape(new Vec2F(0.0f, 
-                        0.01f),new Vec2F(0.008f,0.027f), new Vec2F(0.0f,0.01f)),
+                 PlayerShot shot = new PlayerShot(game, new DynamicShape(
+                         new Vec2F(Shape.Position.X + .047f, 0.2f),
+                         new Vec2F(0.008f,0.027f)),
                     new ImageStride(100,shotStrides));
                  game.playerShots.Add(shot);
         }
