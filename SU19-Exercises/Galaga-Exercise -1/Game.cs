@@ -81,21 +81,33 @@ public class Game : IGameEventProcessor<object> {
             }
         }
     }
-
+    /// <summary>
+    /// Adds an enemy at given position.
+    /// </summary>
+    /// <param name="x"></param>
+    /// <param name="y"></param>
     public void AddEnemies(float x, float y) {
         enemy = new Enemy(this, new DynamicShape(new Vec2F(x,
                 y), new Vec2F(0.1f, 0.1f), new Vec2F(0.0f, 0.0f)),
             new ImageStride(80, enemyStrides));
         enemies.Add(enemy);
     }
-    
+    /// <summary>
+    /// Adds an explosion animation at given position.
+    /// </summary>
+    /// <param name="posX"></param>
+    /// <param name="posY"></param>
+    /// <param name="extentX"></param>
+    /// <param name="extentY"></param>
     public void AddExplosion(float posX, float posY,
         float extentX, float extentY) {
         explosions.AddAnimation(
             new StationaryShape(posX, posY, extentX, extentY), explosionLength,
             new ImageStride(explosionLength / 8, explosionStrides));
     }
-
+    /// <summary>
+    /// Makes the shots move and deletes shots if outside window.
+    /// </summary>
     public void IterateShots() {
         foreach (var shot in playerShots) {
             shot.Shape.Move();
