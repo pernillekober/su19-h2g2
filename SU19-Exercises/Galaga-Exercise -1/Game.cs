@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.IO;
 using DIKUArcade;
 using DIKUArcade.Entities;
@@ -106,9 +107,9 @@ public class Game : IGameEventProcessor<object> {
             foreach (var enemy in enemies) {
                 if (CollisionDetection.Aabb(shot.Shape.AsDynamicShape(),
                     enemy.Shape.AsDynamicShape()).Collision) {
+                    enemy.DeleteEntity();
                     AddExplosion(enemy.Shape.Position.X,enemy.Shape.Position.Y, 
                         enemy.Shape.Extent.X,enemy.Shape.Extent.Y);
-                    enemy.DeleteEntity();
                     shot.DeleteEntity();
                     scoreTable.AddPoint();
                     
@@ -192,10 +193,10 @@ public class Game : IGameEventProcessor<object> {
                     "", ""));
             break;
         case "KEY_RIGHT":
-            player.Direction(new Vec2F(0.02f, 0.0f));
+            player.Direction(new Vec2F(0.013f, 0.0f));
             break;
         case "KEY_LEFT":
-            player.Direction(new Vec2F(-0.02f, 0.0f));
+            player.Direction(new Vec2F(-0.013f, 0.0f));
             break;
         case "KEY_SPACE":
             player.Shoot();
