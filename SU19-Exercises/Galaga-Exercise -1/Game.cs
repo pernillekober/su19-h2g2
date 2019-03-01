@@ -153,6 +153,7 @@ public class Game : IGameEventProcessor<object> {
             while (gameTimer.ShouldUpdate()) {
                 win.PollEvents();
                 player.Move();
+                player.AddBoost();
                 IterateShots();
                 eventBus.ProcessEvents();
             }
@@ -162,7 +163,7 @@ public class Game : IGameEventProcessor<object> {
                 player.RenderEntity();
                 player.booster.RenderEntity();
                 scoreTable.RenderScore();
-
+                
                 foreach (var enemy in enemies) {
                     explosions.RenderAnimations();
                     enemy.RenderEntity();
@@ -198,9 +199,6 @@ public class Game : IGameEventProcessor<object> {
             break;
         case "KEY_SPACE":
             player.Shoot();
- 
-            
-            
             break;
         }
     }

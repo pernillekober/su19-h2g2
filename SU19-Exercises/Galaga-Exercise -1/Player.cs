@@ -8,7 +8,7 @@ namespace Galaga_Exercise__1 {
     public class Player : Entity {
         private Game game;
         private List<Image> playerShots;
-        private List<Image> playerBooster;
+        public List<Image> playerBooster;
         public Entity booster ;
 
         public Player(Game game, DynamicShape shape, IBaseImage image) :
@@ -18,20 +18,16 @@ namespace Galaga_Exercise__1 {
             playerShots.Add(new Image(Path.Combine("Assets", "Images","BulletRed2.png")));
             playerBooster = new List<Image>();
             playerBooster.Add(new Image(Path.Combine("Assets", "Images","PlayerBooster.png")));
-            booster = new Entity( new DynamicShape(new Vec2F(Shape.Position.X, 
-                    Shape.Position.Y-0.015f), new Vec2F(0.1f,0.1f)),
-                playerBooster[0]);
+            
         }
 
         public void Direction(Vec2F dir) {
             Shape.AsDynamicShape().Direction = dir;
-            booster.Shape.AsDynamicShape().Direction = dir;
 
         }
 
         public void Move() {
             Shape.Move();
-            booster.Shape.Move();
             if (Shape.Position.X + Shape.AsDynamicShape().Direction.X < -.02f) {
                 Shape.Position.X = -.02f;
             } else if (Shape.Position.X + Shape.AsDynamicShape().Direction.X > .92f) {
@@ -45,6 +41,12 @@ namespace Galaga_Exercise__1 {
                     new Vec2F(Shape.Position.X + .047f, 0.2f),
                     new Vec2F(0.008f, 0.027f)),
                 playerShots[0]));
+        }
+
+        public void AddBoost() {
+            booster = new Entity( new DynamicShape(new Vec2F(Shape.Position.X, 
+                    Shape.Position.Y-0.015f), new Vec2F(0.1f,0.1f)),
+                playerBooster[0]);
         }
     }
 }
