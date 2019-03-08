@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.IO;
+using DIKUArcade;
 using DIKUArcade.Entities;
 using DIKUArcade.Graphics;
 using DIKUArcade.Math;
@@ -28,15 +29,14 @@ namespace Galaga_Exercise__1 {
             Shape.AsDynamicShape().Direction = dir;
 
         }
+
         /// <summary>
         /// Moves a shape property if inside the window.
-        /// </summary>
+        /// </summary>5
         public void Move() {
-            Shape.Move();
-            if (Shape.Position.X + Shape.AsDynamicShape().Direction.X < -.02f) {
-                Shape.Position.X = -.02f;
-            } else if (Shape.Position.X + Shape.AsDynamicShape().Direction.X > .92f) {
-                Shape.Position.X = .92f;
+            if (Shape.Position.X + Shape.AsDynamicShape().Direction.X > (0.0f - Shape.Extent.X/3) &&
+                Shape.Position.X + Shape.AsDynamicShape().Direction.X < (1.0f - 2 * Shape.Extent.X/3)) {
+                Shape.Move();
             }
         }
 

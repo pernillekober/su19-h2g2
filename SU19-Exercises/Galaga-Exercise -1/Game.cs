@@ -87,11 +87,15 @@ public class Game : IGameEventProcessor<object> {
     /// </summary>
     /// <param name="x"></param>
     /// <param name="y"></param>
-    public void AddEnemies(float x, float y) {
-        enemy = new Enemy(this, new DynamicShape(new Vec2F(x,
-                y), new Vec2F(0.1f, 0.1f), new Vec2F(0.0f, 0.0f)),
-            new ImageStride(80, enemyStrides));
-        enemies.Add(enemy);
+    public void AddEnemies() {
+        for (float i = 0.15f; i <= 0.85f; i += .1f) {
+            enemy = new Enemy(this, new DynamicShape(new Vec2F(i,
+                .7f), new Vec2F(0.1f, 0.1f), new Vec2F(0.1f, 0.0f)),
+                new ImageStride(80, enemyStrides));
+            enemies.Add(enemy);
+        }
+        
+        
     }
     /// <summary>
     /// Adds an explosion animation at given position.
@@ -147,20 +151,7 @@ public class Game : IGameEventProcessor<object> {
     }
 
     public void GameLoop() {
-        AddEnemies(0.15f, 0.7f);
-        AddEnemies(0.25f, 0.8f);
-        AddEnemies(0.35f, 0.7f);
-        AddEnemies(0.45f, 0.8f);
-        AddEnemies(0.55f, 0.7f);
-        AddEnemies(0.65f, 0.8f);
-        AddEnemies(0.75f, 0.7f);
-        AddEnemies(0.15f, 0.5f);
-        AddEnemies(0.25f, 0.6f);
-        AddEnemies(0.35f, 0.5f);
-        AddEnemies(0.45f, 0.6f);
-        AddEnemies(0.55f, 0.5f);
-        AddEnemies(0.65f, 0.6f);
-        AddEnemies(0.75f, 0.5f);
+        AddEnemies();
         while (win.IsRunning()) {
             gameTimer.MeasureTime();
             while (gameTimer.ShouldUpdate()) {
