@@ -93,6 +93,10 @@ public class Game : IGameEventProcessor<object> {
                 .7f), new Vec2F(0.1f, 0.1f), new Vec2F(0.1f, 0.0f)),
                 new ImageStride(80, enemyStrides));
             enemies.Add(enemy);
+            enemy = new Enemy(this, new DynamicShape(new Vec2F(i,
+                    .6f), new Vec2F(0.1f, 0.1f), new Vec2F(0.1f, 0.0f)),
+                new ImageStride(80, enemyStrides));
+            enemies.Add(enemy);
         }
         
         
