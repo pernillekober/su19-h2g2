@@ -12,7 +12,7 @@ namespace Galaga_Exercise_2.GalagaEntities.Enemy {
         }
     }
 }
-
+/*
 namespace Galaga_Exercise_2.Squadrons {
     public interface ISquadron {
         EntityContainer<GalagaEntities.Enemy> Enemies { get; }
@@ -20,4 +20,4 @@ namespace Galaga_Exercise_2.Squadrons {
         
         void CreateEnemies(List<Image> enemyStrides);
     }
-}
+}*/

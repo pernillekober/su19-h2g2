@@ -10,6 +10,7 @@ using DIKUArcade.Math;
 using DIKUArcade.Physics;
 using DIKUArcade.Timers;
 using Galaga_Exercise_2;
+using Galaga_Exercise_2.GalagaEntities.Enemy;
 
 public class Game : IGameEventProcessor<object> {
     public List<Enemy> enemies;
@@ -68,10 +69,11 @@ public class Game : IGameEventProcessor<object> {
         if (eventType == GameEventType.WindowEvent) {
             switch (gameEvent.Message) {
             case "CLOSE_WINDOW":
-                win.CloseWindow();
+                player.KeyPress(gameEvent.Message);
+
                 break;
             }
-            
+/*
         } else if (eventType == GameEventType.InputEvent) {
             switch (gameEvent.Parameter1) {
             case "KEY_PRESS":
@@ -80,7 +82,7 @@ public class Game : IGameEventProcessor<object> {
             case "KEY_RELEASE":
                 player.KeyRelease(gameEvent.Message);
                    break;
-            }
+            }*/
         }
     }
     /// <summary>
