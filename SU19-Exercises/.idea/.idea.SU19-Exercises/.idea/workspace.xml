@@ -23,9 +23,7 @@
     <option name="FILTER_BY_CURRENT_PROJECT" value="true" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="493e80e4-301d-4e87-b5a7-19a0a7f8a3c3" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Galaga-Exercise-2/Enemy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Galaga-Exercise-2/Enemy.cs" afterDir="false" />
-    </list>
+    <list default="true" id="493e80e4-301d-4e87-b5a7-19a0a7f8a3c3" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -113,8 +111,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Galaga-Exercise-2/Enemy.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="19" column="8" selection-start-line="19" selection-start-column="8" selection-end-line="19" selection-end-column="8" />
+            <state relative-caret-position="345">
+              <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
               <folding>
                 <marker date="1552550477464" expanded="true" signature="6:87" ph="..." />
                 <marker date="1552550477464" expanded="true" signature="117:333" ph="{...}" />
@@ -307,12 +305,12 @@
       <workItem from="1551458313248" duration="2144000" />
       <workItem from="1552042669639" duration="4780000" />
       <workItem from="1552543224181" duration="82000" />
-      <workItem from="1552543334143" duration="6501000" />
+      <workItem from="1552543334143" duration="6975000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="67297000" />
+    <option name="totallyTimeSpent" value="67771000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1002,6 +1000,37 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Galaga-Exercise-2/Player.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="98">
+          <caret line="76" column="55" selection-start-line="76" selection-start-column="55" selection-end-line="76" selection-end-column="55" />
+          <folding>
+            <marker date="1552547934744" expanded="true" signature="6:172" ph="..." />
+            <marker date="1552547934744" expanded="true" signature="202:3761" ph="{...}" />
+            <marker date="1552547934744" expanded="true" signature="237:3759" ph="{...}" />
+            <marker date="1552547934744" expanded="true" signature="532:865" ph="{...}" />
+            <marker date="1552547934744" expanded="true" signature="874:995" ph="/// Updates the direction of a shape. ... " />
+            <marker date="1552547934744" expanded="true" signature="1038:1102" ph="{...}" />
+            <marker date="1552547934744" expanded="true" signature="1112:1206" ph="/// Moves a shape property if inside the window. ... " />
+            <marker date="1552547934744" expanded="true" signature="1234:1495" ph="{...}" />
+            <marker date="1552547934744" expanded="true" signature="1440:1485" ph="{...}" />
+            <marker date="1552547934744" expanded="true" signature="1533:2080" ph="{...}" />
+            <marker date="1552547934744" expanded="true" signature="1556:2074" ph="{...}" />
+            <marker date="1552547934744" expanded="true" signature="2125:2346" ph="{...}" />
+            <marker date="1552547934744" expanded="true" signature="2148:2340" ph="{...}" />
+            <marker date="1552547934744" expanded="true" signature="2506:3049" ph="{...}" />
+            <marker date="1552547934744" expanded="true" signature="2560:2722" ph="{...}" />
+            <marker date="1552547934744" expanded="true" signature="2601:2712" ph="{...}" />
+            <marker date="1552547934744" expanded="true" signature="2771:3043" ph="{...}" />
+            <marker date="1552547934744" expanded="true" signature="2815:3033" ph="{...}" />
+            <marker date="1552547934744" expanded="true" signature="3058:3163" ph="/// A method which instantiates a projectile for the player. ... " />
+            <marker date="1552547934744" expanded="true" signature="3192:3420" ph="{...}" />
+            <marker date="1552547934744" expanded="true" signature="3429:3526" ph="/// Adds boosters to the space ship (visual effect). ... " />
+            <marker date="1552547934744" expanded="true" signature="3558:3753" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Galaga-Exercise-2/Game.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
@@ -1043,41 +1072,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Galaga-Exercise-2/Player.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="98">
-          <caret line="76" column="55" selection-start-line="76" selection-start-column="55" selection-end-line="76" selection-end-column="55" />
-          <folding>
-            <marker date="1552547934744" expanded="true" signature="6:172" ph="..." />
-            <marker date="1552547934744" expanded="true" signature="202:3761" ph="{...}" />
-            <marker date="1552547934744" expanded="true" signature="237:3759" ph="{...}" />
-            <marker date="1552547934744" expanded="true" signature="532:865" ph="{...}" />
-            <marker date="1552547934744" expanded="true" signature="874:995" ph="/// Updates the direction of a shape. ... " />
-            <marker date="1552547934744" expanded="true" signature="1038:1102" ph="{...}" />
-            <marker date="1552547934744" expanded="true" signature="1112:1206" ph="/// Moves a shape property if inside the window. ... " />
-            <marker date="1552547934744" expanded="true" signature="1234:1495" ph="{...}" />
-            <marker date="1552547934744" expanded="true" signature="1440:1485" ph="{...}" />
-            <marker date="1552547934744" expanded="true" signature="1533:2080" ph="{...}" />
-            <marker date="1552547934744" expanded="true" signature="1556:2074" ph="{...}" />
-            <marker date="1552547934744" expanded="true" signature="2125:2346" ph="{...}" />
-            <marker date="1552547934744" expanded="true" signature="2148:2340" ph="{...}" />
-            <marker date="1552547934744" expanded="true" signature="2506:3049" ph="{...}" />
-            <marker date="1552547934744" expanded="true" signature="2560:2722" ph="{...}" />
-            <marker date="1552547934744" expanded="true" signature="2601:2712" ph="{...}" />
-            <marker date="1552547934744" expanded="true" signature="2771:3043" ph="{...}" />
-            <marker date="1552547934744" expanded="true" signature="2815:3033" ph="{...}" />
-            <marker date="1552547934744" expanded="true" signature="3058:3163" ph="/// A method which instantiates a projectile for the player. ... " />
-            <marker date="1552547934744" expanded="true" signature="3192:3420" ph="{...}" />
-            <marker date="1552547934744" expanded="true" signature="3429:3526" ph="/// Adds boosters to the space ship (visual effect). ... " />
-            <marker date="1552547934744" expanded="true" signature="3558:3753" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Galaga-Exercise-2/Enemy.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="8" selection-start-line="19" selection-start-column="8" selection-end-line="19" selection-end-column="8" />
+        <state relative-caret-position="345">
+          <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
           <folding>
             <marker date="1552550477464" expanded="true" signature="6:87" ph="..." />
             <marker date="1552550477464" expanded="true" signature="117:333" ph="{...}" />

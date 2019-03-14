@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using DIKUArcade.Entities;
 using DIKUArcade.Graphics;
 
-namespace Galaga_Exercise_2 {
+namespace Galaga_Exercise_2.GalagaEntities.Enemy {
     public class Enemy : Entity {
         private Game game;
 
@@ -15,7 +15,7 @@ namespace Galaga_Exercise_2 {
 
 namespace Galaga_Exercise_2.Squadrons {
     public interface ISquadron {
-        EntityContainer<Enemy> Enemies { get; }
+        EntityContainer<GalagaEntities.Enemy> Enemies { get; }
         int MaxEnemies { get: }
         
         void CreateEnemies(List<Image> enemyStrides);
