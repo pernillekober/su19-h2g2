@@ -25,3 +25,14 @@ C:/Users/Thomasasboe/Documents/KU/Github/Assignment #4/su19-h2g2/SU19-Exercises/
 C:/Users/Thomasasboe/Documents/KU/Github/Assignment #4/su19-h2g2/SU19-Exercises/Galaga-Exercise -1/obj/Debug/Galaga-Exercise -1.csproj.CopyComplete
 C:/Users/Thomasasboe/Documents/KU/Github/Assignment #4/su19-h2g2/SU19-Exercises/Galaga-Exercise -1/obj/Debug/Galaga_Exercise__1.exe
 C:/Users/Thomasasboe/Documents/KU/Github/Assignment #4/su19-h2g2/SU19-Exercises/Galaga-Exercise -1/obj/Debug/Galaga_Exercise__1.pdb
+C:\Users\Pernille\Desktop\assi4\su19-h2g2\SU19-Exercises\Galaga-Exercise -1\bin\Debug\Galaga_Exercise__1.exe
+C:\Users\Pernille\Desktop\assi4\su19-h2g2\SU19-Exercises\Galaga-Exercise -1\bin\Debug\Galaga_Exercise__1.pdb
+C:\Users\Pernille\Desktop\assi4\su19-h2g2\SU19-Exercises\Galaga-Exercise -1\bin\Debug\DIKUArcade.dll
+C:\Users\Pernille\Desktop\assi4\su19-h2g2\SU19-Exercises\Galaga-Exercise -1\bin\Debug\OpenTK.dll
+C:\Users\Pernille\Desktop\assi4\su19-h2g2\SU19-Exercises\Galaga-Exercise -1\bin\Debug\DIKUArcade.pdb
+C:\Users\Pernille\Desktop\assi4\su19-h2g2\SU19-Exercises\Galaga-Exercise -1\bin\Debug\OpenTK.xml
+C:\Users\Pernille\Desktop\assi4\su19-h2g2\SU19-Exercises\Galaga-Exercise -1\obj\Debug\Galaga-Exercise -1.csprojAssemblyReference.cache
+C:\Users\Pernille\Desktop\assi4\su19-h2g2\SU19-Exercises\Galaga-Exercise -1\obj\Debug\Galaga-Exercise -1.csproj.CoreCompileInputs.cache
+C:\Users\Pernille\Desktop\assi4\su19-h2g2\SU19-Exercises\Galaga-Exercise -1\obj\Debug\Galaga-Exercise -1.csproj.CopyComplete
+C:\Users\Pernille\Desktop\assi4\su19-h2g2\SU19-Exercises\Galaga-Exercise -1\obj\Debug\Galaga_Exercise__1.exe
+C:\Users\Pernille\Desktop\assi4\su19-h2g2\SU19-Exercises\Galaga-Exercise -1\obj\Debug\Galaga_Exercise__1.pdb
