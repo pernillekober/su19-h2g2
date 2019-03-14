@@ -24,8 +24,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="493e80e4-301d-4e87-b5a7-19a0a7f8a3c3" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Galaga-Exercise-2/Game.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Galaga-Exercise-2/Game.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Galaga-Exercise-2/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Galaga-Exercise-2/Player.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Galaga-Exercise-2/Enemy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Galaga-Exercise-2/Enemy.cs" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -78,7 +77,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Galaga-Exercise-2/Player.cs">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="98">
@@ -106,6 +105,23 @@
                 <marker date="1552547934744" expanded="true" signature="3192:3420" ph="{...}" />
                 <marker date="1552547934744" expanded="true" signature="3429:3526" ph="/// Adds boosters to the space ship (visual effect). ... " />
                 <marker date="1552547934744" expanded="true" signature="3558:3753" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Galaga-Exercise-2/Enemy.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="285">
+              <caret line="19" column="8" selection-start-line="19" selection-start-column="8" selection-end-line="19" selection-end-column="8" />
+              <folding>
+                <marker date="1552550477464" expanded="true" signature="6:87" ph="..." />
+                <marker date="1552550477464" expanded="true" signature="117:333" ph="{...}" />
+                <marker date="1552550477464" expanded="true" signature="151:331" ph="{...}" />
+                <marker date="1552550477464" expanded="true" signature="284:325" ph="{...}" />
+                <marker date="1552550477464" expanded="true" signature="373:558" ph="{...}" />
+                <marker date="1552550477464" expanded="true" signature="406:556" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -168,17 +184,18 @@
         <option value="$PROJECT_DIR$/Galaga-Exercise -1/Game.cs" />
         <option value="$PROJECT_DIR$/Galaga-Exercise-2/Class1.cs" />
         <option value="$PROJECT_DIR$/ConsoleApplication1/Program.cs" />
-        <option value="$PROJECT_DIR$/Galaga-Exercise-2/Enemy.cs" />
         <option value="$PROJECT_DIR$/Galaga-Exercise-2/PlayerShot.cs" />
         <option value="$PROJECT_DIR$/Galaga-Exercise-2/Program.cs" />
         <option value="$PROJECT_DIR$/Galaga-Exercise-2/Score.cs" />
         <option value="$PROJECT_DIR$/Galaga-Exercise-2/Game.cs" />
         <option value="$PROJECT_DIR$/Galaga-Exercise-2/Player.cs" />
+        <option value="$PROJECT_DIR$/Galaga-Exercise-2/Enemy.cs" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="width" value="1183" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-7" />
+    <option name="width" value="1181" />
     <option name="height" value="1047" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -290,12 +307,12 @@
       <workItem from="1551458313248" duration="2144000" />
       <workItem from="1552042669639" duration="4780000" />
       <workItem from="1552543224181" duration="82000" />
-      <workItem from="1552543334143" duration="5195000" />
+      <workItem from="1552543334143" duration="6501000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="65991000" />
+    <option name="totallyTimeSpent" value="67297000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -307,17 +324,17 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-7" y="0" width="1181" height="1047" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.18176973" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.3041927" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Capture Tool" order="3" />
       <window_info id="Favorites" order="4" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4989339" visible="true" weight="0.3261105" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4989339" visible="true" weight="0.32932165" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49919224" weight="0.39941692" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -330,7 +347,7 @@
       <window_info anchor="bottom" id="Unit Tests" order="12" />
       <window_info anchor="bottom" id="TeamCity" order="13" />
       <window_info anchor="bottom" id="Event Log" order="14" sideWeight="0.5010661" side_tool="true" weight="0.3261105" />
-      <window_info anchor="bottom" id="Build" order="15" weight="0.3261105" />
+      <window_info anchor="bottom" id="Build" order="15" weight="0.32603937" />
       <window_info anchor="bottom" id="Terminal" order="16" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -858,19 +875,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Galaga-Exercise-2/Enemy.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="9" column="29" selection-start-line="9" selection-start-column="29" selection-end-line="9" selection-end-column="29" />
-          <folding>
-            <marker date="1552544049690" expanded="false" signature="6:53" ph="..." />
-            <marker date="1552544049690" expanded="true" signature="83:299" ph="{...}" />
-            <marker date="1552544049690" expanded="true" signature="117:297" ph="{...}" />
-            <marker date="1552544049690" expanded="true" signature="250:291" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Galaga-Exercise-2/Program.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
@@ -1066,6 +1070,21 @@
             <marker date="1552547934744" expanded="true" signature="3192:3420" ph="{...}" />
             <marker date="1552547934744" expanded="true" signature="3429:3526" ph="/// Adds boosters to the space ship (visual effect). ... " />
             <marker date="1552547934744" expanded="true" signature="3558:3753" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Galaga-Exercise-2/Enemy.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" column="8" selection-start-line="19" selection-start-column="8" selection-end-line="19" selection-end-column="8" />
+          <folding>
+            <marker date="1552550477464" expanded="true" signature="6:87" ph="..." />
+            <marker date="1552550477464" expanded="true" signature="117:333" ph="{...}" />
+            <marker date="1552550477464" expanded="true" signature="151:331" ph="{...}" />
+            <marker date="1552550477464" expanded="true" signature="284:325" ph="{...}" />
+            <marker date="1552550477464" expanded="true" signature="373:558" ph="{...}" />
+            <marker date="1552550477464" expanded="true" signature="406:556" ph="{...}" />
           </folding>
         </state>
       </provider>
