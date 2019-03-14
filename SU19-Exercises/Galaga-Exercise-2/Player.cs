@@ -70,7 +70,28 @@ namespace Galaga_Exercise_2 {
             Direction(new Vec2F(0.0f, 0.0f));
             break;
         }
-        
+    }
+    
+    
+    // DISKUSSION: hvordan se ut og hvordan refere?
+    public void ProcessPlayerEvent(GameEventType eventType,
+        GameEvent<object> gameEvent) {
+        if (eventType == GameEventType.WindowEvent) {
+            switch (gameEvent.Message) {
+            case "CLOSE_WINDOW":
+                game.win.CloseWindow();
+                break;
+            }
+        } else if (eventType == GameEventType.InputEvent) {
+            switch (gameEvent.Parameter1) {
+            case "KEY_PRESS":
+                KeyPress(gameEvent.Message);
+                break;
+            case "KEY_RELEASE":
+                KeyRelease(gameEvent.Message);
+                   break;
+            }
+        }
     }
         /// <summary>
         /// A method which instantiates a projectile for the player.

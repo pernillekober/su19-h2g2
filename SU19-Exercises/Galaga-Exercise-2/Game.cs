@@ -22,7 +22,7 @@ public class Game : IGameEventProcessor<object> {
     private GameEventBus<object> eventBus;
     private GameTimer gameTimer;
     private Player player;
-    private Window win;
+    public Window win;
     private int explosionLength = 500;
     private Score scoreTable;
     public List<PlayerShot> playerShots { get; private set; }
@@ -71,6 +71,7 @@ public class Game : IGameEventProcessor<object> {
                 win.CloseWindow();
                 break;
             }
+            
         } else if (eventType == GameEventType.InputEvent) {
             switch (gameEvent.Parameter1) {
             case "KEY_PRESS":
