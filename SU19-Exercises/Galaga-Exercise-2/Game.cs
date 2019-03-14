@@ -77,7 +77,7 @@ public class Game : IGameEventProcessor<object> {
                 player.KeyPress(gameEvent.Message);
                 break;
             case "KEY_RELEASE":
-                KeyRelease(gameEvent.Message);
+                player.KeyRelease(gameEvent.Message);
                    break;
             }
         }
@@ -189,17 +189,5 @@ public class Game : IGameEventProcessor<object> {
                 // + gameTimer.CapturedUpdates + ", FPS: " + gameTimer.CapturedFrames;
             }
         }
-    }
-
-    public void KeyRelease(string key) {
-        switch (key) {
-        case "KEY_LEFT":
-            player.Direction(new Vec2F(0.0f, 0.0f));
-            break;
-        case "KEY_RIGHT":
-            player.Direction(new Vec2F(0.0f, 0.0f));
-            break;
-        }
-        
     }
 }

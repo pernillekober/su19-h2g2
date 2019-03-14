@@ -27,7 +27,7 @@ namespace Galaga_Exercise_2 {
         /// Updates the direction of a shape.
         /// </summary>
         /// <param name="dir"></param>
-        public void Direction(Vec2F dir) {
+        private void Direction(Vec2F dir) {
             Shape.AsDynamicShape().Direction = dir;
 
         }
