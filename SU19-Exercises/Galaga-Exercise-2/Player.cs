@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.IO;
 using DIKUArcade;
 using DIKUArcade.Entities;
+using DIKUArcade.EventBus;
 using DIKUArcade.Graphics;
 using DIKUArcade.Math;
 
@@ -11,6 +12,7 @@ namespace Galaga_Exercise_2 {
         private List<Image> playerShots;
         public List<Image> playerBooster;
         public Entity booster ;
+        public GameEventBus<object> eventBus;
 
         public Player(Game game, DynamicShape shape, IBaseImage image) :
             base(shape, image) {
@@ -39,7 +41,37 @@ namespace Galaga_Exercise_2 {
                 Shape.Move();
             }
         }
-
+    public void KeyPress(string key) {
+        switch (key) {
+        case "KEY_ESCAPE":
+            eventBus.RegisterEvent(
+                GameEventFactory<object>.CreateGameEventForAllProcessors(
+                    GameEventType.WindowEvent, this, "CLOSE_WINDOW",
+                    "", ""));
+            break;
+        case "KEY_RIGHT":
+            Direction(new Vec2F(0.013f, 0.0f));
+            break;
+        case "KEY_LEFT":
+            Direction(new Vec2F(-0.013f, 0.0f));
+            break;
+        case "KEY_SPACE":
+            Shoot();
+            break;
+        }
+    }
+    
+    public void KeyRelease(string key) {
+        switch (key) {
+        case "KEY_LEFT":
+            Direction(new Vec2F(0.0f, 0.0f));
+            break;
+        case "KEY_RIGHT":
+            Direction(new Vec2F(0.0f, 0.0f));
+            break;
+        }
+        
+    }
         /// <summary>
         /// A method which instantiates a projectile for the player.
         /// </summary>

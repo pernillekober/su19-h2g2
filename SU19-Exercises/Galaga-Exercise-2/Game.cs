@@ -74,11 +74,11 @@ public class Game : IGameEventProcessor<object> {
         } else if (eventType == GameEventType.InputEvent) {
             switch (gameEvent.Parameter1) {
             case "KEY_PRESS":
-                KeyPress(gameEvent.Message);
+                player.KeyPress(gameEvent.Message);
                 break;
             case "KEY_RELEASE":
                 KeyRelease(gameEvent.Message);
-                break;
+                   break;
             }
         }
     }
@@ -191,26 +191,6 @@ public class Game : IGameEventProcessor<object> {
         }
     }
 
-    private void KeyPress(string key) {
-        switch (key) {
-        case "KEY_ESCAPE":
-            eventBus.RegisterEvent(
-                GameEventFactory<object>.CreateGameEventForAllProcessors(
-                    GameEventType.WindowEvent, this, "CLOSE_WINDOW",
-                    "", ""));
-            break;
-        case "KEY_RIGHT":
-            player.Direction(new Vec2F(0.013f, 0.0f));
-            break;
-        case "KEY_LEFT":
-            player.Direction(new Vec2F(-0.013f, 0.0f));
-            break;
-        case "KEY_SPACE":
-            player.Shoot();
-            break;
-        }
-    }
-
     public void KeyRelease(string key) {
         switch (key) {
         case "KEY_LEFT":
@@ -220,5 +200,6 @@ public class Game : IGameEventProcessor<object> {
             player.Direction(new Vec2F(0.0f, 0.0f));
             break;
         }
+        
     }
 }
