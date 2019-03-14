@@ -23,7 +23,9 @@
     <option name="FILTER_BY_CURRENT_PROJECT" value="true" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="493e80e4-301d-4e87-b5a7-19a0a7f8a3c3" name="Default Changelist" comment="" />
+    <list default="true" id="493e80e4-301d-4e87-b5a7-19a0a7f8a3c3" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.SU19-Exercises/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SU19-Exercises/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -114,12 +116,12 @@
             <state relative-caret-position="345">
               <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
               <folding>
-                <marker date="1552550477464" expanded="true" signature="6:87" ph="..." />
-                <marker date="1552550477464" expanded="true" signature="117:333" ph="{...}" />
-                <marker date="1552550477464" expanded="true" signature="151:331" ph="{...}" />
-                <marker date="1552550477464" expanded="true" signature="284:325" ph="{...}" />
-                <marker date="1552550477464" expanded="true" signature="373:558" ph="{...}" />
-                <marker date="1552550477464" expanded="true" signature="406:556" ph="{...}" />
+                <marker date="1552551002609" expanded="true" signature="6:87" ph="..." />
+                <marker date="1552551002609" expanded="true" signature="138:354" ph="{...}" />
+                <marker date="1552551002609" expanded="true" signature="172:352" ph="{...}" />
+                <marker date="1552551002609" expanded="true" signature="305:346" ph="{...}" />
+                <marker date="1552551002609" expanded="true" signature="394:594" ph="{...}" />
+                <marker date="1552551002609" expanded="true" signature="427:592" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -305,12 +307,12 @@
       <workItem from="1551458313248" duration="2144000" />
       <workItem from="1552042669639" duration="4780000" />
       <workItem from="1552543224181" duration="82000" />
-      <workItem from="1552543334143" duration="6975000" />
+      <workItem from="1552543334143" duration="7966000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="67771000" />
+    <option name="totallyTimeSpent" value="68762000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1077,12 +1079,12 @@
         <state relative-caret-position="345">
           <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
           <folding>
-            <marker date="1552550477464" expanded="true" signature="6:87" ph="..." />
-            <marker date="1552550477464" expanded="true" signature="117:333" ph="{...}" />
-            <marker date="1552550477464" expanded="true" signature="151:331" ph="{...}" />
-            <marker date="1552550477464" expanded="true" signature="284:325" ph="{...}" />
-            <marker date="1552550477464" expanded="true" signature="373:558" ph="{...}" />
-            <marker date="1552550477464" expanded="true" signature="406:556" ph="{...}" />
+            <marker date="1552551002609" expanded="true" signature="6:87" ph="..." />
+            <marker date="1552551002609" expanded="true" signature="138:354" ph="{...}" />
+            <marker date="1552551002609" expanded="true" signature="172:352" ph="{...}" />
+            <marker date="1552551002609" expanded="true" signature="305:346" ph="{...}" />
+            <marker date="1552551002609" expanded="true" signature="394:594" ph="{...}" />
+            <marker date="1552551002609" expanded="true" signature="427:592" ph="{...}" />
           </folding>
         </state>
       </provider>
