@@ -81,7 +81,46 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Galaga-Exercise-2/Player.cs">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="458">
+=======
+<<<<<<< HEAD
+            <state relative-caret-position="168">
+              <caret line="18" column="22" selection-start-line="18" selection-start-column="22" selection-end-line="18" selection-end-column="22" />
+              <folding>
+                <marker date="1551366540174" expanded="true" signature="58:980" ph="{...}" />
+                <marker date="1551366540174" expanded="true" signature="84:978" ph="{...}" />
+                <marker date="1551366540174" expanded="true" signature="172:268" ph="{...}" />
+                <marker date="1551366540174" expanded="true" signature="366:537" ph="///     Make an Entity as ready for being deleted. ... " />
+                <marker date="1551366540174" expanded="true" signature="573:614" ph="{...}" />
+                <marker date="1551366540174" expanded="true" signature="624:817" ph="///     Check if this Entity has been marked as ready for being deleted. ... " />
+                <marker date="1551366540174" expanded="true" signature="850:891" ph="{...}" />
+                <marker date="1551366540174" expanded="true" signature="928:972" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../DIKUArcade/DIKUArcade/Entities/DynamicShape.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="264">
+              <caret line="27" column="62" selection-start-line="27" selection-start-column="62" selection-end-line="27" selection-end-column="62" />
+              <folding>
+                <marker date="1551366540569" expanded="true" signature="54:1509" ph="{...}" />
+                <marker date="1551366540569" expanded="true" signature="94:1507" ph="{...}" />
+                <marker date="1551366540569" expanded="true" signature="104:204" ph="///     Only dynamic entities carry a direction vector. ... " />
+                <marker date="1551366540569" expanded="true" signature="317:458" ph="{...}" />
+                <marker date="1551366540569" expanded="true" signature="609:684" ph="{...}" />
+                <marker date="1551366540569" expanded="true" signature="739:844" ph="{...}" />
+                <marker date="1551366540569" expanded="true" signature="910:1007" ph="{...}" />
+                <marker date="1551366540569" expanded="true" signature="1056:1096" ph="{...}" />
+                <marker date="1551366540569" expanded="true" signature="1107:1265" ph="///     Overrides the default Shape.Move() method to add ... " />
+                <marker date="1551366540569" expanded="true" signature="1302:1348" ph="{...}" />
+                <marker date="1551366540569" expanded="true" signature="1424:1501" ph="{...}" />
+=======
+            <state relative-caret-position="98">
+>>>>>>> f94a39fb3ef96a1f0ab04b7460e9ca181e07f595
               <caret line="76" column="55" selection-start-line="76" selection-start-column="55" selection-end-line="76" selection-end-column="55" />
               <folding>
                 <marker date="1552547934744" expanded="true" signature="6:172" ph="..." />
@@ -106,17 +145,136 @@
                 <marker date="1552547934744" expanded="true" signature="3192:3420" ph="{...}" />
                 <marker date="1552547934744" expanded="true" signature="3429:3526" ph="/// Adds boosters to the space ship (visual effect). ... " />
                 <marker date="1552547934744" expanded="true" signature="3558:3753" ph="{...}" />
+>>>>>>> 9a190a7655c03d6b2a65e1392ad4c5ba8911c023
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+<<<<<<< HEAD
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Galaga-Exercise -1/Game.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-687">
+              <caret line="136" column="13" selection-start-line="136" selection-start-column="13" selection-end-line="136" selection-end-column="13" />
+              <folding>
+                <marker date="1552045758998" expanded="false" signature="6:292" ph="..." />
+                <marker date="1552045758998" expanded="true" signature="342:7375" ph="{...}" />
+                <marker date="1552045758998" expanded="true" signature="810:2120" ph="{...}" />
+                <marker date="1552045758998" expanded="true" signature="1807:1951" ph="{...}" />
+                <marker date="1552045758998" expanded="true" signature="2214:2749" ph="{...}" />
+                <marker date="1552045758998" expanded="true" signature="2268:2425" ph="{...}" />
+                <marker date="1552045758998" expanded="true" signature="2309:2415" ph="{...}" />
+                <marker date="1552045758998" expanded="true" signature="2474:2743" ph="{...}" />
+                <marker date="1552045758998" expanded="true" signature="2518:2733" ph="{...}" />
+                <marker date="1552045758998" expanded="true" signature="2754:2893" ph="/// Adds an enemy at given position. ... " />
+                <marker date="1552045758998" expanded="true" signature="2923:3454" ph="{...}" />
+                <marker date="1552045758998" expanded="true" signature="2977:3430" ph="{...}" />
+                <marker date="1552045758998" expanded="true" signature="3459:3696" ph="/// Adds an explosion animation at given position. ... " />
+                <marker date="1552045758998" expanded="true" signature="3788:3977" ph="{...}" />
+                <marker date="1552045758998" expanded="true" signature="3982:4080" ph="/// Makes the shots move and deletes shots if outside window. ... " />
+                <marker date="1552045758998" expanded="true" signature="4112:5325" ph="{...}" />
+                <marker date="1552045758998" expanded="true" signature="4156:5319" ph="{...}" />
+                <marker date="1552045758998" expanded="true" signature="4235:4287" ph="{...}" />
+                <marker date="1552045758998" expanded="true" signature="4332:4797" ph="{...}" />
+                <marker date="1552045758998" expanded="true" signature="4468:4783" ph="{...}" />
+                <marker date="1552045758998" expanded="true" signature="4890:5008" ph="{...}" />
+                <marker date="1552045758998" expanded="true" signature="4932:4994" ph="{...}" />
+                <marker date="1552045758998" expanded="true" signature="5147:5273" ph="{...}" />
+                <marker date="1552045758998" expanded="true" signature="5194:5259" ph="{...}" />
+                <marker date="1552045758998" expanded="true" signature="5354:6489" ph="{...}" />
+                <marker date="1552045758998" expanded="true" signature="5410:6483" ph="{...}" />
+                <marker date="1552045758998" expanded="true" signature="5494:5683" ph="{...}" />
+                <marker date="1552045758998" expanded="true" signature="5727:6224" ph="{...}" />
+                <marker date="1552045758998" expanded="true" signature="5950:6062" ph="{...}" />
+                <marker date="1552045758998" expanded="true" signature="6114:6174" ph="{...}" />
+                <marker date="1552045758998" expanded="true" signature="6267:6473" ph="{...}" />
+                <marker date="1552045758998" expanded="true" signature="6285:6459" ph="/* 1 second has passed - display last captured ups and fps win.Title = &quot;Galaga | UPS: &quot; ... */" />
+                <marker date="1552045758998" expanded="true" signature="6529:7097" ph="{...}" />
+                <marker date="1552045758998" expanded="true" signature="6552:7091" ph="{...}" />
+                <marker date="1552045758998" expanded="true" signature="7138:7373" ph="{...}" />
+                <marker date="1552045758998" expanded="true" signature="7161:7367" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Galaga-Exercise -1/Score.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="132">
+              <caret line="15" column="32" selection-start-line="15" selection-start-column="32" selection-end-line="15" selection-end-column="32" />
+              <folding>
+                <marker date="1551435390396" expanded="false" signature="7:50" ph="..." />
+                <marker date="1551435390396" expanded="true" signature="81:782" ph="{...}" />
+                <marker date="1551435390396" expanded="true" signature="106:780" ph="{...}" />
+                <marker date="1551435390396" expanded="true" signature="216:318" ph="{...}" />
+                <marker date="1551435390396" expanded="true" signature="327:411" ph="/// Increases the score with one point. ... " />
+                <marker date="1551435390396" expanded="true" signature="443:475" ph="{...}" />
+                <marker date="1551435390396" expanded="true" signature="484:566" ph="/// Adds a score display to the game. ... " />
+                <marker date="1551435390396" expanded="true" signature="601:774" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Galaga-Exercise -1/Enemy.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="72">
+              <caret line="9" column="29" selection-start-line="9" selection-start-column="29" selection-end-line="9" selection-end-column="29" />
+              <folding>
+                <marker date="1551366540588" expanded="false" signature="6:53" ph="..." />
+                <marker date="1551366540588" expanded="true" signature="84:300" ph="{...}" />
+                <marker date="1551366540588" expanded="true" signature="118:298" ph="{...}" />
+                <marker date="1551366540588" expanded="true" signature="251:292" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Galaga-Exercise -1/PlayerShot.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="36">
+              <caret line="6" column="26" selection-start-line="6" selection-start-column="26" selection-end-line="6" selection-end-column="26" />
+              <folding>
+                <marker date="1551366540600" expanded="false" signature="6:76" ph="..." />
+                <marker date="1551366540600" expanded="true" signature="107:404" ph="{...}" />
+                <marker date="1551366540600" expanded="true" signature="146:402" ph="{...}" />
+                <marker date="1551366540600" expanded="true" signature="284:396" ph="{...}" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Galaga-Exercise -1/Player.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="216">
+              <caret line="23" column="21" lean-forward="true" selection-start-line="23" selection-start-column="21" selection-end-line="23" selection-end-column="21" />
+              <folding>
+                <marker date="1552045034967" expanded="false" signature="6:145" ph="..." />
+                <marker date="1552045034967" expanded="true" signature="176:2135" ph="{...}" />
+                <marker date="1552045034967" expanded="true" signature="211:2133" ph="{...}" />
+                <marker date="1552045034967" expanded="true" signature="460:793" ph="{...}" />
+                <marker date="1552045034967" expanded="true" signature="802:923" ph="/// Updates the direction of a shape. ... " />
+                <marker date="1552045034967" expanded="true" signature="965:1029" ph="{...}" />
+                <marker date="1552045034967" expanded="true" signature="1039:1133" ph="/// Moves a shape property if inside the window. ... " />
+                <marker date="1552045034967" expanded="true" signature="1161:1422" ph="{...}" />
+                <marker date="1552045034967" expanded="true" signature="1367:1412" ph="{...}" />
+                <marker date="1552045034967" expanded="true" signature="1432:1537" ph="/// A method which instantiates a projectile for the player. ... " />
+                <marker date="1552045034967" expanded="true" signature="1566:1794" ph="{...}" />
+                <marker date="1552045034967" expanded="true" signature="1803:1900" ph="/// Adds boosters to the space ship (visual effect). ... " />
+                <marker date="1552045034967" expanded="true" signature="1932:2127" ph="{...}" />
+=======
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Galaga-Exercise-2/Enemy.cs">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="45">
               <caret line="3" column="2" selection-start-line="3" selection-start-column="2" selection-end-line="3" selection-end-column="2" />
               <folding>
+<<<<<<< HEAD
                 <marker date="1552552809538" expanded="true" signature="6:87" ph="..." />
                 <marker date="1552552809538" expanded="true" signature="119:539" ph="{...}" />
                 <marker date="1552552809538" expanded="true" signature="153:333" ph="{...}" />
@@ -169,6 +327,15 @@
                 <marker date="1552405634255" expanded="true" signature="6552:7091" ph="{...}" />
                 <marker date="1552405634255" expanded="true" signature="7138:7373" ph="{...}" />
                 <marker date="1552405634255" expanded="true" signature="7161:7367" ph="{...}" />
+=======
+                <marker date="1552550477464" expanded="true" signature="6:87" ph="..." />
+                <marker date="1552550477464" expanded="true" signature="117:333" ph="{...}" />
+                <marker date="1552550477464" expanded="true" signature="151:331" ph="{...}" />
+                <marker date="1552550477464" expanded="true" signature="284:325" ph="{...}" />
+                <marker date="1552550477464" expanded="true" signature="373:558" ph="{...}" />
+                <marker date="1552550477464" expanded="true" signature="406:556" ph="{...}" />
+>>>>>>> 9a190a7655c03d6b2a65e1392ad4c5ba8911c023
+>>>>>>> f94a39fb3ef96a1f0ab04b7460e9ca181e07f595
               </folding>
             </state>
           </provider>
@@ -256,6 +423,8 @@
       <pane id="AssemblyExplorer" />
       <pane id="FileSystemExplorer" />
       <pane id="SolutionExplorer">
+<<<<<<< HEAD
+=======
         <subPane>
           <expand>
             <path>
@@ -292,6 +461,7 @@
           </expand>
           <select />
         </subPane>
+>>>>>>> 9a190a7655c03d6b2a65e1392ad4c5ba8911c023
         <option name="show-all-files" value="false" />
       </pane>
     </panes>
@@ -352,14 +522,32 @@
       <workItem from="1551193143307" duration="47000" />
       <workItem from="1551193974613" duration="52015000" />
       <workItem from="1551458313248" duration="2144000" />
+<<<<<<< HEAD
+      <workItem from="1552042669639" duration="5440000" />
+      <workItem from="1552405902258" duration="23000" />
+      <workItem from="1552406127008" duration="108000" />
+=======
       <workItem from="1552042669639" duration="4780000" />
       <workItem from="1552543224181" duration="82000" />
+<<<<<<< HEAD
       <workItem from="1552543334143" duration="8800000" />
+=======
+      <workItem from="1552543334143" duration="6975000" />
+>>>>>>> 9a190a7655c03d6b2a65e1392ad4c5ba8911c023
+>>>>>>> f94a39fb3ef96a1f0ab04b7460e9ca181e07f595
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< HEAD
     <option name="totallyTimeSpent" value="69596000" />
+=======
+<<<<<<< HEAD
+    <option name="totallyTimeSpent" value="61505000" />
+=======
+    <option name="totallyTimeSpent" value="67771000" />
+>>>>>>> 9a190a7655c03d6b2a65e1392ad4c5ba8911c023
+>>>>>>> f94a39fb3ef96a1f0ab04b7460e9ca181e07f595
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -374,14 +562,26 @@
     <frame x="-7" y="0" width="1181" height="1047" extended-state="0" />
     <editor active="true" />
     <layout>
+<<<<<<< HEAD
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18336026" />
+=======
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.3041927" />
+>>>>>>> 9a190a7655c03d6b2a65e1392ad4c5ba8911c023
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Capture Tool" order="3" />
       <window_info id="Favorites" order="4" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
+<<<<<<< HEAD
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4989339" weight="0.32932165" />
+=======
+<<<<<<< HEAD
+      <window_info anchor="bottom" id="Run" order="2" weight="0.18221575" />
+=======
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4989339" visible="true" weight="0.32932165" />
+>>>>>>> 9a190a7655c03d6b2a65e1392ad4c5ba8911c023
+>>>>>>> f94a39fb3ef96a1f0ab04b7460e9ca181e07f595
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49919224" weight="0.39941692" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -501,7 +701,6 @@
           <caret line="462" column="13" lean-forward="true" selection-start-line="462" selection-start-column="13" selection-end-line="462" selection-end-column="13" />
           <folding>
             <marker date="1551366540271" expanded="false" signature="6:49" ph="..." />
-            <marker date="1551366540271" expanded="true" signature="18193:18201" ph="{...}" />
             <marker date="1551366540271" expanded="true" signature="416:549" ph="/// Aspect ratio for a DIKUArcade.Window object, defining ... " />
             <marker date="1551366540271" expanded="true" signature="578:627" ph="{...}" />
             <marker date="1551366540271" expanded="true" signature="633:788" ph="/// Create an OpenTK window wrapper, where we only show ... " />
@@ -827,6 +1026,21 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/../DIKUArcade/DIKUArcade/Entities/Entity.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="18" column="22" selection-start-line="18" selection-start-column="22" selection-end-line="18" selection-end-column="22" />
+          <folding>
+            <marker date="1551366540174" expanded="true" signature="58:980" ph="{...}" />
+            <marker date="1551366540174" expanded="true" signature="84:978" ph="{...}" />
+            <marker date="1551366540174" expanded="true" signature="172:268" ph="{...}" />
+            <marker date="1551366540174" expanded="true" signature="366:537" ph="///     Make an Entity as ready for being deleted. ... " />
+            <marker date="1551366540174" expanded="true" signature="573:614" ph="{...}" />
+            <marker date="1551366540174" expanded="true" signature="624:817" ph="///     Check if this Entity has been marked as ready for being deleted. ... " />
+            <marker date="1551366540174" expanded="true" signature="850:891" ph="{...}" />
+            <marker date="1551366540174" expanded="true" signature="928:972" ph="{...}" />
+=======
     <entry file="file://$PROJECT_DIR$/GalagaExercise2/Program.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
@@ -867,12 +1081,29 @@
             <marker date="1551300265055" expanded="true" signature="1103:1253" ph="/// Overrides the default Shape.Move() method to add ... " />
             <marker date="1551300265055" expanded="true" signature="1290:1336" ph="{...}" />
             <marker date="1551300265055" expanded="true" signature="1412:1489" ph="{...}" />
+>>>>>>> 9a190a7655c03d6b2a65e1392ad4c5ba8911c023
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Galaga-Exercise -1/Enemy.cs">
+    <entry file="file://$PROJECT_DIR$/../DIKUArcade/DIKUArcade/Entities/DynamicShape.cs">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="264">
+          <caret line="27" column="62" selection-start-line="27" selection-start-column="62" selection-end-line="27" selection-end-column="62" />
+          <folding>
+            <marker date="1551366540569" expanded="true" signature="54:1509" ph="{...}" />
+            <marker date="1551366540569" expanded="true" signature="94:1507" ph="{...}" />
+            <marker date="1551366540569" expanded="true" signature="104:204" ph="///     Only dynamic entities carry a direction vector. ... " />
+            <marker date="1551366540569" expanded="true" signature="317:458" ph="{...}" />
+            <marker date="1551366540569" expanded="true" signature="609:684" ph="{...}" />
+            <marker date="1551366540569" expanded="true" signature="739:844" ph="{...}" />
+            <marker date="1551366540569" expanded="true" signature="910:1007" ph="{...}" />
+            <marker date="1551366540569" expanded="true" signature="1056:1096" ph="{...}" />
+            <marker date="1551366540569" expanded="true" signature="1107:1265" ph="///     Overrides the default Shape.Move() method to add ... " />
+            <marker date="1551366540569" expanded="true" signature="1302:1348" ph="{...}" />
+            <marker date="1551366540569" expanded="true" signature="1424:1501" ph="{...}" />
+=======
         <state>
           <caret line="1" column="26" selection-start-line="1" selection-start-column="26" selection-end-line="1" selection-end-column="26" />
           <folding>
@@ -930,14 +1161,20 @@
             <marker date="1552544289504" expanded="true" signature="28:189" ph="{...}" />
             <marker date="1552544289504" expanded="true" signature="57:187" ph="{...}" />
             <marker date="1552544289504" expanded="true" signature="106:181" ph="{...}" />
+>>>>>>> 9a190a7655c03d6b2a65e1392ad4c5ba8911c023
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Galaga-Exercise -1/Score.cs">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="132">
+          <caret line="15" column="32" selection-start-line="15" selection-start-column="32" selection-end-line="15" selection-end-column="32" />
+=======
         <state relative-caret-position="195">
           <caret line="14" column="21" selection-start-line="14" selection-start-column="21" selection-end-line="14" selection-end-column="21" />
+>>>>>>> 9a190a7655c03d6b2a65e1392ad4c5ba8911c023
           <folding>
             <marker date="1551437555965" expanded="false" signature="7:50" ph="..." />
             <marker date="1551437555965" expanded="true" signature="81:782" ph="{...}" />
@@ -951,6 +1188,17 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/Galaga-Exercise -1/Enemy.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="9" column="29" selection-start-line="9" selection-start-column="29" selection-end-line="9" selection-end-column="29" />
+          <folding>
+            <marker date="1551366540588" expanded="false" signature="6:53" ph="..." />
+            <marker date="1551366540588" expanded="true" signature="84:300" ph="{...}" />
+            <marker date="1551366540588" expanded="true" signature="118:298" ph="{...}" />
+            <marker date="1551366540588" expanded="true" signature="251:292" ph="{...}" />
+=======
     <entry file="file://$PROJECT_DIR$/Galaga-Exercise-2/Score.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
@@ -964,10 +1212,22 @@
             <marker date="1552544472520" expanded="true" signature="442:474" ph="{...}" />
             <marker date="1552544472520" expanded="true" signature="483:565" ph="/// Adds a score display to the game. ... " />
             <marker date="1552544472520" expanded="true" signature="600:773" ph="{...}" />
+>>>>>>> 9a190a7655c03d6b2a65e1392ad4c5ba8911c023
           </folding>
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/Galaga-Exercise -1/PlayerShot.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="6" column="26" selection-start-line="6" selection-start-column="26" selection-end-line="6" selection-end-column="26" />
+          <folding>
+            <marker date="1551366540600" expanded="false" signature="6:76" ph="..." />
+            <marker date="1551366540600" expanded="true" signature="107:404" ph="{...}" />
+            <marker date="1551366540600" expanded="true" signature="146:402" ph="{...}" />
+            <marker date="1551366540600" expanded="true" signature="284:396" ph="{...}" />
+=======
     <entry file="file://$PROJECT_DIR$/Galaga-Exercise -1/Player.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
@@ -986,6 +1246,7 @@
             <marker date="1552405634257" expanded="true" signature="1566:1794" ph="{...}" />
             <marker date="1552405634257" expanded="true" signature="1803:1900" ph="/// Adds boosters to the space ship (visual effect). ... " />
             <marker date="1552405634257" expanded="true" signature="1932:2127" ph="{...}" />
+>>>>>>> 9a190a7655c03d6b2a65e1392ad4c5ba8911c023
           </folding>
         </state>
       </provider>
@@ -1047,6 +1308,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Galaga-Exercise -1/Game.cs">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="-687">
+          <caret line="136" column="13" selection-start-line="136" selection-start-column="13" selection-end-line="136" selection-end-column="13" />
+=======
         <state relative-caret-position="2970">
           <caret line="209" column="18" selection-start-line="209" selection-start-column="18" selection-end-line="209" selection-end-column="18" />
           <folding>
@@ -1123,14 +1388,42 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Galaga-Exercise-2/Enemy.cs">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="45">
           <caret line="3" column="2" selection-start-line="3" selection-start-column="2" selection-end-line="3" selection-end-column="2" />
+=======
+        <state relative-caret-position="345">
+          <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
+>>>>>>> 9a190a7655c03d6b2a65e1392ad4c5ba8911c023
+>>>>>>> f94a39fb3ef96a1f0ab04b7460e9ca181e07f595
           <folding>
             <marker date="1552552809538" expanded="true" signature="6:87" ph="..." />
             <marker date="1552552809538" expanded="true" signature="119:539" ph="{...}" />
             <marker date="1552552809538" expanded="true" signature="153:333" ph="{...}" />
             <marker date="1552552809538" expanded="true" signature="286:327" ph="{...}" />
             <marker date="1552552809538" expanded="true" signature="395:537" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Galaga-Exercise -1/Player.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="23" column="21" lean-forward="true" selection-start-line="23" selection-start-column="21" selection-end-line="23" selection-end-column="21" />
+          <folding>
+            <marker date="1552045034967" expanded="false" signature="6:145" ph="..." />
+            <marker date="1552045034967" expanded="true" signature="176:2135" ph="{...}" />
+            <marker date="1552045034967" expanded="true" signature="211:2133" ph="{...}" />
+            <marker date="1552045034967" expanded="true" signature="460:793" ph="{...}" />
+            <marker date="1552045034967" expanded="true" signature="802:923" ph="/// Updates the direction of a shape. ... " />
+            <marker date="1552045034967" expanded="true" signature="965:1029" ph="{...}" />
+            <marker date="1552045034967" expanded="true" signature="1039:1133" ph="/// Moves a shape property if inside the window. ... " />
+            <marker date="1552045034967" expanded="true" signature="1161:1422" ph="{...}" />
+            <marker date="1552045034967" expanded="true" signature="1367:1412" ph="{...}" />
+            <marker date="1552045034967" expanded="true" signature="1432:1537" ph="/// A method which instantiates a projectile for the player. ... " />
+            <marker date="1552045034967" expanded="true" signature="1566:1794" ph="{...}" />
+            <marker date="1552045034967" expanded="true" signature="1803:1900" ph="/// Adds boosters to the space ship (visual effect). ... " />
+            <marker date="1552045034967" expanded="true" signature="1932:2127" ph="{...}" />
           </folding>
         </state>
       </provider>

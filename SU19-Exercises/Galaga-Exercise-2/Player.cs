@@ -44,6 +44,7 @@ namespace Galaga_Exercise_2 {
     public void KeyPress(string key) {
         switch (key) {
         case "KEY_ESCAPE":
+            game.win.CloseWindow();
             eventBus.RegisterEvent(
                 GameEventFactory<object>.CreateGameEventForAllProcessors(
                     GameEventType.WindowEvent, this, "CLOSE_WINDOW",
