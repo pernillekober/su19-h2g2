@@ -11,9 +11,9 @@ namespace Galaga_Exercise_2 {
         public Entity Entity { get; private set; }
         private Game game;
         private List<Image> playerShots;
-        public List<Image> playerBooster;
+        private List<Image> playerBooster;
         public Entity booster ;
-        public GameEventBus<object> eventBus;
+        private GameEventBus<object> eventBus;
 
         public Player(Game game, DynamicShape shape, IBaseImage image) {
             Entity = new Entity(shape, image);
@@ -46,7 +46,7 @@ namespace Galaga_Exercise_2 {
         /// <summary>
         /// A method which instantiates a projectile for the player.
         /// </summary>
-        public void Shoot() {
+        private void Shoot() {
             game.playerShots.Add(new PlayerShot(game, new DynamicShape(
                     new Vec2F(Entity.Shape.Position.X + .047f, 0.2f),
                     new Vec2F(0.008f, 0.027f)),
