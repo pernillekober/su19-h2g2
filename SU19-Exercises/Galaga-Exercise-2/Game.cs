@@ -56,11 +56,13 @@ public class Game : IGameEventProcessor<object> {
         eventBus = new GameEventBus<object>();
         eventBus.InitializeEventBus(new List<GameEventType> {
             GameEventType.InputEvent, // key press / key release
-            GameEventType.WindowEvent // messages to the window });
+            GameEventType.WindowEvent, // messages to the window });
+            GameEventType.PlayerEvent  // player event
         });
         win.RegisterEventBus(eventBus);
         eventBus.Subscribe(GameEventType.InputEvent, this);
         eventBus.Subscribe(GameEventType.WindowEvent, this);
+        eventBus.Subscribe(GameEventType.PlayerEvent,player);
     }
 
 
@@ -69,20 +71,62 @@ public class Game : IGameEventProcessor<object> {
         if (eventType == GameEventType.WindowEvent) {
             switch (gameEvent.Message) {
             case "CLOSE_WINDOW":
-                player.KeyPress(gameEvent.Message);
-
+                win.CloseWindow();
                 break;
             }
-/*
         } else if (eventType == GameEventType.InputEvent) {
             switch (gameEvent.Parameter1) {
             case "KEY_PRESS":
-                player.KeyPress(gameEvent.Message);
+                KeyPress(gameEvent.Message);
                 break;
             case "KEY_RELEASE":
-                player.KeyRelease(gameEvent.Message);
+                KeyRelease(gameEvent.Message);
                    break;
-            }*/
+            }
+        }
+    }
+    public void KeyPress(string key) {
+        switch (key) {
+        case "KEY_ESCAPE":
+            eventBus.RegisterEvent(
+                GameEventFactory<object>.CreateGameEventForAllProcessors(
+                    GameEventType.WindowEvent, this, "CLOSE_WINDOW",
+                    "", ""));
+            break;
+        case "KEY_RIGHT":
+            eventBus.RegisterEvent(
+                GameEventFactory<object>.CreateGameEventForAllProcessors(
+                    GameEventType.PlayerEvent, this, "KEY_RIGHT",
+                    "", ""));
+            break;
+        case "KEY_LEFT":
+            eventBus.RegisterEvent(
+                GameEventFactory<object>.CreateGameEventForAllProcessors(
+                    GameEventType.PlayerEvent, this, "KEY_LEFT",
+                    "", ""));
+            break;
+        case "KEY_SPACE":
+            eventBus.RegisterEvent(
+                GameEventFactory<object>.CreateGameEventForAllProcessors(
+                    GameEventType.PlayerEvent, this, "KEY_SPACE",
+                    "", ""));
+            break;
+        }
+    }
+    public void KeyRelease(string key) {
+        switch (key) {
+        case "KEY_LEFT":
+            eventBus.RegisterEvent(
+                GameEventFactory<object>.CreateGameEventForAllProcessors(
+                    GameEventType.PlayerEvent, this, "STOP",
+                    "", ""));
+            break;
+        case "KEY_RIGHT":
+            eventBus.RegisterEvent(
+                GameEventFactory<object>.CreateGameEventForAllProcessors(
+                    GameEventType.PlayerEvent, this, "STOP",
+                    "", ""));
+            break;
         }
     }
     /// <summary>
@@ -100,9 +144,7 @@ public class Game : IGameEventProcessor<object> {
                     .6f), new Vec2F(0.1f, 0.1f), new Vec2F(0.1f, 0.0f)),
                 new ImageStride(80, enemyStrides));
             enemies.Add(enemy);
-        }
-        
-        
+        }  
     }
     /// <summary>
     /// Adds an explosion animation at given position.
@@ -171,7 +213,7 @@ public class Game : IGameEventProcessor<object> {
 
             if (gameTimer.ShouldRender()) {
                 win.Clear();
-                player.RenderEntity();
+                player.Entity.RenderEntity();
                 player.booster.RenderEntity();
                 scoreTable.RenderScore();
                 

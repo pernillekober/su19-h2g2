@@ -12,12 +12,12 @@ namespace Galaga_Exercise_2.GalagaEntities.Enemy {
         }
     }
 }
-/*
+
 namespace Galaga_Exercise_2.Squadrons {
     public interface ISquadron {
-        EntityContainer<GalagaEntities.Enemy> Enemies { get; }
-        int MaxEnemies { get: }
+        EntityContainer<GalagaEntities.Enemy.Enemy> Enemies { get; }
+        int MaxEnemies { get; }
         
         void CreateEnemies(List<Image> enemyStrides);
     }
-}*/
+}
