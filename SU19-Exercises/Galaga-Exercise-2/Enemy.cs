@@ -13,19 +13,8 @@ namespace Galaga_Exercise_2.GalagaEntities.Enemy {
         public Enemy(Game game, DynamicShape shape, IBaseImage image) :
             base(shape, image) {
             this.game = game;
-            Vec2F position = new Vec2F(0.0f,0.0f); 
-            
+            Vec2F position = new Vec2F(0.0f, 0.0f);
+
         }
     }
 }
-<<<<<<< HEAD
-
-namespace Galaga_Exercise_2.GalagaEntities.Squadrons {
-    public interface ISquadron {
-        EntityContainer<Galaga_Exercise_2.GalagaEntities.Enemy.Enemy> Enemies { get; }
-        int MaxEnemies { get; }
-        void CreateEnemies(List<Image> enemyStrides);
-    }
-}
-=======
->>>>>>> 9839b08a2391c5df71cf5b8d94d1a85bebdbb154

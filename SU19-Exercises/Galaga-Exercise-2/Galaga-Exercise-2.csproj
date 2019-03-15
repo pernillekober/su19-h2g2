@@ -50,6 +50,9 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Score.cs" />
+    <Compile Include="Squadron\ArrowSquadron.cs" />
+    <Compile Include="Squadron\ISquadron.cs" />
+    <Compile Include="Squadron\ZigZagSquadron.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\DIKUArcade\DIKUArcade\DIKUArcade.csproj">

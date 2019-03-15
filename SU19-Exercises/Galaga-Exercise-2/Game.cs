@@ -11,6 +11,7 @@ using DIKUArcade.Physics;
 using DIKUArcade.Timers;
 using Galaga_Exercise_2;
 using Galaga_Exercise_2.GalagaEntities.Enemy;
+using Galaga_Exercise_2.Squadrons;
 
 public class Game : IGameEventProcessor<object> {
     public List<Enemy> enemies;
@@ -146,6 +147,7 @@ public class Game : IGameEventProcessor<object> {
             enemies.Add(enemy);
         }  
     }
+
     /// <summary>
     /// Adds an explosion animation at given position.
     /// </summary>
