@@ -172,8 +172,8 @@ public class Game : IGameEventProcessor<object> {
                 SpawnEnemies();
 
                 foreach (ISquadron squadron in monsterList) {
-                    squadron.Enemies.RenderEntities();
-                }
+                   squadron.Enemies.RenderEntities();}
+                
                 
                 explosions.RenderAnimations();
 
