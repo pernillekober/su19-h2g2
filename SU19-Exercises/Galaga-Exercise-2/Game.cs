@@ -13,22 +13,22 @@ using Galaga_Exercise_2.Squadrons;
 
 public class Game : IGameEventProcessor<object> {
     // Instantiate Squadrons
-    private ArrowSquadron arrowSquadron = new ArrowSquadron(20);
-    private ZigZagSquadron zigZagSquadron = new ZigZagSquadron(15);
-    private WallSquadron wallSquadron = new WallSquadron(30);
 
     private List<Image> enemyStrides;
     private List<Image> greenEnemies;
     private List<Image> redEnemies;
     private List<Image> explosionStrides;
-    
-    private List<ISquadron> monsterList = new List<ISquadron>() {
 
+    private List<ISquadron> monsterList = new List<ISquadron>() {
         new ArrowSquadron(20),
         new ZigZagSquadron(15),
         new WallSquadron(30)
     };
-
+    
+    // Enemy Image List
+    //private List<List<Image>> strideList;
+    
+    private int i = 0;
     private int explosionLength = 500;
     private AnimationContainer explosions;
     private Player player;
@@ -52,15 +52,22 @@ public class Game : IGameEventProcessor<object> {
             new DynamicShape(new Vec2F(0.45f, 0.1f), new Vec2F(
                 0.1f, 0.1f)), new Image(Path.Combine("Assets", "Images", "Player.png")));
 
-        // Enemy Image List
+        /*strideList = new List<List<Image>> {
+            ImageStride.CreateStrides(4,
+                Path.Combine("Assets", "Images", "BlueMonster.png")),
+            ImageStride.CreateStrides(2,
+                Path.Combine("Assets", "Images", "RedMonster.png")),
+            ImageStride.CreateStrides(2,
+                Path.Combine("Assets", "Images", "GreenMonster.png"))
+        };*/
+        // Enemy Strides
         enemyStrides = ImageStride.CreateStrides(4,
             Path.Combine("Assets", "Images", "BlueMonster.png"));
         redEnemies = ImageStride.CreateStrides(2,
             Path.Combine("Assets", "Images", "RedMonster.png"));
         greenEnemies = ImageStride.CreateStrides(2,
             Path.Combine("Assets", "Images", "GreenMonster.png"));
-
-
+        
         // Enemy Explosion
         explosionStrides = ImageStride.CreateStrides(8,
             Path.Combine("Assets", "Images", "Explosion.png"));
@@ -70,6 +77,7 @@ public class Game : IGameEventProcessor<object> {
         scoreTable = new Score(new Vec2F(0.1f, 0.62f),
             new Vec2F(0.35f, 0.35f));
 
+        
         // EventHandling
         eventBus = new GameEventBus<object>();
         eventBus.InitializeEventBus(new List<GameEventType> {
@@ -132,16 +140,20 @@ public class Game : IGameEventProcessor<object> {
         }
     }
 
-
+    public void SpawnEnemies() {
+        if (monsterList[i].Enemies.CountEntities() == 0) {
+            monsterList[i].Enemies.ClearContainer();
+            i++;
+            if (monsterList.Count-1 < i) {
+                i = 0;
+            }
+            monsterList[i].CreateEnemies(enemyStrides);
+            
+        }
+    }
 
     public void GameLoop() {
-        // Adding Squadrons
         
-        monsterList[0].CreateEnemies(enemyStrides);
-        monsterList[1].CreateEnemies(redEnemies);
-        monsterList[2].CreateEnemies(greenEnemies);
-
-
         while (win.IsRunning()) {
             gameTimer.MeasureTime();
             while (gameTimer.ShouldUpdate()) {
@@ -157,6 +169,7 @@ public class Game : IGameEventProcessor<object> {
                 player.Entity.RenderEntity();
                 player.booster.RenderEntity();
                 scoreTable.RenderScore();
+                SpawnEnemies();
 
                 foreach (ISquadron squadron in monsterList) {
                     squadron.Enemies.RenderEntities();
