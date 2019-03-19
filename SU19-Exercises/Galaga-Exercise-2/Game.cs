@@ -9,16 +9,18 @@ using DIKUArcade.Physics;
 using DIKUArcade.Timers;
 using Galaga_Exercise_2;
 using Galaga_Exercise_2.GalagaEntities.Enemy;
+using Galaga_Exercise_2.MovementStrategy;
 using Galaga_Exercise_2.Squadrons;
 
 public class Game : IGameEventProcessor<object> {
-    // Instantiate Squadrons
+    
 
     private List<Image> enemyStrides;
     private List<Image> greenEnemies;
     private List<Image> redEnemies;
     private List<Image> explosionStrides;
 
+    // Instantiate Squadrons
     private List<ISquadron> monsterList = new List<ISquadron>() {
         new ArrowSquadron(20),
         new ZigZagSquadron(15),
@@ -27,6 +29,9 @@ public class Game : IGameEventProcessor<object> {
     
     // Enemy Image List
     private List<List<Image>> strideList;
+    
+    // Adding movement
+    private IMovementStrategy down;
     
     private int i = 0;
     private int explosionLength = 500;
@@ -60,14 +65,7 @@ public class Game : IGameEventProcessor<object> {
             ImageStride.CreateStrides(2,
                 Path.Combine("Assets", "Images", "GreenMonster.png"))
         };
-        // Enemy Strides
-        /*enemyStrides = ImageStride.CreateStrides(4,
-            Path.Combine("Assets", "Images", "BlueMonster.png"));
-        redEnemies = ImageStride.CreateStrides(2,
-            Path.Combine("Assets", "Images", "RedMonster.png"));
-        greenEnemies = ImageStride.CreateStrides(2,
-            Path.Combine("Assets", "Images", "GreenMonster.png"));*/
-        
+
         // Enemy Explosion
         explosionStrides = ImageStride.CreateStrides(8,
             Path.Combine("Assets", "Images", "Explosion.png"));
@@ -76,6 +74,7 @@ public class Game : IGameEventProcessor<object> {
         // ScoreTable
         scoreTable = new Score(new Vec2F(0.1f, 0.62f),
             new Vec2F(0.35f, 0.35f));
+        // Enemy movement Strategies
 
         
         // EventHandling
@@ -152,8 +151,20 @@ public class Game : IGameEventProcessor<object> {
         }
     }
 
+    public void IterateMove() {
+        foreach (ISquadron squadron in monsterList) {
+            down.MoveEnemies(squadron.Enemies);
+        }
+    }
+
+    public void MoveEnemies() {
+        
+    }
+
     public void GameLoop() {
         
+       
+
         while (win.IsRunning()) {
             gameTimer.MeasureTime();
             while (gameTimer.ShouldUpdate()) {
@@ -162,6 +173,7 @@ public class Game : IGameEventProcessor<object> {
                 player.AddBoost();
                 IterateShots();
                 eventBus.ProcessEvents();
+                
             }
 
             if (gameTimer.ShouldRender()) {
@@ -170,9 +182,13 @@ public class Game : IGameEventProcessor<object> {
                 player.booster.RenderEntity();
                 scoreTable.RenderScore();
                 SpawnEnemies();
+                IterateMove();
+ 
 
                 foreach (ISquadron squadron in monsterList) {
-                   squadron.Enemies.RenderEntities();}
+                   squadron.Enemies.RenderEntities();
+                   
+                }
                 
                 
                 explosions.RenderAnimations();

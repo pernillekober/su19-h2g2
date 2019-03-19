@@ -12,6 +12,6 @@ namespace Galaga_Exercise_2.GalagaEntities.Enemy {
             new Entity(shape, image);
         }
 
-        private Vec2F startPos { get; }
+        internal Vec2F startPos { get; }
     }
 }
