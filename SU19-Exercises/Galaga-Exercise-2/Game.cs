@@ -16,31 +16,31 @@ public class Game : IGameEventProcessor<object> {
     private ArrowSquadron arrowSquadron = new ArrowSquadron(20);
     private ZigZagSquadron zigZagSquadron = new ZigZagSquadron(15);
     private WallSquadron wallSquadron = new WallSquadron(30);
-    
+
     private List<Image> enemyStrides;
     private List<Image> greenEnemies;
     private List<Image> redEnemies;
     private List<Image> explosionStrides;
-
+    
     private List<ISquadron> monsterList = new List<ISquadron>() {
-        
+
         new ArrowSquadron(20),
         new ZigZagSquadron(15),
         new WallSquadron(30)
     };
-    
+
     private int explosionLength = 500;
     private AnimationContainer explosions;
     private Player player;
 
-    
+
     private GameTimer gameTimer;
     private Score scoreTable;
-    
+
     private GameEventBus<object> eventBus;
-    
+
     private Window win;
-    
+
 
     public Game() {
         win = new Window("Galaga", 500, 500);
@@ -85,7 +85,7 @@ public class Game : IGameEventProcessor<object> {
 
     public List<PlayerShot> playerShots { get; private set; }
 
-    
+
 
     /// <summary>
     ///     Adds an explosion animation at given position.
@@ -106,62 +106,40 @@ public class Game : IGameEventProcessor<object> {
     /// </summary>
 
     public void IterateShots() {
+        var newShots = new List<PlayerShot>();
         foreach (var shot in playerShots) {
             shot.Shape.Move();
             if (shot.Shape.Position.Y > 1.0f) {
                 shot.DeleteEntity();
-                
+            } else {
                 foreach (ISquadron squadron in monsterList) {
                     squadron.Enemies.Iterate(delegate(Enemy enemy) {
-                        if (!CollisionDetection.Aabb((DynamicShape) 
+                        if (CollisionDetection.Aabb((DynamicShape)
                             shot.Shape, enemy.Shape).Collision) {
-                            return;
+                            AddExplosion(enemy.Shape.Position.X, enemy.Shape.Position.Y,
+                                enemy.Shape.Extent.X, enemy.Shape.Extent.Y);
+                            enemy.DeleteEntity();
+                            shot.DeleteEntity();
+                            scoreTable.AddPoint();
                         }
-                        
-                        AddExplosion(enemy.Shape.Position.X, enemy.Shape.Position.Y,
-                            enemy.Shape.Extent.X, enemy.Shape.Extent.Y);
-                        enemy.DeleteEntity();
-                        shot.DeleteEntity();
-                        scoreTable.AddPoint();
-
                     });
                 }
-                /*
-                foreach (var enemy in enemies) {
-                    if (CollisionDetection.Aabb(shot.Shape.AsDynamicShape(),
-                        enemy.Shape.AsDynamicShape()).Collision) {
-                        enemy.DeleteEntity();
-                        AddExplosion(enemy.Shape.Position.X, enemy.Shape.Position.Y,
-                            enemy.Shape.Extent.X, enemy.Shape.Extent.Y);
-                        shot.DeleteEntity();
-                        scoreTable.AddPoint();
-                    }
-                }
-
-                var newEnemies = new List<Enemy>();
-                foreach (var enemy in enemies) {
-                    if (!enemy.IsDeleted()) {
-                        newEnemies.Add(enemy);
-                    }
-                }
-
-                enemies = newEnemies;
-                var newShots = new List<PlayerShot>();
-                foreach (var playerShot in playerShots) {
-                    if (!playerShot.IsDeleted()) {
-                        newShots.Add(playerShot);
-                    }
-                }
-
-                playerShots = newShots; */
             }
+            if (!shot.IsDeleted()) {
+                    newShots.Add(shot);
+                }
+                playerShots = newShots;
         }
     }
+
+
 
     public void GameLoop() {
         // Adding Squadrons
         
         monsterList[0].CreateEnemies(enemyStrides);
+        monsterList[1].CreateEnemies(redEnemies);
+        monsterList[2].CreateEnemies(greenEnemies);
 
 
         while (win.IsRunning()) {
