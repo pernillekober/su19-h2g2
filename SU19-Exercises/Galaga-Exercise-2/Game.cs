@@ -143,6 +143,7 @@ public class Game : IGameEventProcessor<object> {
     public void SpawnEnemies() {
         if (monsterList[i].Enemies.CountEntities() == 0) {
             monsterList[i].Enemies.ClearContainer();
+            playerShots.Clear();
             i++;
             if (monsterList.Count-1 < i) {
                 i = 0;

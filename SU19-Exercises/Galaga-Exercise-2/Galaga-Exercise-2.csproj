@@ -45,7 +45,10 @@
   <ItemGroup>
     <Compile Include="Enemy.cs" />
     <Compile Include="Game.cs" />
-    <Compile Include="MovementStrategy.cs" />
+    <Compile Include="MovementStrategy\Down.cs" />
+    <Compile Include="MovementStrategy\IMovementStrategy.cs" />
+    <Compile Include="MovementStrategy\NoMove.cs" />
+    <Compile Include="MovementStrategy\ZigZagMove.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="PlayerShot.cs" />
     <Compile Include="Program.cs" />

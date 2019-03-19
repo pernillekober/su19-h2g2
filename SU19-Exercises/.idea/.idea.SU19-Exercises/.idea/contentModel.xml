@@ -92,7 +92,12 @@
         <e p="Enemy.cs" t="Include" />
         <e p="Galaga-Exercise-2.csproj" t="IncludeRecursive" />
         <e p="Game.cs" t="Include" />
-        <e p="MovementStrategy.cs" t="Include" />
+        <e p="MovementStrategy" t="Include">
+          <e p="Down.cs" t="Include" />
+          <e p="IMovementStrategy.cs" t="Include" />
+          <e p="NoMove.cs" t="Include" />
+          <e p="ZigZagMove.cs" t="Include" />
+        </e>
         <e p="obj" t="ExcludeRecursive" />
         <e p="OpenTK.dll.config" t="Include" />
         <e p="packages.config" t="Include" />
