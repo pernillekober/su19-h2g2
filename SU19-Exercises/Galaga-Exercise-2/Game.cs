@@ -26,7 +26,7 @@ public class Game : IGameEventProcessor<object> {
     };
     
     // Enemy Image List
-    //private List<List<Image>> strideList;
+    private List<List<Image>> strideList;
     
     private int i = 0;
     private int explosionLength = 500;
@@ -52,21 +52,21 @@ public class Game : IGameEventProcessor<object> {
             new DynamicShape(new Vec2F(0.45f, 0.1f), new Vec2F(
                 0.1f, 0.1f)), new Image(Path.Combine("Assets", "Images", "Player.png")));
 
-        /*strideList = new List<List<Image>> {
+        strideList = new List<List<Image>> {
             ImageStride.CreateStrides(4,
                 Path.Combine("Assets", "Images", "BlueMonster.png")),
             ImageStride.CreateStrides(2,
                 Path.Combine("Assets", "Images", "RedMonster.png")),
             ImageStride.CreateStrides(2,
                 Path.Combine("Assets", "Images", "GreenMonster.png"))
-        };*/
+        };
         // Enemy Strides
-        enemyStrides = ImageStride.CreateStrides(4,
+        /*enemyStrides = ImageStride.CreateStrides(4,
             Path.Combine("Assets", "Images", "BlueMonster.png"));
         redEnemies = ImageStride.CreateStrides(2,
             Path.Combine("Assets", "Images", "RedMonster.png"));
         greenEnemies = ImageStride.CreateStrides(2,
-            Path.Combine("Assets", "Images", "GreenMonster.png"));
+            Path.Combine("Assets", "Images", "GreenMonster.png"));*/
         
         // Enemy Explosion
         explosionStrides = ImageStride.CreateStrides(8,
@@ -147,8 +147,7 @@ public class Game : IGameEventProcessor<object> {
             if (monsterList.Count-1 < i) {
                 i = 0;
             }
-            monsterList[i].CreateEnemies(enemyStrides);
-            
+            monsterList[i].CreateEnemies(strideList[i]);
         }
     }
 
