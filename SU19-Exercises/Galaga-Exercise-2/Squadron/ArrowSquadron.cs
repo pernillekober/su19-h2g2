@@ -8,24 +8,39 @@ namespace Galaga_Exercise_2.Squadrons {
     public class ArrowSquadron : ISquadron {
 
         public EntityContainer<Enemy> Enemies { get; }
-        public int MaxEnemies { get; } 
+        public int MaxEnemies { get; }
+
         public ArrowSquadron(int Max) {
             MaxEnemies = Max;
             Enemies = new EntityContainer<Enemy>();
         }
-        
+
 
         public void CreateEnemies(List<Image> enemyStrides) {
-            for (var i = 0.0f; i <= 0.4f; i += .1f) {
+
+            for (var i = 0.0f; i <= 0.4f; i += .06f) {
                 var enemy = new Enemy(new DynamicShape(new Vec2F(i + 0.05f, 0.8f - i),
-                        new Vec2F(0.1f, 0.1f), new Vec2F(0.1f, 0.0f)),
+                        new Vec2F(.06f, 0.06f), new Vec2F(0.1f, 0.0f)),
                     new ImageStride(80, enemyStrides));
                 Enemies.AddDynamicEntity(enemy);
             }
 
-            for (var i = 0.4f; i >= 0.1f; i -= .1f) {
+            for (var i = 0.4f; i >= 0.0f; i -= .06f) {
                 var enemy = new Enemy(new DynamicShape(new Vec2F(i + 0.45f, 0.4f + i),
-                        new Vec2F(0.1f, 0.1f), new Vec2F(0.1f, 0.0f)),
+                        new Vec2F(0.06f, 0.06f), new Vec2F(0.1f, 0.0f)),
+                    new ImageStride(80, enemyStrides));
+                Enemies.AddDynamicEntity(enemy);
+            }
+
+            for (var i = 0.0f; i <= 0.24f; i += .06f) {
+                var enemy = new Enemy(new DynamicShape(new Vec2F(i + 0.18f, 0.8f - i),
+                        new Vec2F(.06f, 0.06f), new Vec2F(0.1f, 0.0f)),
+                    new ImageStride(80, enemyStrides));
+                Enemies.AddDynamicEntity(enemy);
+            }
+            for (var i = 0.24f; i >= 0.0f; i -= .06f) {
+                var enemy = new Enemy(new DynamicShape(new Vec2F(i + 0.48f, 0.54f + i),
+                        new Vec2F(0.06f, 0.06f), new Vec2F(0.1f, 0.0f)),
                     new ImageStride(80, enemyStrides));
                 Enemies.AddDynamicEntity(enemy);
             }

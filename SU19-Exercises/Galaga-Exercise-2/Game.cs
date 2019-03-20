@@ -33,7 +33,7 @@ public class Game : IGameEventProcessor<object> {
     // Adding movement
     private IMovementStrategy down;
     
-    private int i = 0;
+    private int i = 2;
     private int explosionLength = 500;
     private AnimationContainer explosions;
     private Player player;
@@ -55,7 +55,7 @@ public class Game : IGameEventProcessor<object> {
         // Player Sprite
         player = new Player(this,
             new DynamicShape(new Vec2F(0.45f, 0.1f), new Vec2F(
-                0.1f, 0.1f)), new Image(Path.Combine("Assets", "Images", "Player.png")));
+                0.05f, 0.05f)), new Image(Path.Combine("Assets", "Images", "Player.png")));
 
         strideList = new List<List<Image>> {
             ImageStride.CreateStrides(4,
@@ -182,7 +182,7 @@ public class Game : IGameEventProcessor<object> {
                 player.booster.RenderEntity();
                 scoreTable.RenderScore();
                 SpawnEnemies();
-                IterateMove();
+                //IterateMove();
  
 
                 foreach (ISquadron squadron in monsterList) {

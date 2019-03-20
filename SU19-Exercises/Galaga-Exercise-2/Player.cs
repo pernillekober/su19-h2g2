@@ -71,8 +71,8 @@ namespace Galaga_Exercise_2 {
         /// </summary>
         private void Shoot() {
             game.playerShots.Add(new PlayerShot(game, new DynamicShape(
-                    new Vec2F(Entity.Shape.Position.X + .047f, 0.2f),
-                    new Vec2F(0.008f, 0.027f)),
+                    new Vec2F(Entity.Shape.Position.X + .022f, 0.15f),
+                    new Vec2F(0.005f, 0.027f)),
                 playerShots[0]));
         }
 
@@ -81,7 +81,8 @@ namespace Galaga_Exercise_2 {
         /// </summary>
         public void AddBoost() {
             booster = new Entity(new DynamicShape(new Vec2F(Entity.Shape.Position.X,
-                    Entity.Shape.Position.Y - 0.015f), new Vec2F(0.1f, 0.1f)),
+                    Entity.Shape.Position.Y - 0.007f), 
+                    new Vec2F(Entity.Shape.Extent.X,Entity.Shape.Extent.Y)),
                 playerBooster[0]);
         }
     }

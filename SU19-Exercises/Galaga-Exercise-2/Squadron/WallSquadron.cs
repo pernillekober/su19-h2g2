@@ -17,16 +17,22 @@ namespace Galaga_Exercise_2.Squadrons {
         
 
         public void CreateEnemies(List<Image> enemyStrides) {
-            for (var i = 0.05f; i <= 0.95f; i += .1f) {
-                var enemy = new Enemy(new DynamicShape(new Vec2F(i, .8f),
-                        new Vec2F(0.1f, 0.1f), new Vec2F(0.1f, 0.0f)),
+            for (var i = 1; i <= 15; i ++) {
+                var enemy = new Enemy(new DynamicShape(new Vec2F(i * .06f, .8f),
+                        new Vec2F(0.06f, 0.06f), new Vec2F(0.1f, 0.0f)),
                     new ImageStride(80, enemyStrides));
                 Enemies.AddDynamicEntity(enemy);
             }
 
-            for (var i = 0.05f; i <= 0.95f; i += .1f) {
-                var enemy = new Enemy(new DynamicShape(new Vec2F(i, .7f),
-                        new Vec2F(0.1f, 0.1f), new Vec2F(0.1f, 0.0f)),
+            for (var i = 1; i <= 15; i ++) {
+                var enemy = new Enemy(new DynamicShape(new Vec2F(i * .06f, .7f),
+                        new Vec2F(0.06f, 0.06f), new Vec2F(0.1f, 0.0f)),
+                    new ImageStride(80, enemyStrides));
+                Enemies.AddDynamicEntity(enemy);
+            }
+            for (var i = 1; i <= 15; i ++) {
+                var enemy = new Enemy(new DynamicShape(new Vec2F(i * .06f, .6f),
+                        new Vec2F(0.06f, 0.06f), new Vec2F(0.1f, 0.0f)),
                     new ImageStride(80, enemyStrides));
                 Enemies.AddDynamicEntity(enemy);
             }
