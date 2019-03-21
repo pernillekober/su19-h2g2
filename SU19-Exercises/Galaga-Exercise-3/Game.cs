@@ -163,8 +163,6 @@ public class Game : IGameEventProcessor<object> {
 
     public void GameLoop() {
         
-       
-
         while (win.IsRunning()) {
             gameTimer.MeasureTime();
             while (gameTimer.ShouldUpdate()) {
@@ -183,13 +181,10 @@ public class Game : IGameEventProcessor<object> {
                 scoreTable.RenderScore();
                 SpawnEnemies();
                 
- 
-
                 foreach (ISquadron squadron in monsterList) {
                    squadron.Enemies.RenderEntities();
                    
                 }
-                
                 
                 explosions.RenderAnimations();
 

@@ -14,7 +14,7 @@ namespace GalagaGame.GalagaState {
         private int maxMenuButtons;
 
         public static GetInstance() {
-            return MainMenu.instance ?? (MainMenu).instance = new MainMenu());
+            return MainMenu.instance ?? (MainMenu.instance = new MainMenu());
         }
     }
 }
