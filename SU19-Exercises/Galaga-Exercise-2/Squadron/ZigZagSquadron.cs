@@ -22,7 +22,7 @@ namespace Galaga_Exercise_2.Squadrons {
                 Enemies.AddDynamicEntity(enemy);
             }
 
-            for (var i = .0f; i <= .9f; i += .1f) {
+            for (var i = .0f; i <= .8f; i += .1f) {
                 var enemy = new Enemy(new DynamicShape(new Vec2F(i + .1f, .7f),
                         new Vec2F(0.06f, 0.06f), new Vec2F(0.1f, 0.0f)),
                     new ImageStride(80, enemyStrides));

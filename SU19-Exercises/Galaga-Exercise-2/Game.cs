@@ -33,7 +33,7 @@ public class Game : IGameEventProcessor<object> {
     // Adding movement
     private IMovementStrategy down;
     
-    private int i = 2;
+    private int i = 0;
     private int explosionLength = 500;
     private AnimationContainer explosions;
     private Player player;
