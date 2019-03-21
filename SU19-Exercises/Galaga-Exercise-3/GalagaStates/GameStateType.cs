@@ -1,3 +1,6 @@
+using System.ComponentModel.Design;
+using System;
+
 namespace Galaga_Exercise_3.GalagaStates {
     public enum GameStateType {
         GameRunning,
@@ -15,8 +18,9 @@ namespace Galaga_Exercise_3.GalagaStates {
                 return GameStateType.MainMenu;
             case "GAME_PAUSED":
                 return GameStateType.GamePaused;
+            default:
+  
             }
-            return 
         }
    
 

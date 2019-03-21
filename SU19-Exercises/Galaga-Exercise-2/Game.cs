@@ -26,7 +26,8 @@ public class Game : IGameEventProcessor<object> {
         new ZigZagSquadron(15),
         new WallSquadron(30)
     };
-    
+
+    private int i = 0;
     // Enemy Image List
     private List<List<Image>> strideList;
     
@@ -143,18 +144,18 @@ public class Game : IGameEventProcessor<object> {
     }
 
     public void SpawnEnemies() {
-        int i = 0;
-        if (monsterList[i].Enemies.CountEntities() == 0) {
-            monsterList[i].Enemies.ClearContainer();
-            
-            playerShots.Clear();
-            i++;
-            if (monsterList.Count-1 < i) {
-                i = 0;
+            if (monsterList[i].Enemies.CountEntities() == 0) {
+                monsterList[i].Enemies.ClearContainer();
+
+                playerShots.Clear();
+                i++;
+                if (monsterList.Count - 1 < i) {
+                    i = 0;
+                }
+
+                monsterList[i].CreateEnemies(strideList[i]);
             }
-            monsterList[i].CreateEnemies(strideList[i]);
-        }
-        down.MoveEnemies(monsterList[i].Enemies);
+            down.MoveEnemies(monsterList[i].Enemies);
     }
 
 
