@@ -19,11 +19,7 @@ namespace Galaga_Exercise_3.GalagaStateType {
             case "GAME_PAUSED":
                 return GameStateType.GamePaused;
             default:
-<<<<<<< HEAD
-                throw new ArgumentException("String not valid");
-=======
                 throw new ArgumentException("Invalid String");
->>>>>>> 2fff06a0ce89217e5c5d16413f0d9fa45799176b
             }
         }
 

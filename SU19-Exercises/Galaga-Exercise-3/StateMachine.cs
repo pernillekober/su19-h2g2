@@ -1,8 +1,4 @@
 using System;
-<<<<<<< HEAD
-=======
-using System.Windows.Forms;
->>>>>>> 2fff06a0ce89217e5c5d16413f0d9fa45799176b
 using DIKUArcade.EventBus;
 using DIKUArcade.State;
 using Galaga_Exercise_3.GalagaGame;
