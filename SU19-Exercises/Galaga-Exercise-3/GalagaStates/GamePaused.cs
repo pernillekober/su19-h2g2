@@ -1,22 +1,16 @@
-
 using DIKUArcade.Entities;
 using DIKUArcade.Graphics;
 using DIKUArcade.State;
 
-
-namespace GalagaGame.GalagaState {
-    public class MainMenu : IGameState {
-        private static MainMenu instance = null;
-
-        private Entity backGroundImage;
-        private Text[] menubuttons;
-        private int activeMenuButton;
-        private int maxMenuButtons;
-
-        public static MainMenu GetInstance() {
-            return MainMenu.instance ?? (MainMenu.instance = new MainMenu());
+namespace Galaga_Exercise_3.GalagaStates {
+    public class GamePaused : IGameState {
+        
+        private static GamePaused instance = null;
+        
+        public static GamePaused GetInstance() {
+            return GamePaused.instance ?? (GamePaused.instance = new GamePaused());
         }
-
+        
         public void GameLoop() {
             throw new System.NotImplementedException();
         }

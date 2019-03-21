@@ -1,9 +1,9 @@
-using System;
 using DIKUArcade.EventBus;
 using DIKUArcade.State;
 using Galaga_Exercise_3.GalagaGame;
 using Galaga_Exercise_3.GalagaStateType;
 using GalagaGame.GalagaState;
+using Galaga_Exercise_3.GalagaStates;
 
 namespace GalagaGame.GalagaState {
     public class StateMachine : IGameEventProcessor<object> {
@@ -22,10 +22,10 @@ namespace GalagaGame.GalagaState {
                    ActiveState = GameRunning.GetInstance();
                    break;
                case (GameStateType.GamePaused):
-                   ActiveState = GamePaused.GetInstance;
+                   ActiveState = GamePaused.GetInstance();
                    break;
                case (GameStateType.MainMenu):
-                   ActiveState = MainMenu.Getinstance();
+                   ActiveState = MainMenu.GetInstance();
                    break;
             }
         }
