@@ -7,10 +7,11 @@ using DIKUArcade.Graphics;
 using DIKUArcade.Math;
 using DIKUArcade.Physics;
 using DIKUArcade.Timers;
-using Galaga_Exercise_2;
-using Galaga_Exercise_2.GalagaEntities.Enemy;
-using Galaga_Exercise_2.MovementStrategy;
-using Galaga_Exercise_2.Squadrons;
+using Galaga_Exercise_3;
+using Galaga_Exercise_3.GalagaEntities.Enemy;
+using Galaga_Exercise_3.MovementStrategy;
+using Galaga_Exercise_3.Squadrons;
+using Galaga_Exercise_3.GalagaGame;
 
 public class Game : IGameEventProcessor<object> {
     
@@ -33,6 +34,7 @@ public class Game : IGameEventProcessor<object> {
     // Adding movement
     private IMovementStrategy down;
     
+    private int i = 0;
     private int explosionLength = 500;
     private AnimationContainer explosions;
     private Player player;
@@ -41,7 +43,7 @@ public class Game : IGameEventProcessor<object> {
     private GameTimer gameTimer;
     private Score scoreTable;
 
-    private GameEventBus<object> eventBus;
+   
 
     private Window win;
 
@@ -65,10 +67,6 @@ public class Game : IGameEventProcessor<object> {
                 Path.Combine("Assets", "Images", "GreenMonster.png"))
         };
 
-        // Instatiating MovementStrategies
-        down = new Down();
-        
-        
         // Enemy Explosion
         explosionStrides = ImageStride.CreateStrides(8,
             Path.Combine("Assets", "Images", "Explosion.png"));
@@ -81,16 +79,16 @@ public class Game : IGameEventProcessor<object> {
 
         
         // EventHandling
-        eventBus = new GameEventBus<object>();
-        eventBus.InitializeEventBus(new List<GameEventType> {
+        //eventBus = new GameEventBus<object>();
+        GalagaBus.GetBus().InitializeEventBus(new List<GameEventType> {
             GameEventType.InputEvent, // key press / key release
             GameEventType.WindowEvent, // messages to the window });
             GameEventType.PlayerEvent // player event
         });
-        win.RegisterEventBus(eventBus);
-        eventBus.Subscribe(GameEventType.InputEvent, this);
-        eventBus.Subscribe(GameEventType.WindowEvent, this);
-        eventBus.Subscribe(GameEventType.PlayerEvent, player);
+        win.RegisterEventBus(GalagaBus.GetBus());
+        GalagaBus.GetBus().Subscribe(GameEventType.InputEvent, this);
+        GalagaBus.GetBus().Subscribe(GameEventType.WindowEvent, this);
+        GalagaBus.GetBus().Subscribe(GameEventType.PlayerEvent, player);
     }
 
     public List<PlayerShot> playerShots { get; private set; }
@@ -143,7 +141,6 @@ public class Game : IGameEventProcessor<object> {
     }
 
     public void SpawnEnemies() {
-        int i = 0;
         if (monsterList[i].Enemies.CountEntities() == 0) {
             monsterList[i].Enemies.ClearContainer();
             
@@ -154,7 +151,6 @@ public class Game : IGameEventProcessor<object> {
             }
             monsterList[i].CreateEnemies(strideList[i]);
         }
-        down.MoveEnemies(monsterList[i].Enemies);
     }
 
 
@@ -169,7 +165,7 @@ public class Game : IGameEventProcessor<object> {
                 player.Move();
                 player.AddBoost();
                 IterateShots();
-                eventBus.ProcessEvents();
+                GalagaBus.GetBus().ProcessEvents();
                 
             }
 
@@ -226,25 +222,25 @@ public class Game : IGameEventProcessor<object> {
     public void KeyPress(string key) {
         switch (key) {
         case "KEY_ESCAPE":
-            eventBus.RegisterEvent(
+            GalagaBus.GetBus().RegisterEvent(
                 GameEventFactory<object>.CreateGameEventForAllProcessors(
                     GameEventType.WindowEvent, this, "CLOSE_WINDOW",
                     "", ""));
             break;
         case "KEY_RIGHT":
-            eventBus.RegisterEvent(
+            GalagaBus.GetBus().RegisterEvent(
                 GameEventFactory<object>.CreateGameEventForAllProcessors(
                     GameEventType.PlayerEvent, this, "KEY_RIGHT",
                     "", ""));
             break;
         case "KEY_LEFT":
-            eventBus.RegisterEvent(
+            GalagaBus.GetBus().RegisterEvent(
                 GameEventFactory<object>.CreateGameEventForAllProcessors(
                     GameEventType.PlayerEvent, this, "KEY_LEFT",
                     "", ""));
             break;
         case "KEY_SPACE":
-            eventBus.RegisterEvent(
+            GalagaBus.GetBus().RegisterEvent(
                 GameEventFactory<object>.CreateGameEventForAllProcessors(
                     GameEventType.PlayerEvent, this, "KEY_SPACE",
                     "", ""));
@@ -255,13 +251,13 @@ public class Game : IGameEventProcessor<object> {
     public void KeyRelease(string key) {
         switch (key) {
         case "KEY_LEFT":
-            eventBus.RegisterEvent(
+            GalagaBus.GetBus().RegisterEvent(
                 GameEventFactory<object>.CreateGameEventForAllProcessors(
                     GameEventType.PlayerEvent, this, "STOP",
                     "", ""));
             break;
         case "KEY_RIGHT":
-            eventBus.RegisterEvent(
+            GalagaBus.GetBus().RegisterEvent(
                 GameEventFactory<object>.CreateGameEventForAllProcessors(
                     GameEventType.PlayerEvent, this, "STOP",
                     "", ""));
