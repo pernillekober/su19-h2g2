@@ -1,3 +1,5 @@
+using System;
+using System.Windows.Forms;
 using DIKUArcade.EventBus;
 using DIKUArcade.State;
 using Galaga_Exercise_3;
@@ -17,9 +19,30 @@ namespace GalagaGame.GalagaState {
 
         private void SwitchState(GameStateType stateType) {
             switch (stateType) {
-               case (GameRunning):
-               case (Gamepaused):
-               case (Mainmenu):
+               case (GameStateType.GameRunning):
+                   ActiveState = GameRunning.GetInstance();
+                   break;
+               case (GameStateType.GamePaused):
+                   ActiveState = GamePaused.GetInstance;
+                   break;
+               case (GameStateType.MainMenu):
+                   ActiveState = MainMenu.Getinstance();
+                   break;
+            }
+        }
+        public void ProcessEvent(GameEventType eventType, GameEvent<object> gameEvent) {
+            if (eventType == GameEventType.GameStateEvent) {
+                switch (gameEvent.Message) {
+                case "MAIN_MENU":
+                    SwitchState(GameStateType.MainMenu);
+                    break;
+                case "GAME_RUNNING":
+                    SwitchState(GameStateType.GameRunning);
+                    break;
+                case "GAME_PAUSED":
+                    SwitchState(GameStateType.GamePaused);
+                    break;
+                }
             }
         }
     }

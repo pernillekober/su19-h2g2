@@ -1,7 +1,7 @@
 ﻿using System;
 using NUnit.Framework;
 using Galaga_Exercise_3;
-using Galaga_Exercise_3.GalagaStates;
+using Galaga_Exercise_3.GalagaStateType;
 
 namespace TestGalaga {
     [TestFixture]
@@ -37,11 +37,6 @@ namespace TestGalaga {
         public void TestStringToStateGamePaused() {
             Assert.AreEqual(GameStateType.GamePaused,
                 StateTransformer.TransformStringToState("GAME_PAUSED"));
-        }
-
-        [Test]
-        public void TestStringToStateException() {
-            Assert.Fail("State not valid", StateTransformer.TransformStringToState("Hello_World"));
         }
     }
 }

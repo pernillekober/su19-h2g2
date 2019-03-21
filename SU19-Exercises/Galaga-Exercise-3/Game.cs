@@ -13,7 +13,7 @@ using Galaga_Exercise_3.GalagaEntities.Enemy;
 using Galaga_Exercise_3.MovementStrategy;
 using Galaga_Exercise_3.Squadrons;
 using Galaga_Exercise_3.GalagaGame;
-using Galaga_Exercise_3.GalagaStates;
+using Galaga_Exercise_3.GalagaStateType;
 
 public class Game : IGameEventProcessor<object> {
     
@@ -164,8 +164,6 @@ public class Game : IGameEventProcessor<object> {
 
     public void GameLoop() {
         
-       
-
         while (win.IsRunning()) {
             gameTimer.MeasureTime();
             while (gameTimer.ShouldUpdate()) {
@@ -184,13 +182,10 @@ public class Game : IGameEventProcessor<object> {
                 scoreTable.RenderScore();
                 SpawnEnemies();
                 
- 
-
                 foreach (ISquadron squadron in monsterList) {
                    squadron.Enemies.RenderEntities();
                    
                 }
-                
                 
                 explosions.RenderAnimations();
 
