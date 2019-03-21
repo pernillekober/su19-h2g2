@@ -19,7 +19,7 @@ namespace Galaga_Exercise_3.GalagaStates {
             case "GAME_PAUSED":
                 return GameStateType.GamePaused;
             default:
-  
+                throw new ArgumentException("String not valid");
             }
         }
    
@@ -32,6 +32,8 @@ namespace Galaga_Exercise_3.GalagaStates {
                     return "MAIN_MENU";
                 case GameStateType.GamePaused:
                     return "GAME_PAUSED";
+                default:
+                    throw new ArgumentException("State not valid");
             }
         }
     }
