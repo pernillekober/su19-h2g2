@@ -2,7 +2,6 @@ using DIKUArcade.EventBus;
 using DIKUArcade.State;
 using Galaga_Exercise_3.GalagaGame;
 using Galaga_Exercise_3.GalagaStateType;
-using GalagaGame.GalagaState;
 using Galaga_Exercise_3.GalagaStates;
 
 namespace GalagaGame.GalagaState {

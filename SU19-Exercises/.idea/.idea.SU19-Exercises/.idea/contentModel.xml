@@ -161,6 +161,7 @@
         </e>
         <e p="TestGalaga.csproj" t="IncludeRecursive" />
         <e p="Tests.cs" t="Include" />
+        <e p="TestStateMachine.cs" t="Include" />
       </e>
     </e>
     <e p="$USER_HOME$/Library/Caches/Rider2018.3/extResources" t="IncludeRecursive" />
