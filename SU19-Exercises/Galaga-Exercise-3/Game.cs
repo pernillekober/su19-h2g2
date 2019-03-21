@@ -13,7 +13,7 @@ using Galaga_Exercise_3.GalagaEntities.Enemy;
 using Galaga_Exercise_3.MovementStrategy;
 using Galaga_Exercise_3.Squadrons;
 using Galaga_Exercise_3.GalagaGame;
-using Galaga_Exercise_3.GalagaStates;
+using Galaga_Exercise_3.GalagaStateType;
 
 public class Game : IGameEventProcessor<object> {
     
@@ -47,7 +47,7 @@ public class Game : IGameEventProcessor<object> {
 
     private Window win;
     public StateMachine StateMachine;
-
+    
     public Game() {
         win = new Window("Galaga", 500, 500);
         gameTimer = new GameTimer(60, 60);
@@ -72,7 +72,6 @@ public class Game : IGameEventProcessor<object> {
         
         // Initializing statemachine
         StateMachine = new StateMachine();
-        
         
         
         // Enemy Explosion
