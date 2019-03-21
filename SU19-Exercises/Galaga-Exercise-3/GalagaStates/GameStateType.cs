@@ -19,11 +19,13 @@ namespace Galaga_Exercise_3.GalagaStateType {
             case "GAME_PAUSED":
                 return GameStateType.GamePaused;
             default:
+                throw new ArgumentException("String not valid");
+                    >>>>>>> 20ec1e9ae646640714812d6b056f619b13dc5a17
             }
         }
-   
 
-    public static string TransformStateToString(GameStateType state) {
+
+        public static string TransformStateToString(GameStateType state) {
             switch (state) {
                 case GameStateType.GameRunning:
                     return "GAME_RUNNING";
@@ -31,6 +33,8 @@ namespace Galaga_Exercise_3.GalagaStateType {
                     return "MAIN_MENU";
                 case GameStateType.GamePaused:
                     return "GAME_PAUSED";
+                default:
+                    throw new ArgumentException("State not valid");
             }
         }
     }
