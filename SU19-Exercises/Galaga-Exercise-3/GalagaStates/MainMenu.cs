@@ -16,5 +16,25 @@ namespace GalagaGame.GalagaState {
         public static GetInstance() {
             return MainMenu.instance ?? (MainMenu.instance = new MainMenu());
         }
+
+        public void GameLoop() {
+            throw new System.NotImplementedException();
+        }
+
+        public void InitializeGameState() {
+            throw new System.NotImplementedException();
+        }
+
+        public void UpdateGameLogic() {
+            throw new System.NotImplementedException();
+        }
+
+        public void RenderState() {
+            throw new System.NotImplementedException();
+        }
+
+        public void HandleKeyEvent(string keyValue, string keyAction) {
+            throw new System.NotImplementedException();
+        }
     }
 }
