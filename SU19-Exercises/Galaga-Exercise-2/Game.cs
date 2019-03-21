@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.IO;
+using System.Runtime.CompilerServices;
 using DIKUArcade;
 using DIKUArcade.Entities;
 using DIKUArcade.EventBus;
@@ -45,8 +46,8 @@ public class Game : IGameEventProcessor<object> {
     private GameEventBus<object> eventBus;
 
     private Window win;
-
-
+    
+        
     public Game() {
         win = new Window("Galaga", 500, 500);
         gameTimer = new GameTimer(60, 60);

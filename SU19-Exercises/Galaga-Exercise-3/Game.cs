@@ -7,11 +7,13 @@ using DIKUArcade.Graphics;
 using DIKUArcade.Math;
 using DIKUArcade.Physics;
 using DIKUArcade.Timers;
+using GalagaGame.GalagaState;
 using Galaga_Exercise_3;
 using Galaga_Exercise_3.GalagaEntities.Enemy;
 using Galaga_Exercise_3.MovementStrategy;
 using Galaga_Exercise_3.Squadrons;
 using Galaga_Exercise_3.GalagaGame;
+using Galaga_Exercise_3.GalagaStates;
 
 public class Game : IGameEventProcessor<object> {
     
@@ -43,10 +45,8 @@ public class Game : IGameEventProcessor<object> {
     private GameTimer gameTimer;
     private Score scoreTable;
 
-   
-
     private Window win;
-
+    public StateMachine StateMachine;
 
     public Game() {
         win = new Window("Galaga", 500, 500);
@@ -67,6 +67,14 @@ public class Game : IGameEventProcessor<object> {
                 Path.Combine("Assets", "Images", "GreenMonster.png"))
         };
 
+        //Initializing Movement Staretegies
+        down = new Down();
+        
+        // Initializing statemachine
+        StateMachine = new StateMachine();
+        
+        
+        
         // Enemy Explosion
         explosionStrides = ImageStride.CreateStrides(8,
             Path.Combine("Assets", "Images", "Explosion.png"));
