@@ -142,6 +142,7 @@ public class Game : IGameEventProcessor<object> {
     public void SpawnEnemies() {
         if (monsterList[i].Enemies.CountEntities() == 0) {
             monsterList[i].Enemies.ClearContainer();
+            
             playerShots.Clear();
             i++;
             if (monsterList.Count-1 < i) {
@@ -151,15 +152,6 @@ public class Game : IGameEventProcessor<object> {
         }
     }
 
-    public void IterateMove() {
-        foreach (ISquadron squadron in monsterList) {
-            down.MoveEnemies(squadron.Enemies);
-        }
-    }
-
-    public void MoveEnemies() {
-        
-    }
 
     public void GameLoop() {
         
@@ -182,7 +174,7 @@ public class Game : IGameEventProcessor<object> {
                 player.booster.RenderEntity();
                 scoreTable.RenderScore();
                 SpawnEnemies();
-                //IterateMove();
+                
  
 
                 foreach (ISquadron squadron in monsterList) {
