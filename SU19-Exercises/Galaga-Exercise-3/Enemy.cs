@@ -8,7 +8,7 @@ namespace Galaga_Exercise_3.GalagaEntities.Enemy {
         
         public Enemy(DynamicShape shape, IBaseImage image) :
             base(shape, image) {
-            startPos = shape.Position;
+            startPos = shape.Position.Copy();
             new Entity(shape, image);
         }
 
