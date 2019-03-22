@@ -41,7 +41,10 @@ namespace GalagaGame.GalagaState {
                     SwitchState(GameStateType.GamePaused);
                     break;
                 }
-            }    
+            }
+            else if (eventType == GameEventType.InputEvent) {
+                ActiveState.HandleKeyEvent(gameEvent.Message, gameEvent.Parameter1);
+            }
         }
     }
 }
