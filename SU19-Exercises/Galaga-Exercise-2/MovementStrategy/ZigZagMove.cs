@@ -23,9 +23,11 @@ namespace Galaga_Exercise_2.MovementStrategy {
             var p = 0.045f;       // period of sine wave
             var a = 0.05f;        //amplitude
             
+            
             //calculate enemy position
             var currentY = enemy.Shape.Position.Y + s;
             var currentX = enemy.startPos.X + a * (float) Math.Sin(2 * Math.PI * (enemy.startPos.Y - currentY)/p);
+            
             
             // change enemy position
             enemy.Shape.Position.X = currentX;

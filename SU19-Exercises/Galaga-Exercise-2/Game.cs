@@ -27,7 +27,13 @@ public class Game : IGameEventProcessor<object> {
         new ZigZagSquadron(15),
         new WallSquadron(30)
     };
-
+    // Instantiate list of movementstrategies
+    private List<IMovementStrategy> movesStrategies = new List<IMovementStrategy>() {
+        new NoMove(),
+        new Down(),
+        new ZigZagMove()
+    };
+    
     private int i = 0;
     // Enemy Image List
     private List<List<Image>> strideList;
@@ -35,6 +41,7 @@ public class Game : IGameEventProcessor<object> {
     // Adding movement
     private IMovementStrategy down;
     private IMovementStrategy ZigZag;
+    private IMovementStrategy NoMove;
     
     private int explosionLength = 500;
     private AnimationContainer explosions;
@@ -67,10 +74,6 @@ public class Game : IGameEventProcessor<object> {
             ImageStride.CreateStrides(2,
                 Path.Combine("Assets", "Images", "GreenMonster.png"))
         };
-
-        // Instatiating MovementStrategies
-        down = new Down();
-        ZigZag = new ZigZagMove();
         
         
         // Enemy Explosion
@@ -157,8 +160,13 @@ public class Game : IGameEventProcessor<object> {
                 }
 
                 monsterList[i].CreateEnemies(strideList[i]);
-            }
-            ZigZag.MoveEnemies(monsterList[i].Enemies);
+                //movesStrategies[i].MoveEnemies(monsterList[i].Enemies);
+                
+                }
+        foreach (var movestrategy in movesStrategies) {
+        movestrategy.MoveEnemies(monsterList[i].Enemies);
+    }
+    //ZigZag.MoveEnemies(monsterList[i].Enemies);
     }
 
 
