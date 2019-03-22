@@ -1,13 +1,7 @@
 using System;
-using System.Configuration;
-using System.Security.Cryptography.X509Certificates;
 using DIKUArcade.Entities;
 using Galaga_Exercise_2.GalagaEntities.Enemy;
-using DIKUArcade.Entities;
-using DIKUArcade.Graphics;
-using DIKUArcade.Math;
-using Galaga_Exercise_2.GalagaEntities.Enemy;
-using Galaga_Exercise_2.Squadrons;
+
 
 namespace Galaga_Exercise_2.MovementStrategy {
     public class ZigZagMove : IMovementStrategy {

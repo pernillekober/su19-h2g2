@@ -15,12 +15,10 @@ namespace Galaga_Testing {
         public void InitiateStateMachine() {
             DIKUArcade.Window.CreateOpenGLContext();
             GalagaBus.GetBus().InitializeEventBus(new List<GameEventType> {
-                GameEventType.InputEvent,
-                GameEventType.WindowEvent,
+                GameEventType.GameStateEvent
             });
-            GalagaBus.GetBus().Subscribe(GameEventType.InputEvent,);
-            GalagaBus.GetBus().Subscribe(GameEventType.WindowEvent, game);
-            GalagaBus.GetBus().Subscribe(GameEventType.GameStateEvent, game);
+            stateMachine = new StateMachine();
+            GalagaBus.GetBus().Subscribe(GameEventType.GameStateEvent, stateMachine);
 
 // Here you should:
 // (1) Initialize a GalagaBus with proper GameEventTypes
