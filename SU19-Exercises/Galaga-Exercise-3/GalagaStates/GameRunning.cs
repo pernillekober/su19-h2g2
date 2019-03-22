@@ -120,10 +120,10 @@ namespace Galaga_Exercise_3.GalagaStates {
             }
             movesStrategies[i].MoveEnemies(monsterList[i].Enemies);
         }
+        
         public static GameRunning GetInstance() {
             return GameRunning.instance ?? (GameRunning.instance = new GameRunning());
         }
-
 
         public GameRunning() {
             
