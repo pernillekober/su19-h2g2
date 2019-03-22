@@ -12,8 +12,6 @@ using Galaga_Exercise_3;
 using Galaga_Exercise_3.GalagaEntities.Enemy;
 using Galaga_Exercise_3.MovementStrategy;
 using Galaga_Exercise_3.Squadrons;
-using Galaga_Exercise_3.GalagaGame;
-using Galaga_Exercise_3.GalagaStateType;
 
 public class Game : IGameEventProcessor<object> {
     
@@ -25,19 +23,26 @@ public class Game : IGameEventProcessor<object> {
 
     // Instantiate Squadrons
     private List<ISquadron> monsterList = new List<ISquadron>() {
-        new ArrowSquadron(20),
         new ZigZagSquadron(15),
+        new ArrowSquadron(20),
         new WallSquadron(30)
     };
+    // Instantiate list of movementstrategies
+    private List<IMovementStrategy> movesStrategies = new List<IMovementStrategy>() {
+        new ZigZagMove(),
+        new NoMove(),
+        new Down()
+    };
     
+    private int i = 0;
     // Enemy Image List
     private List<List<Image>> strideList;
     
     // Adding movement
     private IMovementStrategy down;
     private IMovementStrategy ZigZag;
+    private IMovementStrategy NoMove;
     
-    private int i = 0;
     private int explosionLength = 500;
     private AnimationContainer explosions;
     private Player player;
@@ -46,9 +51,11 @@ public class Game : IGameEventProcessor<object> {
     private GameTimer gameTimer;
     private Score scoreTable;
 
+    private GameEventBus<object> eventBus;
+
     private Window win;
-    public StateMachine StateMachine;
     
+        
     public Game() {
         win = new Window("Galaga", 500, 500);
         gameTimer = new GameTimer(60, 60);
@@ -68,14 +75,6 @@ public class Game : IGameEventProcessor<object> {
                 Path.Combine("Assets", "Images", "GreenMonster.png"))
         };
 
-        //Initializing Movement Strategies
-        down = new Down();
-        ZigZag = new ZigZagMove();
-        
-        // Initializing statemachine
-        StateMachine = new StateMachine();
-        
-        
         // Enemy Explosion
         explosionStrides = ImageStride.CreateStrides(8,
             Path.Combine("Assets", "Images", "Explosion.png"));
@@ -88,21 +87,19 @@ public class Game : IGameEventProcessor<object> {
 
         
         // EventHandling
-        //eventBus = new GameEventBus<object>();
-        GalagaBus.GetBus().InitializeEventBus(new List<GameEventType> {
+        eventBus = new GameEventBus<object>();
+        eventBus.InitializeEventBus(new List<GameEventType> {
             GameEventType.InputEvent, // key press / key release
             GameEventType.WindowEvent, // messages to the window });
             GameEventType.PlayerEvent // player event
         });
-        win.RegisterEventBus(GalagaBus.GetBus());
-        GalagaBus.GetBus().Subscribe(GameEventType.InputEvent, this);
-        GalagaBus.GetBus().Subscribe(GameEventType.WindowEvent, this);
-        GalagaBus.GetBus().Subscribe(GameEventType.PlayerEvent, player);
+        win.RegisterEventBus(eventBus);
+        eventBus.Subscribe(GameEventType.InputEvent, this);
+        eventBus.Subscribe(GameEventType.WindowEvent, this);
+        eventBus.Subscribe(GameEventType.PlayerEvent, player);
     }
 
     public List<PlayerShot> playerShots { get; private set; }
-
-
 
     /// <summary>
     ///     Adds an explosion animation at given position.
@@ -150,21 +147,22 @@ public class Game : IGameEventProcessor<object> {
     }
 
     public void SpawnEnemies() {
-        if (monsterList[i].Enemies.CountEntities() == 0) {
-            monsterList[i].Enemies.ClearContainer();
-            
-            playerShots.Clear();
-            i++;
-            if (monsterList.Count-1 < i) {
-                i = 0;
-            }
-            monsterList[i].CreateEnemies(strideList[i]);
-        }
+            if (monsterList[i].Enemies.CountEntities() == 0) {
+                monsterList[i].Enemies.ClearContainer();
+
+                playerShots.Clear();
+                i++;
+                if (monsterList.Count - 1 < i) {
+                    i = 0;
+                }
+                monsterList[i].CreateEnemies(strideList[i]);
+                }
+            movesStrategies[i].MoveEnemies(monsterList[i].Enemies);
     }
 
 
     public void GameLoop() {
-        
+
         while (win.IsRunning()) {
             gameTimer.MeasureTime();
             while (gameTimer.ShouldUpdate()) {
@@ -172,7 +170,7 @@ public class Game : IGameEventProcessor<object> {
                 player.Move();
                 player.AddBoost();
                 IterateShots();
-                GalagaBus.GetBus().ProcessEvents();
+                eventBus.ProcessEvents();
                 
             }
 
@@ -183,10 +181,13 @@ public class Game : IGameEventProcessor<object> {
                 scoreTable.RenderScore();
                 SpawnEnemies();
                 
+ 
+
                 foreach (ISquadron squadron in monsterList) {
                    squadron.Enemies.RenderEntities();
                    
                 }
+                
                 
                 explosions.RenderAnimations();
 
@@ -226,25 +227,25 @@ public class Game : IGameEventProcessor<object> {
     public void KeyPress(string key) {
         switch (key) {
         case "KEY_ESCAPE":
-            GalagaBus.GetBus().RegisterEvent(
+            eventBus.RegisterEvent(
                 GameEventFactory<object>.CreateGameEventForAllProcessors(
                     GameEventType.WindowEvent, this, "CLOSE_WINDOW",
                     "", ""));
             break;
         case "KEY_RIGHT":
-            GalagaBus.GetBus().RegisterEvent(
+            eventBus.RegisterEvent(
                 GameEventFactory<object>.CreateGameEventForAllProcessors(
                     GameEventType.PlayerEvent, this, "KEY_RIGHT",
                     "", ""));
             break;
         case "KEY_LEFT":
-            GalagaBus.GetBus().RegisterEvent(
+            eventBus.RegisterEvent(
                 GameEventFactory<object>.CreateGameEventForAllProcessors(
                     GameEventType.PlayerEvent, this, "KEY_LEFT",
                     "", ""));
             break;
         case "KEY_SPACE":
-            GalagaBus.GetBus().RegisterEvent(
+            eventBus.RegisterEvent(
                 GameEventFactory<object>.CreateGameEventForAllProcessors(
                     GameEventType.PlayerEvent, this, "KEY_SPACE",
                     "", ""));
@@ -255,13 +256,13 @@ public class Game : IGameEventProcessor<object> {
     public void KeyRelease(string key) {
         switch (key) {
         case "KEY_LEFT":
-            GalagaBus.GetBus().RegisterEvent(
+            eventBus.RegisterEvent(
                 GameEventFactory<object>.CreateGameEventForAllProcessors(
                     GameEventType.PlayerEvent, this, "STOP",
                     "", ""));
             break;
         case "KEY_RIGHT":
-            GalagaBus.GetBus().RegisterEvent(
+            eventBus.RegisterEvent(
                 GameEventFactory<object>.CreateGameEventForAllProcessors(
                     GameEventType.PlayerEvent, this, "STOP",
                     "", ""));

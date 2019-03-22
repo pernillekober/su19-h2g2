@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using System.IO;
-using System.Runtime.CompilerServices;
 using DIKUArcade;
 using DIKUArcade.Entities;
 using DIKUArcade.EventBus;
@@ -165,8 +164,6 @@ public class Game : IGameEventProcessor<object> {
 
 
     public void GameLoop() {
-        
-       
 
         while (win.IsRunning()) {
             gameTimer.MeasureTime();
