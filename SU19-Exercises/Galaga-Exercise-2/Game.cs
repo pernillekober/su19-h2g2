@@ -147,8 +147,13 @@ public class Game : IGameEventProcessor<object> {
                 playerShots = newShots;
         }
     }
-
+    
+    /// <summary>
+    /// Create enemies with the given list of strides and formations, and adds movement. When one
+    /// squadron is dead, the next spawns.
+    /// </summary>
     public void SpawnEnemies() {
+            //checks if the squadron is dead.
             if (monsterList[i].Enemies.CountEntities() == 0) {
                 monsterList[i].Enemies.ClearContainer();
 
@@ -157,8 +162,11 @@ public class Game : IGameEventProcessor<object> {
                 if (monsterList.Count - 1 < i) {
                     i = 0;
                 }
+                
+                // creates enemies with of given strides from StrideList.  
                 monsterList[i].CreateEnemies(strideList[i]);
                 }
+            //adds movementStrategies to enemies in the instantiated squadron.
             movesStrategies[i].MoveEnemies(monsterList[i].Enemies);
     }
 
