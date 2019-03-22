@@ -23,15 +23,15 @@ public class Game : IGameEventProcessor<object> {
 
     // Instantiate Squadrons
     private List<ISquadron> monsterList = new List<ISquadron>() {
-        new ArrowSquadron(20),
         new ZigZagSquadron(15),
+        new ArrowSquadron(20),
         new WallSquadron(30)
     };
     // Instantiate list of movementstrategies
     private List<IMovementStrategy> movesStrategies = new List<IMovementStrategy>() {
+        new ZigZagMove(),
         new NoMove(),
-        new Down(),
-        new ZigZagMove()
+        new Down()
     };
     
     private int i = 0;
@@ -158,15 +158,9 @@ public class Game : IGameEventProcessor<object> {
                 if (monsterList.Count - 1 < i) {
                     i = 0;
                 }
-
                 monsterList[i].CreateEnemies(strideList[i]);
-                //movesStrategies[i].MoveEnemies(monsterList[i].Enemies);
-                
                 }
-        foreach (var movestrategy in movesStrategies) {
-        movestrategy.MoveEnemies(monsterList[i].Enemies);
-    }
-    //ZigZag.MoveEnemies(monsterList[i].Enemies);
+            movesStrategies[i].MoveEnemies(monsterList[i].Enemies);
     }
 
 

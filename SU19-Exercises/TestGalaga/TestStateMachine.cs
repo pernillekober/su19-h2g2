@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using NUnit.Framework;
 using GalagaGame.GalagaState;
 using Galaga_Exercise_3.GalagaStates;
@@ -13,9 +14,19 @@ namespace Galaga_Testing {
         [SetUp]
         public void InitiateStateMachine() {
             DIKUArcade.Window.CreateOpenGLContext();
+            GalagaBus.GetBus().InitializeEventBus(new List<GameEventType> {
+                GameEventType.InputEvent,
+                GameEventType.WindowEvent,
+            });
+            GalagaBus.GetBus().Subscribe(GameEventType.InputEvent,);
+            GalagaBus.GetBus().Subscribe(GameEventType.WindowEvent, game);
+            GalagaBus.GetBus().Subscribe(GameEventType.GameStateEvent, game);
+
 // Here you should:
-// (1) Initialize a GalagaBus with proper GameEventTypes // (2) Instantiate the StateMachine
-// (3) Subscribe the GalagaBus to proper GameEventTypes // and GameEventProcessors
+// (1) Initialize a GalagaBus with proper GameEventTypes
+// // (2) Instantiate the StateMachine
+// (3) Subscribe the GalagaBus to proper GameEventTypes
+// // and GameEventProcessors
         }
 
         [Test]
