@@ -4,6 +4,7 @@ using DIKUArcade.Entities;
 using DIKUArcade.EventBus;
 using DIKUArcade.Graphics;
 using DIKUArcade.Math;
+using Galaga_Exercise_3.GalagaStates;
 
 namespace Galaga_Exercise_3 {
     public class Player : IGameEventProcessor<object> {
@@ -70,12 +71,11 @@ namespace Galaga_Exercise_3 {
         ///     A method which instantiates a projectile for the player.
         /// </summary>
         private void Shoot() {
-            game.playerShots.Add(new PlayerShot(game, new DynamicShape(
+            GameRunning.playerShots.Add(new PlayerShot(game, new DynamicShape(
                     new Vec2F(Entity.Shape.Position.X + .022f, 0.15f),
                     new Vec2F(0.005f, 0.027f)),
                 playerShots[0]));
         }
-
         /// <summary>
         ///     Adds boosters to the space ship (visual effect).
         /// </summary>

@@ -1,4 +1,4 @@
-using System.Net.Mime;
+using System.IO;
 using System.Security.AccessControl;
 using System.Windows.Forms;
 using DIKUArcade.Entities;
@@ -33,7 +33,8 @@ namespace GalagaGame.GalagaState {
         }
 
         public void RenderState() {
-            //backGroundImage = new Entity(new DynamicShape(); 
+            backGroundImage = new Entity(new StationaryShape(new Vec2F(),
+                new Vec2F() ),new Image(Path.Combine("Assets", "Images", "TitleImage.png"))); 
             backGroundImage.RenderEntity();
             // instantiate buttons??? ny klasse eller instansiere i MainMenu eller Game?
             // render new game button
