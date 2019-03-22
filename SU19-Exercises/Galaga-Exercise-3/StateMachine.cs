@@ -29,8 +29,8 @@ namespace GalagaGame.GalagaState {
             }
         }
         public void ProcessEvent(GameEventType eventType, GameEvent<object> gameEvent) {
-            if (eventType == GameEventType.GameStateEvent) {
-                switch (gameEvent.Message) {
+            if (gameEvent.Message == "CHANGE_STATE") {
+                switch (gameEvent.Parameter1) {
                 case "MAIN_MENU":
                     SwitchState(GameStateType.MainMenu);
                     break;
