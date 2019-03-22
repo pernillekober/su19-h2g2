@@ -34,6 +34,7 @@ public class Game : IGameEventProcessor<object> {
     
     // Adding movement
     private IMovementStrategy down;
+    private IMovementStrategy ZigZag;
     
     private int explosionLength = 500;
     private AnimationContainer explosions;
@@ -69,6 +70,7 @@ public class Game : IGameEventProcessor<object> {
 
         // Instatiating MovementStrategies
         down = new Down();
+        ZigZag = new ZigZagMove();
         
         
         // Enemy Explosion
@@ -156,7 +158,7 @@ public class Game : IGameEventProcessor<object> {
 
                 monsterList[i].CreateEnemies(strideList[i]);
             }
-            down.MoveEnemies(monsterList[i].Enemies);
+            ZigZag.MoveEnemies(monsterList[i].Enemies);
     }
 
 

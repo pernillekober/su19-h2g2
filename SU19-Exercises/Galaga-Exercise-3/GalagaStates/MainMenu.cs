@@ -1,5 +1,9 @@
+using System.Net.Mime;
+using System.Security.AccessControl;
+using System.Windows.Forms;
 using DIKUArcade.Entities;
 using DIKUArcade.Graphics;
+using DIKUArcade.Math;
 using DIKUArcade.State;
 
 
@@ -15,7 +19,7 @@ namespace GalagaGame.GalagaState {
         public static MainMenu GetInstance() {
             return MainMenu.instance ?? (MainMenu.instance = new MainMenu());
         }
-
+        
         public void GameLoop() {
             throw new System.NotImplementedException();
         }
@@ -29,7 +33,12 @@ namespace GalagaGame.GalagaState {
         }
 
         public void RenderState() {
-            throw new System.NotImplementedException();
+            //backGroundImage = new Entity(new DynamicShape(); 
+            backGroundImage.RenderEntity();
+            // instantiate buttons??? ny klasse eller instansiere i MainMenu eller Game?
+            // render new game button
+            // render quit button 
+            
         }
 
         public void HandleKeyEvent(string keyValue, string keyAction) {

@@ -35,6 +35,7 @@ public class Game : IGameEventProcessor<object> {
     
     // Adding movement
     private IMovementStrategy down;
+    private IMovementStrategy ZigZag;
     
     private int i = 0;
     private int explosionLength = 500;
@@ -67,8 +68,9 @@ public class Game : IGameEventProcessor<object> {
                 Path.Combine("Assets", "Images", "GreenMonster.png"))
         };
 
-        //Initializing Movement Staretegies
+        //Initializing Movement Strategies
         down = new Down();
+        ZigZag = new ZigZagMove();
         
         // Initializing statemachine
         StateMachine = new StateMachine();
