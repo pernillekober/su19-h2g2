@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.IO;
 using System.Linq.Expressions;
 using System.Net.Mime;
 using System.Security.AccessControl;
@@ -49,12 +50,14 @@ namespace GalagaGame.GalagaState {
                 new Vec2F(0.5f, 0.4f), new Vec2F(0.1f,0.1f));
             QuitGame = new Text("Quit Game", 
                 new Vec2F(0.5f,0.5f), new Vec2F(0.1f,0.1f) );
-                
-            menubuttons[NewGame, QuitGame]
+
+            menubuttons[0] = NewGame;
+            menubuttons[1] = QuitGame;
+            
             // instance background
-            
-                    
-            
+            backGroundImage = new Entity(new StationaryShape(new Vec2F(0.0f,0.0f), 
+                new Vec2F(1.0f,1.0f)), new Image(Path.Combine("Assets", "Images", "TitleImage.png")) );
+
         }
 
         public void HandleKeyEvent(string keyValue, string keyAction) {
