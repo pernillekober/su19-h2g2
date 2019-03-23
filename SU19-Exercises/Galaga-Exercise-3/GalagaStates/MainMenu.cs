@@ -28,21 +28,19 @@ namespace GalagaGame.GalagaState {
         
         
         public void GameLoop() {
-            throw new System.NotImplementedException();
+          
         }
 
         public void InitializeGameState() {
-            throw new System.NotImplementedException();
+          
         }
 
         public void UpdateGameLogic() {
-            throw new System.NotImplementedException();
+           
         }
 
         public void RenderState() {
-            backGroundImage = new Entity(new StationaryShape(new Vec2F(),
-                new Vec2F() ),new Image(Path.Combine("Assets", "Images", "TitleImage.png"))); 
-            backGroundImage.RenderEntity();
+            
             // instantiate buttons??? ny klasse eller instansiere i MainMenu eller Game?
             // render new game button
             // render quit button 
@@ -57,10 +55,14 @@ namespace GalagaGame.GalagaState {
             menubuttons[1] = QuitGame;
             
             menubuttons[activeMenuButton].SetColor(Color.DarkViolet);
+            foreach (var button in menubuttons) {
+                button.RenderText();
+            }
             
             // instance background
             backGroundImage = new Entity(new StationaryShape(new Vec2F(0.0f,0.0f), 
                 new Vec2F(1.0f,1.0f)), new Image(Path.Combine("Assets", "Images", "TitleImage.png")) );
+            backGroundImage.RenderEntity();
 
         }
 

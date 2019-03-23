@@ -4,7 +4,8 @@ using DIKUArcade.Entities;
 using DIKUArcade.EventBus;
 using DIKUArcade.Graphics;
 using DIKUArcade.Math;
-using Galaga_Exercise_3.GalagaStates;
+
+
 
 namespace Galaga_Exercise_3 {
     public class Player : IGameEventProcessor<object> {
@@ -12,13 +13,11 @@ namespace Galaga_Exercise_3 {
         private GameEventBus<object> eventBus;
         private Game game;
         private List<Image> playerBooster;
-        private List<Image> playerShots;
+        
 
         public Player(Game game, DynamicShape shape, IBaseImage image) {
             Entity = new Entity(shape, image);
             this.game = game;
-            playerShots = new List<Image>();
-            playerShots.Add(new Image(Path.Combine("Assets", "Images", "BulletRed2.png")));
             playerBooster = new List<Image>();
             playerBooster.Add(new Image(Path.Combine("Assets", "Images", "PlayerBooster.png")));
         }
@@ -38,9 +37,6 @@ namespace Galaga_Exercise_3 {
                     break;
                 case "STOP":
                     Direction(new Vec2F(0.0f, 0.0f));
-                    break;
-                case "KEY_SPACE":
-                    Shoot();
                     break;
                 }
             }
@@ -67,15 +63,6 @@ namespace Galaga_Exercise_3 {
             }
         }
 
-        /// <summary>
-        ///     A method which instantiates a projectile for the player.
-        /// </summary>
-        private void Shoot() {
-            GameRunning.playerShots.Add(new PlayerShot(game, new DynamicShape(
-                    new Vec2F(Entity.Shape.Position.X + .022f, 0.15f),
-                    new Vec2F(0.005f, 0.027f)),
-                playerShots[0]));
-        }
         /// <summary>
         ///     Adds boosters to the space ship (visual effect).
         /// </summary>

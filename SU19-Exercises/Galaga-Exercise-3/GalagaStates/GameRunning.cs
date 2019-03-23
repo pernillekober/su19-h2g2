@@ -76,6 +76,7 @@ namespace Galaga_Exercise_3.GalagaStates {
                 new StationaryShape(posX, posY, extentX, extentY), explosionLength,
                 new ImageStride(explosionLength / 8, explosionStrides));
         }
+       
 
         /// <summary>
         ///     Here we check if the enemies are hit by a shot, and if they are we delete them.
@@ -156,11 +157,11 @@ namespace Galaga_Exercise_3.GalagaStates {
         }
 
         public void InitializeGameState() {
-            throw new System.NotImplementedException();
+            
         }
 
         public void UpdateGameLogic() {
-            throw new System.NotImplementedException();
+            
         }
 
         public void RenderState() {
@@ -180,7 +181,7 @@ namespace Galaga_Exercise_3.GalagaStates {
             }
         }
         public void HandleKeyEvent(string keyValue, string keyAction) {
-            throw new System.NotImplementedException();
+          
         }
     }
 }
