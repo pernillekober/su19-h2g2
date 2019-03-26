@@ -37,7 +37,18 @@ namespace Galaga_Exercise_3.GalagaStates {
         private List<Image> redEnemies;
         private List<Image> explosionStrides;
         private Score scoreTable;
-       
+        // Adding movement
+        private IMovementStrategy down;
+        private IMovementStrategy ZigZag;
+        private IMovementStrategy NoMove;
+
+        public List<PlayerShot> playerShots { get; private set; }
+        private List<Image> playerShot;
+        private List<Entity> playerShots;
+        
+        private int i = 0;
+        // Enemy Image List
+        private List<List<Image>> strideList;
 
         // Instantiate Squadrons
         private List<ISquadron> monsterList = new List<ISquadron>() {
@@ -51,18 +62,54 @@ namespace Galaga_Exercise_3.GalagaStates {
             new NoMove(),
             new Down()
         };
-    
-        private int i = 0;
-        // Enemy Image List
-        private List<List<Image>> strideList;
+        public GameRunning() {
+            
+            backGroundImage = new Entity(new StationaryShape(new Vec2F(),
+                new Vec2F() ),new Image(Path.Combine("Assets", "Images", "SpaceBackground.png"))); 
+            
+            // Player Sprite
+            player = new Player(this,
+                new DynamicShape(new Vec2F(0.45f, 0.1f), new Vec2F(
+                    0.05f, 0.05f)), new Image(Path.Combine("Assets", "Images", "Player.png")));
         
-        public List<PlayerShot> playerShots { get; private set; }
-    
-        // Adding movement
-        private IMovementStrategy down;
-        private IMovementStrategy ZigZag;
-        private IMovementStrategy NoMove;
-        
+            //PlayerShot List
+            playerShot = new List<Image>();
+            playerShot.Add(new Image(Path.Combine("Assets", "Images", "BulletRed2.png")));
+            playerShots = new List<Entity>();
+
+            
+            // ScoreTable
+            scoreTable = new Score(new Vec2F(0.1f, 0.62f),
+                new Vec2F(0.35f, 0.35f));
+            // Enemy movement Strategies
+            
+            strideList = new List<List<Image>> {
+                ImageStride.CreateStrides(4,
+                    Path.Combine("Assets", "Images", "BlueMonster.png")),
+                ImageStride.CreateStrides(2,
+                    Path.Combine("Assets", "Images", "RedMonster.png")),
+                ImageStride.CreateStrides(2,
+                    Path.Combine("Assets", "Images", "GreenMonster.png"))
+            };
+
+            // Enemy Explosion
+            explosionStrides = ImageStride.CreateStrides(8,
+                Path.Combine("Assets", "Images", "Explosion.png"));
+            explosions = new AnimationContainer(28);
+            
+            playerShots = new List<PlayerShot>();
+        }
+
+        /// <summary>
+        ///     A method which instantiates a projectile for the player.
+        /// </summary>
+        public void Shoot() {
+            playerShots.Add(new Entity( new DynamicShape(
+                    new Vec2F(player.Entity.Shape.Position.X + .022f, 0.15f),
+                    new Vec2F(0.005f, 0.027f)),
+                playerShot[0]));
+        }
+
         /// <summary>
         ///     Adds an explosion animation at given position.
         /// </summary>
@@ -77,7 +124,6 @@ namespace Galaga_Exercise_3.GalagaStates {
                 new ImageStride(explosionLength / 8, explosionStrides));
         }
        
-
         /// <summary>
         ///     Here we check if the enemies are hit by a shot, and if they are we delete them.
         /// </summary>
@@ -126,29 +172,7 @@ namespace Galaga_Exercise_3.GalagaStates {
             return GameRunning.instance ?? (GameRunning.instance = new GameRunning());
         }
 
-        public GameRunning() {
-            
-            // ScoreTable
-            scoreTable = new Score(new Vec2F(0.1f, 0.62f),
-                new Vec2F(0.35f, 0.35f));
-            // Enemy movement Strategies
-            
-            strideList = new List<List<Image>> {
-                ImageStride.CreateStrides(4,
-                    Path.Combine("Assets", "Images", "BlueMonster.png")),
-                ImageStride.CreateStrides(2,
-                    Path.Combine("Assets", "Images", "RedMonster.png")),
-                ImageStride.CreateStrides(2,
-                    Path.Combine("Assets", "Images", "GreenMonster.png"))
-            };
-
-            // Enemy Explosion
-            explosionStrides = ImageStride.CreateStrides(8,
-                Path.Combine("Assets", "Images", "Explosion.png"));
-            explosions = new AnimationContainer(28);
-            
-            playerShots = new List<PlayerShot>();
-        }
+        
         public void GameLoop() {
             player.Move();
             player.AddBoost();
@@ -165,8 +189,6 @@ namespace Galaga_Exercise_3.GalagaStates {
         }
 
         public void RenderState() {
-            backGroundImage = new Entity(new StationaryShape(new Vec2F(),
-                new Vec2F() ),new Image(Path.Combine("Assets", "Images", "SpaceBackground.png"))); 
             backGroundImage.RenderEntity();
             player.Entity.RenderEntity();
             player.booster.RenderEntity();

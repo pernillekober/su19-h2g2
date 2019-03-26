@@ -15,28 +15,17 @@ using Galaga_Exercise_3.GalagaStates;
 public class Game : IGameEventProcessor<object> {
     
     private GameTimer gameTimer;
-    private Player player;
+    
     private GameEventBus<object> eventBus;
     private Window win;
     private StateMachine stateMachine;
-    private List<Image> playerShot;
-    private List<Entity> playerShots;
+    
     
 
     public Game() {
         win = new Window("Galaga", 500, 500);
         gameTimer = new GameTimer(60, 60);
         stateMachine = new StateMachine();
-        
-        // Player Sprite
-        player = new Player(this,
-            new DynamicShape(new Vec2F(0.45f, 0.1f), new Vec2F(
-                0.05f, 0.05f)), new Image(Path.Combine("Assets", "Images", "Player.png")));
-        
-        //PlayerShot List
-        playerShot = new List<Image>();
-        playerShot.Add(new Image(Path.Combine("Assets", "Images", "BulletRed2.png")));
-        playerShots = new List<Entity>();
         
         // EventHandling
         eventBus = new GameEventBus<object>();
@@ -48,17 +37,9 @@ public class Game : IGameEventProcessor<object> {
         win.RegisterEventBus(eventBus);
         eventBus.Subscribe(GameEventType.InputEvent, this);
         eventBus.Subscribe(GameEventType.WindowEvent, this);
-        eventBus.Subscribe(GameEventType.PlayerEvent, player);
+        eventBus.Subscribe(GameEventType.PlayerEvent, this);
     }
-    /// <summary>
-    ///     A method which instantiates a projectile for the player.
-    /// </summary>
-    public void Shoot() {
-        playerShots.Add(new Entity( new DynamicShape(
-                new Vec2F(player.Entity.Shape.Position.X + .022f, 0.15f),
-                new Vec2F(0.005f, 0.027f)),
-            playerShot[0]));
-    }
+    
     
     public void GameLoop() {
 
