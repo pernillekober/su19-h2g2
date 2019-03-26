@@ -30,7 +30,9 @@ namespace GalagaGame.GalagaState {
             }
         }
         public void ProcessEvent(GameEventType eventType, GameEvent<object> gameEvent) {
-            if (gameEvent.Message == "CHANGE_STATE") {
+            if (eventType == GameEventType.GameStateEvent && gameEvent.Message == "CHANGE_STATE") {
+                SwitchState(StateTransformer.TransformStringToState(gameEvent.Parameter1));
+                /*
                 switch (gameEvent.Parameter1) {
                 case "MAIN_MENU":
                     SwitchState(GameStateType.MainMenu);
@@ -41,7 +43,7 @@ namespace GalagaGame.GalagaState {
                 case "GAME_PAUSED":
                     SwitchState(GameStateType.GamePaused);
                     break;
-                }
+                }*/
             }
             
             // if eventype = inputevent send information to Activestate.HandleKeyEvent and 
