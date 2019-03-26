@@ -44,7 +44,7 @@ namespace Galaga_Exercise_3.GalagaStates {
 
         public List<PlayerShot> playerShots { get; private set; }
         private List<Image> playerShot;
-        private List<Entity> playerShots;
+     
         
         private int i = 0;
         // Enemy Image List
@@ -75,7 +75,7 @@ namespace Galaga_Exercise_3.GalagaStates {
             //PlayerShot List
             playerShot = new List<Image>();
             playerShot.Add(new Image(Path.Combine("Assets", "Images", "BulletRed2.png")));
-            playerShots = new List<Entity>();
+
 
             
             // ScoreTable
@@ -104,7 +104,7 @@ namespace Galaga_Exercise_3.GalagaStates {
         ///     A method which instantiates a projectile for the player.
         /// </summary>
         public void Shoot() {
-            playerShots.Add(new Entity( new DynamicShape(
+            playerShots.Add(new PlayerShot(this, new DynamicShape(
                     new Vec2F(player.Entity.Shape.Position.X + .022f, 0.15f),
                     new Vec2F(0.005f, 0.027f)),
                 playerShot[0]));
