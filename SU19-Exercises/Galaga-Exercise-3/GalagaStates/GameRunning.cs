@@ -86,8 +86,8 @@ namespace Galaga_Exercise_3.GalagaStates {
             // ScoreTable
             scoreTable = new Score(new Vec2F(0.1f, 0.62f),
                 new Vec2F(0.35f, 0.35f));
-            // Enemy movement Strategies
             
+            // Enemy movement Strategies
             strideList = new List<List<Image>> {
                 ImageStride.CreateStrides(4,
                     Path.Combine("Assets", "Images", "BlueMonster.png")),
@@ -109,7 +109,7 @@ namespace Galaga_Exercise_3.GalagaStates {
         ///     A method which instantiates a projectile for the player.
         /// </summary>
         public void Shoot() {
-            playerShots.Add(new PlayerShot(this, new DynamicShape(
+            playerShots.Add(new PlayerShot(new DynamicShape(
                     new Vec2F(player.Entity.Shape.Position.X + .022f, 0.15f),
                     new Vec2F(0.005f, 0.027f)),
                 playerShot[0]));
@@ -159,6 +159,8 @@ namespace Galaga_Exercise_3.GalagaStates {
                 playerShots = newShots;
             }
         }
+        
+        // Spawns enemy formations(squadrons) 
         public void SpawnEnemies() {
             if (monsterList[i].Enemies.CountEntities() == 0) {
                 monsterList[i].Enemies.ClearContainer();
@@ -219,34 +221,9 @@ namespace Galaga_Exercise_3.GalagaStates {
             }
         }
 
-
-        
-        
-        // gammel
-        public void ProcessEvent(GameEventType eventType,
-            GameEvent<object> gameEvent) {
-            if (eventType == GameEventType.WindowEvent) {
-                switch (gameEvent.Message) {
-                case "CLOSE_WINDOW":
-                    win.CloseWindow();
-                    break;
-                }
-            } else if (eventType == GameEventType.InputEvent) {
-                switch (gameEvent.Parameter1) {
-                case "KEY_PRESS":
-                    KeyPress(gameEvent.Message);
-                    break;
-                case "KEY_RELEASE":
-                    KeyRelease(gameEvent.Message);
-                    break;
-                }
-            }
-        }
-         
-  
         //gammel
-        public void KeyPress(string key) {
-            switch (key) {
+        public void KeyPress(string KeyValue) {
+            switch (KeyValue) {
             case "KEY_ESCAPE":
                 eventBus.RegisterEvent(
                     GameEventFactory<object>.CreateGameEventForAllProcessors(
@@ -272,8 +249,8 @@ namespace Galaga_Exercise_3.GalagaStates {
         }
         
         //gammel
-        public void KeyRelease(string key) {
-            switch (key) {
+        public void KeyRelease(string KeyValue) {
+            switch (KeyValue) {
             case "KEY_LEFT":
                 eventBus.RegisterEvent(
                 GameEventFactory<object>.CreateGameEventForAllProcessors(

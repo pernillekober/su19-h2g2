@@ -20,14 +20,11 @@ namespace GalagaGame.GalagaState {
         private Text QuitGame;
         private int activeMenuButton = 0;
         private int maxMenuButtons = 1;
-        private GameEventBus<object> eventBus = GalagaBus.GetBus();
+        private GameEventBus<object> eventBus;
 
 
-        public static MainMenu GetInstance() {
-            return MainMenu.instance ?? (MainMenu.instance = new MainMenu());
-        }
-
-        public void InitializeMenuInterface() {
+        
+        public MainMenu(){
             // instance menubuttons
             NewGame = new Text("New Game", new Vec2F(0.35f, 0.30f),
                 new Vec2F(0.3f, 0.3f));
@@ -53,8 +50,11 @@ namespace GalagaGame.GalagaState {
                 new Image(Path.Combine("Assets", "Images", "TitleImage.png")));
         }
 
+        
+        public static MainMenu GetInstance() {
+            return MainMenu.instance ?? (MainMenu.instance = new MainMenu());
+        }
 
-        // Eventhandling???
 
 
         public void GameLoop() { }
@@ -64,7 +64,6 @@ namespace GalagaGame.GalagaState {
         public void UpdateGameLogic() { }
 
         public void RenderState() {
-            InitializeMenuInterface();
 
             //render background picture
             backGroundImage.RenderEntity();
@@ -83,10 +82,9 @@ namespace GalagaGame.GalagaState {
             case "KEY_PRESS":
                 KeyPress(KeyValue);
                 break;
-/*            case "KEY_RELEASE":
+            case "KEY_RELEASE":
                 KeyRelease(KeyValue);
                 break;
-            }*/
             }
         }
 
@@ -96,13 +94,11 @@ namespace GalagaGame.GalagaState {
                 if (activeMenuButton != 0) {
                     activeMenuButton -= 1;
                 }
-
                 break;
             case "KEY_DOWN":
                 if (activeMenuButton != 1) {
                     activeMenuButton += 1;
                 }
-
                 break;
             case "KEY_ENTER":
                 if (activeMenuButton == 0) {
@@ -122,7 +118,6 @@ namespace GalagaGame.GalagaState {
                 break;
             }
         }
-        /*
         public void KeyRelease(string KeyValue) {
             switch (KeyValue) {
             case "KEY_UP":
@@ -140,8 +135,6 @@ namespace GalagaGame.GalagaState {
                 break;
             }
         }
-        */
-
     }
 }
 

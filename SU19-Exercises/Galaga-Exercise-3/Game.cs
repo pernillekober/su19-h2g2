@@ -16,7 +16,7 @@ public class Game : IGameEventProcessor<object> {
     
     private GameTimer gameTimer;
     
-    private GameEventBus<object> eventBus;
+    private GameEventBus<object> eventBus = GalagaBus.GetBus();
     private Window win;
     private StateMachine stateMachine;
     
@@ -28,7 +28,7 @@ public class Game : IGameEventProcessor<object> {
         stateMachine = new StateMachine();
         
         // EventHandling
-        eventBus = new GameEventBus<object>();
+        //eventBus = new GameEventBus<object>();
         eventBus.InitializeEventBus(new List<GameEventType> {
             GameEventType.InputEvent, // key press / key release
             GameEventType.WindowEvent, // messages to the window });
@@ -63,7 +63,19 @@ public class Game : IGameEventProcessor<object> {
             }
         }
     }
-
     
     
+    
+    // Checker for a windowevent. The decision of placing it in Game.cs is because it is directly
+    // related to win, and hance Game.  
+    public void ProcessEvent(GameEventType eventType,
+        GameEvent<object> gameEvent) {
+        if (eventType == GameEventType.WindowEvent) {
+            switch (gameEvent.Message) {
+            case "CLOSE_WINDOW":
+                win.CloseWindow();
+                break;
+            }
+        }
+    }
 }

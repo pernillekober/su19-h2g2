@@ -1,3 +1,4 @@
+using System;
 using DIKUArcade.EventBus;
 using DIKUArcade.State;
 using Galaga_Exercise_3.GalagaGame;
@@ -42,8 +43,12 @@ namespace GalagaGame.GalagaState {
                     break;
                 }
             }
+            
+            // if eventype = inputevent send information to Activestate.HandleKeyEvent and 
+            // GameRunning.HandleKeyEvent to check if relevant and process inputEvent further. 
             else if (eventType == GameEventType.InputEvent) {
                 ActiveState.HandleKeyEvent(gameEvent.Message, gameEvent.Parameter1);
+                Console.WriteLine(gameEvent.Message);
             }
         }
     }
