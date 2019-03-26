@@ -66,20 +66,16 @@ namespace GalagaGame.GalagaState {
                 break;
             }
         }
+        
+        
         public void KeyPress(string KeyValue) {
             switch (KeyValue) {
             case "KEY_UP":
-                eventBus.RegisterEvent(GameEventFactory<object>.CreateGameEventForAllProcessors(
-                    GameEventType.PlayerEvent,this,"KEY_UP","",""));
                 if (activeMenuButton != 0) {
                     activeMenuButton -= 1;
                 }
                 break;
             case "KEY_DOWN":
-                eventBus.RegisterEvent(
-                    GameEventFactory<object>.CreateGameEventForAllProcessors(
-                        GameEventType.PlayerEvent, this, "KEY_DOWN",
-                        "", ""));
                 if (activeMenuButton != 1) {
                     activeMenuButton += 1;
                 }
