@@ -17,6 +17,7 @@ using Galaga_Exercise_3;
 using Galaga_Exercise_3.GalagaEntities.Enemy;
 using Galaga_Exercise_3.MovementStrategy;
 using Galaga_Exercise_3.Squadrons;
+using Galaga_Exercise_3.GalagaGame;
 
 
 namespace Galaga_Exercise_3.GalagaStates {
@@ -24,10 +25,12 @@ namespace Galaga_Exercise_3.GalagaStates {
         
         private static GameRunning instance = null;
         
+        
         private Entity backGroundImage;
         private Text[] menuButtons;
         private int activeMenuButton;
         private int maxMenuButtons;
+        private GameEventBus<object> eventBus = GalagaBus.GetBus();
         
         private int explosionLength = 500;
         private AnimationContainer explosions;
@@ -62,6 +65,8 @@ namespace Galaga_Exercise_3.GalagaStates {
             new NoMove(),
             new Down()
         };
+        
+        
         public GameRunning() {
             
             backGroundImage = new Entity(new StationaryShape(new Vec2F(),
@@ -202,8 +207,86 @@ namespace Galaga_Exercise_3.GalagaStates {
                 shot.RenderEntity();
             }
         }
+
+
+        
+        // ny
         public void HandleKeyEvent(string keyValue, string keyAction) {
-          
+            if (keyAction == "KEY_PRESS") {
+                KeyPress(keyValue);
+            } else if (keyAction == "KEY_RELEASE") {
+                KeyRelease(keyValue);
+            }
+        }
+
+
+        
+        
+        // gammel
+        public void ProcessEvent(GameEventType eventType,
+            GameEvent<object> gameEvent) {
+            if (eventType == GameEventType.WindowEvent) {
+                switch (gameEvent.Message) {
+                case "CLOSE_WINDOW":
+                    win.CloseWindow();
+                    break;
+                }
+            } else if (eventType == GameEventType.InputEvent) {
+                switch (gameEvent.Parameter1) {
+                case "KEY_PRESS":
+                    KeyPress(gameEvent.Message);
+                    break;
+                case "KEY_RELEASE":
+                    KeyRelease(gameEvent.Message);
+                    break;
+                }
+            }
+        }
+         
+  
+        //gammel
+        public void KeyPress(string key) {
+            switch (key) {
+            case "KEY_ESCAPE":
+                eventBus.RegisterEvent(
+                    GameEventFactory<object>.CreateGameEventForAllProcessors(
+                        GameEventType.WindowEvent, this, "CLOSE_WINDOW",
+                        "", ""));
+                break;
+            case "KEY_RIGHT":
+                eventBus.RegisterEvent(
+                    GameEventFactory<object>.CreateGameEventForAllProcessors(
+                        GameEventType.PlayerEvent, this, "KEY_RIGHT",
+                        "", ""));
+                break;
+            case "KEY_LEFT":
+                eventBus.RegisterEvent(
+                    GameEventFactory<object>.CreateGameEventForAllProcessors(
+                        GameEventType.PlayerEvent, this, "KEY_LEFT",
+                        "", ""));
+                break;
+            case "KEY_SPACE":
+                Shoot();
+                break;
+            }
+        }
+        
+        //gammel
+        public void KeyRelease(string key) {
+            switch (key) {
+            case "KEY_LEFT":
+                eventBus.RegisterEvent(
+                GameEventFactory<object>.CreateGameEventForAllProcessors(
+                    GameEventType.PlayerEvent, this, "STOP",
+                    "", ""));
+                    break;
+            case "KEY_RIGHT":
+                eventBus.RegisterEvent(
+                GameEventFactory<object>.CreateGameEventForAllProcessors(
+                GameEventType.PlayerEvent, this, "STOP",
+                "", ""));
+                break;
+            }
         }
     }
 }
