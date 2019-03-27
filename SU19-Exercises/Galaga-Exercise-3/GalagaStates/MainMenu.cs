@@ -48,9 +48,6 @@ namespace GalagaGame.GalagaState {
             backGroundImage = new Entity(new StationaryShape(new Vec2F(0.0f, 0.0f),
                     new Vec2F(1.0f, 1.0f)),
                 new Image(Path.Combine("Assets", "Images", "TitleImage.png")));
-
-            eventBus = GalagaBus.GetBus();
-
         }
 
         
@@ -87,8 +84,6 @@ namespace GalagaGame.GalagaState {
         
  // Calls KeyPress or KeyRelease if button inputevent is registered.
         public void HandleKeyEvent(string KeyValue, string keyAction) {
-            Console.WriteLine("MainMenuHandleKeyEvent");
-            Console.WriteLine($"KeyValue:{ KeyValue }, KeyAction:{ keyAction }");
             switch (keyAction) {
             case "KEY_PRESS":
                 KeyPress(KeyValue);
@@ -114,15 +109,13 @@ namespace GalagaGame.GalagaState {
                 break;
             case "KEY_ENTER":
                 if (activeMenuButton == 0) {
-                    Console.WriteLine("Enter pressed");
-                    eventBus.RegisterEvent(
+                    GalagaBus.GetBus().RegisterEvent(
                         GameEventFactory<object>.CreateGameEventForAllProcessors(
                             GameEventType.GameStateEvent,
                             this, "CHANGE_STATE", "GAME_RUNNING",
                             ""));
                 } else {
-                    Console.WriteLine("ELSE STATEMENT");
-                    eventBus.RegisterEvent(
+                    GalagaBus.GetBus().RegisterEvent(
                         GameEventFactory<object>.CreateGameEventForAllProcessors(
                             GameEventType.GameStateEvent,
                             this, "CHANGE_STATE", "CLOSE_WINDOW",

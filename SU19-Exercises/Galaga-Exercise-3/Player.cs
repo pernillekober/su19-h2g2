@@ -5,6 +5,7 @@ using DIKUArcade.Entities;
 using DIKUArcade.EventBus;
 using DIKUArcade.Graphics;
 using DIKUArcade.Math;
+using Galaga_Exercise_3.GalagaGame;
 using Galaga_Exercise_3.GalagaStates;
 
 
@@ -17,7 +18,6 @@ namespace Galaga_Exercise_3 {
         public Player(GameRunning game, DynamicShape shape, IBaseImage image) {
             Entity = new Entity(shape, image);
             playerBooster = new List<Image>();
-            playerBooster.Add(new Image(Path.Combine("Assets", "Images", "PlayerBooster.png")));
         }
 
         public Entity Entity { get; }
@@ -25,7 +25,6 @@ namespace Galaga_Exercise_3 {
         // Event handling for the player
         public void ProcessEvent(GameEventType eventType,
             GameEvent<object> gameEvent) {
-            Console.WriteLine("PLayerEvent");
             if (eventType == GameEventType.PlayerEvent) {
                 switch (gameEvent.Message) {
                 case "KEY_RIGHT":

@@ -5,16 +5,8 @@ using DIKUArcade.State;
 using DIKUArcade.Math;
 using System.IO;
 using System.Collections.Generic;
-using System.IO;
-using DIKUArcade;
-using DIKUArcade.Entities;
 using DIKUArcade.EventBus;
-using DIKUArcade.Graphics;
-using DIKUArcade.Math;
 using DIKUArcade.Physics;
-using DIKUArcade.Timers;
-using GalagaGame.GalagaState;
-using Galaga_Exercise_3;
 using Galaga_Exercise_3.GalagaEntities.Enemy;
 using Galaga_Exercise_3.MovementStrategy;
 using Galaga_Exercise_3.Squadrons;
@@ -26,28 +18,18 @@ namespace Galaga_Exercise_3.GalagaStates {
         
         private static GameRunning instance = null;
         
-        
         private Entity backGroundImage;
-        private Text[] menuButtons;
-        private int activeMenuButton;
-        private int maxMenuButtons;
         private GameEventBus<object> eventBus;
         
         private int explosionLength = 500;
         private AnimationContainer explosions;
         private Player player;
-        private List<Image> enemyStrides;
-        private List<Image> greenEnemies;
-        private List<Image> redEnemies;
+
         private List<Image> explosionStrides;
         private Score scoreTable;
-        // Adding movement
-        private IMovementStrategy down;
-        private IMovementStrategy ZigZag;
-        private IMovementStrategy NoMove;
 
         public List<PlayerShot> playerShots { get; private set; }
-        private List<Image> playerShot;
+        private List<Image> playerShotImage;
      
         
         private int i = 0;
@@ -79,8 +61,8 @@ namespace Galaga_Exercise_3.GalagaStates {
            
         
             //PlayerShot List
-            playerShot = new List<Image>();
-            playerShot.Add(new Image(Path.Combine("Assets", "Images", "BulletRed2.png")));
+            playerShotImage = new List<Image>();
+            playerShotImage.Add(new Image(Path.Combine("Assets", "Images", "BulletRed2.png")));
 
             // ScoreTable
             scoreTable = new Score(new Vec2F(0.1f, 0.62f),
@@ -101,8 +83,8 @@ namespace Galaga_Exercise_3.GalagaStates {
                 Path.Combine("Assets", "Images", "Explosion.png"));
             explosions = new AnimationContainer(28);
             
+            
             playerShots = new List<PlayerShot>();
-            eventBus = GalagaBus.GetBus();
         }
 
         /// <summary>
@@ -112,7 +94,7 @@ namespace Galaga_Exercise_3.GalagaStates {
             playerShots.Add(new PlayerShot(new DynamicShape(
                     new Vec2F(player.Entity.Shape.Position.X + .022f, 0.15f),
                     new Vec2F(0.005f, 0.027f)),
-                playerShot[0]));
+                playerShotImage[0]));
         }
 
         /// <summary>
@@ -206,7 +188,6 @@ namespace Galaga_Exercise_3.GalagaStates {
         }
         
         public void HandleKeyEvent(string keyValue, string keyAction) {
-            Console.WriteLine("GameRunning.HandlekeyuEvent");
             if (keyAction == "KEY_PRESS") {
                 KeyPress(keyValue);
             } else if (keyAction == "KEY_RELEASE") {
@@ -217,19 +198,25 @@ namespace Galaga_Exercise_3.GalagaStates {
         public void KeyPress(string KeyValue) {
             switch (KeyValue) {
             case "KEY_ESCAPE":
-                eventBus.RegisterEvent(
+                GalagaBus.GetBus().RegisterEvent(
                     GameEventFactory<object>.CreateGameEventForAllProcessors(
                         GameEventType.WindowEvent, this, "CLOSE_WINDOW",
                         "", ""));
                 break;
+            case "KEY_P":
+                GalagaBus.GetBus().RegisterEvent(
+                    GameEventFactory<object>.CreateGameEventForAllProcessors(
+                        GameEventType.GameStateEvent, this, "CHANGE_STATE",
+                        "GAME_PAUSED", ""));
+                break;
             case "KEY_RIGHT":
-                eventBus.RegisterEvent(
+                GalagaBus.GetBus().RegisterEvent(
                     GameEventFactory<object>.CreateGameEventForAllProcessors(
                         GameEventType.PlayerEvent, this, "KEY_RIGHT",
                         "", ""));
                 break;
             case "KEY_LEFT":
-                eventBus.RegisterEvent(
+                GalagaBus.GetBus().RegisterEvent(
                     GameEventFactory<object>.CreateGameEventForAllProcessors(
                         GameEventType.PlayerEvent, this, "KEY_LEFT",
                         "", ""));
@@ -243,13 +230,13 @@ namespace Galaga_Exercise_3.GalagaStates {
         public void KeyRelease(string KeyValue) {
             switch (KeyValue) {
             case "KEY_LEFT":
-                eventBus.RegisterEvent(
+                GalagaBus.GetBus().RegisterEvent(
                 GameEventFactory<object>.CreateGameEventForAllProcessors(
                     GameEventType.PlayerEvent, this, "STOP",
                     "", ""));
                     break;
             case "KEY_RIGHT":
-                eventBus.RegisterEvent(
+                GalagaBus.GetBus().RegisterEvent(
                 GameEventFactory<object>.CreateGameEventForAllProcessors(
                 GameEventType.PlayerEvent, this, "STOP",
                 "", ""));
