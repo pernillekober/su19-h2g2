@@ -32,11 +32,11 @@ namespace GalagaGame.GalagaState {
             }    
         }
 
+        // if eventype = inputevent send information to Activestate.HandleKeyEvent and 
+        // GameRunning.HandleKeyEvent to check if relevant and process inputEvent further.
         public void ProcessEvent(GameEventType eventType, GameEvent<object> gameEvent) {
             Console.WriteLine("StateMachine.ProcessEvents");
             switch (eventType) { 
-        // if eventype = inputevent send information to Activestate.HandleKeyEvent and 
-        // GameRunning.HandleKeyEvent to check if relevant and process inputEvent further. 
             case GameEventType.GameStateEvent when gameEvent.Message == "CHANGE_STATE":
                 SwitchState(StateTransformer.TransformStringToState(gameEvent.Parameter1));
                 break;

@@ -17,7 +17,7 @@ public class Game : IGameEventProcessor<object> {
     
     private GameTimer gameTimer;
     
-    private GameEventBus<object> eventBus = GalagaBus.GetBus();
+    private GameEventBus<object> eventBus;
     private Window win;
     private StateMachine stateMachine;
     
@@ -28,7 +28,7 @@ public class Game : IGameEventProcessor<object> {
         stateMachine = new StateMachine();
         
         // EventHandling
-        //eventBus = new GameEventBus<object>();
+        eventBus = new GameEventBus<object>();
         eventBus.InitializeEventBus(new List<GameEventType> {
             GameEventType.InputEvent, // key press / key release
             GameEventType.WindowEvent, // messages to the window });
