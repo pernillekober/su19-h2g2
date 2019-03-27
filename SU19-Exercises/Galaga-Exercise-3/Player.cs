@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.IO;
 using DIKUArcade.Entities;
@@ -24,6 +25,7 @@ namespace Galaga_Exercise_3 {
         // Event handling for the player
         public void ProcessEvent(GameEventType eventType,
             GameEvent<object> gameEvent) {
+            Console.WriteLine("PLayerEvent");
             if (eventType == GameEventType.PlayerEvent) {
                 switch (gameEvent.Message) {
                 case "KEY_RIGHT":

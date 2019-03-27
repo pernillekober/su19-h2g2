@@ -23,7 +23,6 @@ namespace GalagaGame.GalagaState {
         private int maxMenuButtons = 1;
         private GameEventBus<object> eventBus;
 
-
         
         public MainMenu(){
             // instance menubuttons
@@ -51,14 +50,13 @@ namespace GalagaGame.GalagaState {
                 new Image(Path.Combine("Assets", "Images", "TitleImage.png")));
 
             eventBus = GalagaBus.GetBus();
-            InitializeGameState();
+
         }
 
         
         public static MainMenu GetInstance() {
             return MainMenu.instance ?? (MainMenu.instance = new MainMenu());
         }
-
 
 
         public void GameLoop() {
@@ -69,8 +67,6 @@ namespace GalagaGame.GalagaState {
         }
 
         public void UpdateGameLogic() {
-            Console.WriteLine("MainMenu.UpdateGameLogic");
-            eventBus.ProcessEvents();
         }
 
         public void RenderState() {
@@ -118,19 +114,20 @@ namespace GalagaGame.GalagaState {
                 break;
             case "KEY_ENTER":
                 if (activeMenuButton == 0) {
+                    Console.WriteLine("Enter pressed");
                     eventBus.RegisterEvent(
                         GameEventFactory<object>.CreateGameEventForAllProcessors(
-                            GameEventType.InputEvent,
+                            GameEventType.GameStateEvent,
                             this, "CHANGE_STATE", "GAME_RUNNING",
                             ""));
                 } else {
+                    Console.WriteLine("ELSE STATEMENT");
                     eventBus.RegisterEvent(
                         GameEventFactory<object>.CreateGameEventForAllProcessors(
-                            GameEventType.InputEvent,
-                            this, "CHANCE_STATE", "CLOSE_WINDOW",
+                            GameEventType.GameStateEvent,
+                            this, "CHANGE_STATE", "CLOSE_WINDOW",
                             ""));
                 }
-
                 break;
             }
         }

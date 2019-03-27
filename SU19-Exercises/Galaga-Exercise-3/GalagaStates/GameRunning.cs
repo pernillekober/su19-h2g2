@@ -1,3 +1,4 @@
+using System;
 using DIKUArcade.Entities;
 using DIKUArcade.Graphics;
 using DIKUArcade.State;
@@ -30,7 +31,7 @@ namespace Galaga_Exercise_3.GalagaStates {
         private Text[] menuButtons;
         private int activeMenuButton;
         private int maxMenuButtons;
-        private GameEventBus<object> eventBus = GalagaBus.GetBus();
+        private GameEventBus<object> eventBus;
         
         private int explosionLength = 500;
         private AnimationContainer explosions;
@@ -66,7 +67,6 @@ namespace Galaga_Exercise_3.GalagaStates {
             new Down()
         };
         
-        
         public GameRunning() {
             
             backGroundImage = new Entity(new StationaryShape(new Vec2F(),
@@ -82,8 +82,6 @@ namespace Galaga_Exercise_3.GalagaStates {
             playerShot = new List<Image>();
             playerShot.Add(new Image(Path.Combine("Assets", "Images", "BulletRed2.png")));
 
-
-            
             // ScoreTable
             scoreTable = new Score(new Vec2F(0.1f, 0.62f),
                 new Vec2F(0.35f, 0.35f));
@@ -104,6 +102,7 @@ namespace Galaga_Exercise_3.GalagaStates {
             explosions = new AnimationContainer(28);
             
             playerShots = new List<PlayerShot>();
+            eventBus = GalagaBus.GetBus();
         }
 
         /// <summary>
@@ -180,20 +179,16 @@ namespace Galaga_Exercise_3.GalagaStates {
             return GameRunning.instance ?? (GameRunning.instance = new GameRunning());
         }
 
-        
-        public void GameLoop() {
-            player.Move();
-            player.AddBoost();
-            IterateShots();
-            SpawnEnemies();
+        public void GameLoop() { 
         }
 
-        public void InitializeGameState() {
-            
+        public void InitializeGameState() {  
         }
 
         public void UpdateGameLogic() {
-            
+            IterateShots();
+            SpawnEnemies();
+            player.Move();
         }
 
         public void RenderState() {
@@ -209,19 +204,16 @@ namespace Galaga_Exercise_3.GalagaStates {
                 shot.RenderEntity();
             }
         }
-
-
         
-        // ny
         public void HandleKeyEvent(string keyValue, string keyAction) {
+            Console.WriteLine("GameRunning.HandlekeyuEvent");
             if (keyAction == "KEY_PRESS") {
                 KeyPress(keyValue);
             } else if (keyAction == "KEY_RELEASE") {
                 KeyRelease(keyValue);
             }
         }
-
-        //gammel
+        
         public void KeyPress(string KeyValue) {
             switch (KeyValue) {
             case "KEY_ESCAPE":
@@ -248,7 +240,6 @@ namespace Galaga_Exercise_3.GalagaStates {
             }
         }
         
-        //gammel
         public void KeyRelease(string KeyValue) {
             switch (KeyValue) {
             case "KEY_LEFT":

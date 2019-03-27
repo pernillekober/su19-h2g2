@@ -10,10 +10,11 @@ namespace GalagaGame.GalagaState {
         public IGameState ActiveState { get; private set; }
 
         public StateMachine() {
-            GalagaBus.GetBus().Subscribe(GameEventType.GameStateEvent, this);
             GalagaBus.GetBus().Subscribe(GameEventType.InputEvent, this);
             GalagaBus.GetBus().Subscribe(GameEventType.WindowEvent, this);
             GalagaBus.GetBus().Subscribe(GameEventType.PlayerEvent, this);
+            GalagaBus.GetBus().Subscribe(GameEventType.GameStateEvent, this);
+
 
             ActiveState = MainMenu.GetInstance();
         }
@@ -36,9 +37,12 @@ namespace GalagaGame.GalagaState {
         // GameRunning.HandleKeyEvent to check if relevant and process inputEvent further.
         public void ProcessEvent(GameEventType eventType, GameEvent<object> gameEvent) {
             Console.WriteLine("StateMachine.ProcessEvents");
+            Console.WriteLine($"evenTtype:  { eventType } ");
             switch (eventType) { 
             case GameEventType.GameStateEvent when gameEvent.Message == "CHANGE_STATE":
                 SwitchState(StateTransformer.TransformStringToState(gameEvent.Parameter1));
+                Console.WriteLine($"gameEvent.Parameter1: { gameEvent.Parameter1 }");
+                Console.WriteLine($"gameEvent.Parameter2: { gameEvent.Parameter2 }");
                 break;
             case GameEventType.GameStateEvent:
                 ActiveState.HandleKeyEvent(gameEvent.Message, gameEvent.Parameter1);
