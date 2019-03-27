@@ -4,7 +4,6 @@ using DIKUArcade.Math;
 
 namespace Galaga_Exercise_3 {
     public class PlayerShot : Entity {
-        private Game game;
 
         public PlayerShot(DynamicShape shape, IBaseImage image) :
             base(shape, image) {

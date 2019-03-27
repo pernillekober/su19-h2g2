@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Drawing;
@@ -48,6 +49,9 @@ namespace GalagaGame.GalagaState {
             backGroundImage = new Entity(new StationaryShape(new Vec2F(0.0f, 0.0f),
                     new Vec2F(1.0f, 1.0f)),
                 new Image(Path.Combine("Assets", "Images", "TitleImage.png")));
+
+            eventBus = GalagaBus.GetBus();
+            InitializeGameState();
         }
 
         
@@ -57,14 +61,19 @@ namespace GalagaGame.GalagaState {
 
 
 
-        public void GameLoop() { }
+        public void GameLoop() {
 
-        public void InitializeGameState() { }
+        }
 
-        public void UpdateGameLogic() { }
+        public void InitializeGameState() {
+        }
+
+        public void UpdateGameLogic() {
+            Console.WriteLine("MainMenu.UpdateGameLogic");
+            eventBus.ProcessEvents();
+        }
 
         public void RenderState() {
-
             //render background picture
             backGroundImage.RenderEntity();
 
@@ -73,11 +82,17 @@ namespace GalagaGame.GalagaState {
             menubuttons[activeMenuButton].SetFontSize(70);
             foreach (var button in menubuttons) {
                 button.RenderText();
+                if (button != menubuttons[activeMenuButton]    ) {
+                    button.SetColor(Color.Teal);
+                    button.SetFontSize(55);
+                }
             }
         }
         
  // Calls KeyPress or KeyRelease if button inputevent is registered.
         public void HandleKeyEvent(string KeyValue, string keyAction) {
+            Console.WriteLine("MainMenuHandleKeyEvent");
+            Console.WriteLine($"KeyValue:{ KeyValue }, KeyAction:{ keyAction }");
             switch (keyAction) {
             case "KEY_PRESS":
                 KeyPress(KeyValue);
@@ -89,6 +104,7 @@ namespace GalagaGame.GalagaState {
         }
 
         public void KeyPress(string KeyValue) {
+            Console.WriteLine($"{KeyValue}");
             switch (KeyValue) {
             case "KEY_UP":
                 if (activeMenuButton != 0) {
@@ -97,20 +113,20 @@ namespace GalagaGame.GalagaState {
                 break;
             case "KEY_DOWN":
                 if (activeMenuButton != 1) {
-                    activeMenuButton += 1;
+                    activeMenuButton += 1; 
                 }
                 break;
             case "KEY_ENTER":
                 if (activeMenuButton == 0) {
                     eventBus.RegisterEvent(
                         GameEventFactory<object>.CreateGameEventForAllProcessors(
-                            GameEventType.GameStateEvent,
+                            GameEventType.InputEvent,
                             this, "CHANGE_STATE", "GAME_RUNNING",
                             ""));
                 } else {
                     eventBus.RegisterEvent(
                         GameEventFactory<object>.CreateGameEventForAllProcessors(
-                            GameEventType.GameStateEvent,
+                            GameEventType.InputEvent,
                             this, "CHANCE_STATE", "CLOSE_WINDOW",
                             ""));
                 }

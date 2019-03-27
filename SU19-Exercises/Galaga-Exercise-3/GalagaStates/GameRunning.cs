@@ -76,6 +76,7 @@ namespace Galaga_Exercise_3.GalagaStates {
             player = new Player(this,
                 new DynamicShape(new Vec2F(0.45f, 0.1f), new Vec2F(
                     0.05f, 0.05f)), new Image(Path.Combine("Assets", "Images", "Player.png")));
+           
         
             //PlayerShot List
             playerShot = new List<Image>();
@@ -198,7 +199,6 @@ namespace Galaga_Exercise_3.GalagaStates {
         public void RenderState() {
             backGroundImage.RenderEntity();
             player.Entity.RenderEntity();
-            player.booster.RenderEntity();
             scoreTable.RenderScore();
             explosions.RenderAnimations();
             foreach (ISquadron squadron in monsterList) {

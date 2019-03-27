@@ -10,14 +10,11 @@ using Galaga_Exercise_3.GalagaStates;
 namespace Galaga_Exercise_3 {
     public class Player : IGameEventProcessor<object> {
         public Entity booster;
-        private GameEventBus<object> eventBus;
-        private GameRunning game;
         private List<Image> playerBooster;
         
 
         public Player(GameRunning game, DynamicShape shape, IBaseImage image) {
             Entity = new Entity(shape, image);
-            this.game = game;
             playerBooster = new List<Image>();
             playerBooster.Add(new Image(Path.Combine("Assets", "Images", "PlayerBooster.png")));
         }

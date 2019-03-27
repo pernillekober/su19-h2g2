@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.IO;
 using DIKUArcade;
@@ -20,7 +21,6 @@ public class Game : IGameEventProcessor<object> {
     private Window win;
     private StateMachine stateMachine;
     
-    
 
     public Game() {
         win = new Window("Galaga", 500, 500);
@@ -32,12 +32,14 @@ public class Game : IGameEventProcessor<object> {
         eventBus.InitializeEventBus(new List<GameEventType> {
             GameEventType.InputEvent, // key press / key release
             GameEventType.WindowEvent, // messages to the window });
-            GameEventType.PlayerEvent // player event
+            GameEventType.PlayerEvent, // player event
+            GameEventType.GameStateEvent
         });
         win.RegisterEventBus(eventBus);
         eventBus.Subscribe(GameEventType.InputEvent, this);
         eventBus.Subscribe(GameEventType.WindowEvent, this);
         eventBus.Subscribe(GameEventType.PlayerEvent, this);
+        eventBus.Subscribe(GameEventType.GameStateEvent,this);
     }
     
     
@@ -67,9 +69,14 @@ public class Game : IGameEventProcessor<object> {
     
     
     // Checker for a windowevent. The decision of placing it in Game.cs is because it is directly
-    // related to win, and hance Game.  
+    // related to win, and hence Game.  
     public void ProcessEvent(GameEventType eventType,
         GameEvent<object> gameEvent) {
+        Console.WriteLine("Game.ProcessEvent");
+        if (eventType == GameEventType.InputEvent) {
+            stateMachine.ActiveState.HandleKeyEvent(gameEvent.Message,
+                gameEvent.Parameter1);
+        }
         if (eventType == GameEventType.WindowEvent) {
             switch (gameEvent.Message) {
             case "CLOSE_WINDOW":
