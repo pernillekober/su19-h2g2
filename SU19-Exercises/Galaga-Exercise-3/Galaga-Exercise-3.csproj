@@ -49,6 +49,7 @@
     <Compile Include="GalagaStates\GameRunning.cs" />
     <Compile Include="GalagaStates\GameStateType.cs" />
     <Compile Include="GalagaStates\MainMenu.cs" />
+    <Compile Include="GalagaStates\StateMachine.cs" />
     <Compile Include="Game.cs" />
     <Compile Include="GameEventBus.cs" />
     <Compile Include="MovementStrategy\Down.cs" />
@@ -64,7 +65,6 @@
     <Compile Include="Squadron\ISquadron.cs" />
     <Compile Include="Squadron\WallSquadron.cs" />
     <Compile Include="Squadron\ZigZagSquadron.cs" />
-    <Compile Include="StateMachine.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\DIKUArcade\DIKUArcade\DIKUArcade.csproj">

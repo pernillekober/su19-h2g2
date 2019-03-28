@@ -124,6 +124,7 @@
           <e p="GameRunning.cs" t="Include" />
           <e p="GameStateType.cs" t="Include" />
           <e p="MainMenu.cs" t="Include" />
+          <e p="StateMachine.cs" t="Include" />
         </e>
         <e p="Game.cs" t="Include" />
         <e p="GameEventBus.cs" t="Include" />
@@ -149,7 +150,6 @@
           <e p="WallSquadron.cs" t="Include" />
           <e p="ZigZagSquadron.cs" t="Include" />
         </e>
-        <e p="StateMachine.cs" t="Include" />
       </e>
       <e p="packages" t="ExcludeRecursive" />
       <e p="SU19-Exercises.sln" t="IncludeFlat" />

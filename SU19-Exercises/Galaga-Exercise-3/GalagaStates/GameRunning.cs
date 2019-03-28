@@ -1,3 +1,4 @@
+using System;
 using DIKUArcade.Entities;
 using DIKUArcade.Graphics;
 using DIKUArcade.State;
@@ -206,6 +207,7 @@ namespace Galaga_Exercise_3.GalagaStates {
                     GameEventFactory<object>.CreateGameEventForAllProcessors(
                         GameEventType.PlayerEvent, this, "KEY_RIGHT",
                         "", ""));
+                Console.WriteLine($"KeyValue {KeyValue}");
                 break;
             case "KEY_LEFT":
                 GalagaBus.GetBus().RegisterEvent(

@@ -1,4 +1,5 @@
 
+using System;
 using System.Collections.Generic;
 using DIKUArcade;
 using DIKUArcade.EventBus;
@@ -33,7 +34,6 @@ public class Game : IGameEventProcessor<object> {
         eventBus.Subscribe(GameEventType.GameStateEvent, this);
         eventBus.Subscribe(GameEventType.WindowEvent, this);
         eventBus.Subscribe(GameEventType.InputEvent, this);
-        eventBus.Subscribe(GameEventType.PlayerEvent, this);
     }
     
     
@@ -64,19 +64,12 @@ public class Game : IGameEventProcessor<object> {
     // related to win, and hence Game.  
     public void ProcessEvent(GameEventType eventType,
         GameEvent<object> gameEvent) {
+        Console.WriteLine("Game.ProcessEvent");
         switch (eventType) {
         case GameEventType.InputEvent:
-            switch (gameEvent.Parameter1) {
-            case "KEY_PRESS":
                 stateMachine.ActiveState.HandleKeyEvent(gameEvent.Message,
                     gameEvent.Parameter1);
                 break;
-            case "KEY_RELEASE":
-                stateMachine.ActiveState.HandleKeyEvent(gameEvent.Message,
-                    gameEvent.Parameter1);
-                break;
-            }
-            break;
         case GameEventType.WindowEvent:
             switch (gameEvent.Message) {
             case "CLOSE_WINDOW":
