@@ -7,6 +7,7 @@ using DIKUArcade.Graphics;
 using DIKUArcade.Math;
 using DIKUArcade.State;
 using Galaga_Exercise_3.GalagaGame;
+using Galaga_Exercise_3.GalagaStates;
 using Image = DIKUArcade.Graphics.Image;
 
 
@@ -93,18 +94,18 @@ namespace GalagaGame.GalagaState {
         public void KeyPress(string KeyValue) {
             switch (KeyValue) {
             case "KEY_UP":
-                if (activeMenuButton != 0) {
+                if (activeMenuButton != maxMenuButtons - maxMenuButtons) {
                     activeMenuButton -= 1;
                 }
                 break;
             case "KEY_DOWN":
-                if (activeMenuButton != 1) {
+                if (activeMenuButton != maxMenuButtons) {
                     activeMenuButton += 1; 
                 }
                 break;
             case "KEY_ENTER":
                 if (activeMenuButton == 0) {
-                    Console.WriteLine(this);
+                    GameRunning.GetInstance().InitializeGameState();
                     GalagaBus.GetBus().RegisterEvent(
                         GameEventFactory<object>.CreateGameEventForAllProcessors(
                             GameEventType.GameStateEvent,

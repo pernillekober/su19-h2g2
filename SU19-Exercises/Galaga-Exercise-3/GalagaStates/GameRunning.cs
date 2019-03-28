@@ -1,4 +1,3 @@
-using System;
 using DIKUArcade.Entities;
 using DIKUArcade.Graphics;
 using DIKUArcade.State;
@@ -157,7 +156,8 @@ namespace Galaga_Exercise_3.GalagaStates {
         public void GameLoop() { 
         }
 
-        public void InitializeGameState() {  
+        public void InitializeGameState() {
+            GameRunning.instance = null;
         }
 
         public void UpdateGameLogic() {

@@ -1,6 +1,4 @@
-﻿using System;
-using NUnit.Framework;
-using Galaga_Exercise_3;
+﻿using NUnit.Framework;
 using Galaga_Exercise_3.GalagaStateType;
 
 namespace TestGalaga {

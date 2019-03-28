@@ -86,12 +86,12 @@ namespace Galaga_Exercise_3.GalagaStates {
         public void KeyPress(string KeyValue) {
             switch (KeyValue) {
             case "KEY_UP":
-                if (activeMenuButton != 0) {
+                if (activeMenuButton != maxMenuButtons - maxMenuButtons) {
                     activeMenuButton -= 1;
                 }
                 break;
             case "KEY_DOWN":
-                if (activeMenuButton != 1) {
+                if (activeMenuButton != maxMenuButtons) {
                     activeMenuButton += 1; 
                 }
                 break;

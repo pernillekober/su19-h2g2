@@ -3,7 +3,6 @@ using DIKUArcade.EventBus;
 using DIKUArcade.State;
 using GalagaGame.GalagaState;
 using Galaga_Exercise_3.GalagaGame;
-using Galaga_Exercise_3.GalagaStates;
 using Galaga_Exercise_3.GalagaStateType;
 
 namespace Galaga_Exercise_3.GalagaStates {
@@ -36,8 +35,8 @@ namespace Galaga_Exercise_3.GalagaStates {
         public void ProcessEvent(GameEventType eventType, GameEvent<object> gameEvent) {
             switch (eventType) {
             case GameEventType.GameStateEvent when gameEvent.Message == "CHANGE_STATE":
-                SwitchState(StateTransformer.TransformStringToState(gameEvent.Parameter1));
-                break;
+                    SwitchState(StateTransformer.TransformStringToState(gameEvent.Parameter1));
+                    break;
             case GameEventType.InputEvent:
                 ActiveState.HandleKeyEvent(gameEvent.Message, gameEvent.Parameter1);
                 break;
