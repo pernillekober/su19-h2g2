@@ -108,7 +108,7 @@ namespace GalagaGame.GalagaState {
                     GalagaBus.GetBus().RegisterEvent(
                         GameEventFactory<object>.CreateGameEventForAllProcessors(
                             GameEventType.GameStateEvent,
-                            this, "CHANGE_STATE", "NEW_GAME",
+                            this, "CHANGE_STATE", "GAME_RUNNING",
                             ""));
                 } else {
                     GalagaBus.GetBus().RegisterEvent(

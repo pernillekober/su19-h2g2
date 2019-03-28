@@ -31,10 +31,7 @@ public class Game : IGameEventProcessor<object> {
             GameEventType.GameStateEvent
         });
         win.RegisterEventBus(eventBus);
-        eventBus.Subscribe(GameEventType.GameStateEvent, this);
         eventBus.Subscribe(GameEventType.WindowEvent, this);
-        eventBus.Subscribe(GameEventType.InputEvent, this);
-        
         stateMachine = new StateMachine();
     }
     
