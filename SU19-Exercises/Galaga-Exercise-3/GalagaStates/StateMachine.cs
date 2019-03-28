@@ -18,16 +18,17 @@ namespace Galaga_Exercise_3.GalagaStates {
         }
 
         private void SwitchState(GameStateType stateType) {
+            Console.WriteLine($"gameEvent.From:{stateType}");
             switch (stateType) {
-               case (GameStateType.GameRunning):
-                   ActiveState = GameRunning.GetInstance();
-                   break;
-               case (GameStateType.GamePaused):
-                   ActiveState = GamePaused.GetInstance();
-                   break;
-               case (GameStateType.MainMenu):
-                   ActiveState = MainMenu.GetInstance();
-                   break;
+            case (GameStateType.GameRunning):
+                ActiveState = GameRunning.GetInstance();
+                break;
+            case (GameStateType.GamePaused):
+                ActiveState = GamePaused.GetInstance();
+                break;
+            case (GameStateType.MainMenu):
+                ActiveState = MainMenu.GetInstance();
+                break;
             }    
         }
 

@@ -104,10 +104,11 @@ namespace GalagaGame.GalagaState {
                 break;
             case "KEY_ENTER":
                 if (activeMenuButton == 0) {
+                    Console.WriteLine(this);
                     GalagaBus.GetBus().RegisterEvent(
                         GameEventFactory<object>.CreateGameEventForAllProcessors(
                             GameEventType.GameStateEvent,
-                            this, "CHANGE_STATE", "GAME_RUNNING",
+                            this, "CHANGE_STATE", "NEW_GAME",
                             ""));
                 } else {
                     GalagaBus.GetBus().RegisterEvent(

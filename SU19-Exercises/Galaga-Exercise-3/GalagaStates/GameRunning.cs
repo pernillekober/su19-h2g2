@@ -44,8 +44,8 @@ namespace Galaga_Exercise_3.GalagaStates {
         
         public GameRunning() {
             
-            backGroundImage = new Entity(new StationaryShape(new Vec2F(),
-                new Vec2F() ),new Image(Path.Combine("Assets", "Images", "SpaceBackground.png"))); 
+            backGroundImage = new Entity(new StationaryShape(new Vec2F(0.0f,0.0f),
+                new Vec2F(1.0f,1.0f) ),new Image(Path.Combine("Assets", "Images", "SpaceBackground.png"))); 
             
             // Player Sprite
             player = new Player(this,
