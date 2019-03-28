@@ -1,6 +1,4 @@
-using System;
 using System.Collections.Generic;
-using System.IO;
 using DIKUArcade.Entities;
 using DIKUArcade.EventBus;
 using DIKUArcade.Graphics;
@@ -11,13 +9,14 @@ using Galaga_Exercise_3.GalagaStates;
 
 namespace Galaga_Exercise_3 {
     public class Player : IGameEventProcessor<object> {
-        public Entity booster;
+        private Entity booster;
         private List<Image> playerBooster;
         
 
         public Player(GameRunning game, DynamicShape shape, IBaseImage image) {
             Entity = new Entity(shape, image);
             playerBooster = new List<Image>();
+            GalagaBus.GetBus().Subscribe(GameEventType.PlayerEvent,this);
         }
 
         public Entity Entity { get; }

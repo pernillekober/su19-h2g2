@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using DIKUArcade;
 using DIKUArcade.EventBus;
 using DIKUArcade.Timers;
-using GalagaGame.GalagaState;
+using Galaga_Exercise_3;
 using Galaga_Exercise_3.GalagaGame;
 
 

@@ -1,4 +1,3 @@
-using System;
 using DIKUArcade.Entities;
 using DIKUArcade.Graphics;
 using DIKUArcade.State;
@@ -17,22 +16,15 @@ namespace Galaga_Exercise_3.GalagaStates {
     public class GameRunning : IGameState {
         
         private static GameRunning instance = null;
-        
         private Entity backGroundImage;
-        private GameEventBus<object> eventBus;
-        
         private int explosionLength = 500;
         private AnimationContainer explosions;
         private Player player;
-
         private List<Image> explosionStrides;
         private Score scoreTable;
-
         public List<PlayerShot> playerShots { get; private set; }
         private List<Image> playerShotImage;
-     
-        
-        private int i = 0;
+        private int i;
         // Enemy Image List
         private List<List<Image>> strideList;
 

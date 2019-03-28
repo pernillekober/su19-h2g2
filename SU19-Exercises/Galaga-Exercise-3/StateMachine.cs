@@ -1,11 +1,11 @@
-using System;
 using DIKUArcade.EventBus;
 using DIKUArcade.State;
+using GalagaGame.GalagaState;
 using Galaga_Exercise_3.GalagaGame;
-using Galaga_Exercise_3.GalagaStateType;
 using Galaga_Exercise_3.GalagaStates;
+using Galaga_Exercise_3.GalagaStateType;
 
-namespace GalagaGame.GalagaState {
+namespace Galaga_Exercise_3 {
     public class StateMachine : IGameEventProcessor<object> {
         public IGameState ActiveState { get; private set; }
 
@@ -14,7 +14,7 @@ namespace GalagaGame.GalagaState {
             GalagaBus.GetBus().Subscribe(GameEventType.GameStateEvent, this);
             GalagaBus.GetBus().Subscribe(GameEventType.PlayerEvent, this);
 
-            ActiveState = GameRunning.GetInstance();
+            ActiveState = MainMenu.GetInstance();
         }
 
         private void SwitchState(GameStateType stateType) {
@@ -38,7 +38,7 @@ namespace GalagaGame.GalagaState {
             case GameEventType.GameStateEvent when gameEvent.Message == "CHANGE_STATE":
                 SwitchState(StateTransformer.TransformStringToState(gameEvent.Parameter1));
                 break;
-            case GameEventType.InputEvent:
+            default:
                 ActiveState.HandleKeyEvent(gameEvent.Message, gameEvent.Parameter1);
                 break;
             }

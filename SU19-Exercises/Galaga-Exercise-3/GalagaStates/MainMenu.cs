@@ -1,5 +1,4 @@
 using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Drawing;
 using DIKUArcade.Entities;
@@ -21,7 +20,6 @@ namespace GalagaGame.GalagaState {
         private Text QuitGame;
         private int activeMenuButton = 0;
         private int maxMenuButtons = 1;
-        private GameEventBus<object> eventBus;
 
         
         public MainMenu(){
@@ -48,6 +46,7 @@ namespace GalagaGame.GalagaState {
             backGroundImage = new Entity(new StationaryShape(new Vec2F(0.0f, 0.0f),
                     new Vec2F(1.0f, 1.0f)),
                 new Image(Path.Combine("Assets", "Images", "TitleImage.png")));
+            
         }
 
         
@@ -95,7 +94,6 @@ namespace GalagaGame.GalagaState {
         }
 
         public void KeyPress(string KeyValue) {
-            Console.WriteLine($"{KeyValue}");
             switch (KeyValue) {
             case "KEY_UP":
                 if (activeMenuButton != 0) {
