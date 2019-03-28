@@ -13,9 +13,8 @@ namespace Galaga_Exercise_3.GalagaStates {
         public StateMachine() {
             GalagaBus.GetBus().Subscribe(GameEventType.InputEvent, this);
             GalagaBus.GetBus().Subscribe(GameEventType.GameStateEvent, this);
-            GalagaBus.GetBus().Subscribe(GameEventType.PlayerEvent, this);
 
-            ActiveState = GameRunning.GetInstance();
+            ActiveState = MainMenu.GetInstance();
         }
 
         private void SwitchState(GameStateType stateType) {
@@ -40,7 +39,7 @@ namespace Galaga_Exercise_3.GalagaStates {
             case GameEventType.GameStateEvent when gameEvent.Message == "CHANGE_STATE":
                 SwitchState(StateTransformer.TransformStringToState(gameEvent.Parameter1));
                 break;
-            default:
+            case GameEventType.InputEvent:
                 ActiveState.HandleKeyEvent(gameEvent.Message, gameEvent.Parameter1);
                 break;
             }

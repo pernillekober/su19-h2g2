@@ -87,9 +87,6 @@ namespace GalagaGame.GalagaState {
             case "KEY_PRESS":
                 KeyPress(KeyValue);
                 break;
-            case "KEY_RELEASE":
-                KeyRelease(KeyValue);
-                break;
             }
         }
 
@@ -115,27 +112,10 @@ namespace GalagaGame.GalagaState {
                 } else {
                     GalagaBus.GetBus().RegisterEvent(
                         GameEventFactory<object>.CreateGameEventForAllProcessors(
-                            GameEventType.GameStateEvent,
-                            this, "CHANGE_STATE", "CLOSE_WINDOW",
+                            GameEventType.WindowEvent,
+                            this, "CLOSE_WINDOW", "",
                             ""));
                 }
-                break;
-            }
-        }
-        public void KeyRelease(string KeyValue) {
-            switch (KeyValue) {
-            case "KEY_UP":
-                if (activeMenuButton != 0) {
-                    activeMenuButton -= 1;
-                }
-
-                break;
-            case "KEY_DOWN":
-
-                if (activeMenuButton != 1) {
-                    activeMenuButton += 1;
-                }
-
                 break;
             }
         }

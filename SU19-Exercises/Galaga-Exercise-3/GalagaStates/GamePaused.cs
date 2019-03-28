@@ -7,6 +7,12 @@ namespace Galaga_Exercise_3.GalagaStates {
         
         private static GamePaused instance = null;
         
+        private Text[] pauseMenu = new Text[2];
+        private Text ResumeGame;
+        private Text ExitGame;
+        private int activeMenuButton = 0;
+        private int maxMenuButtons = 1;
+        
         public static GamePaused GetInstance() {
             return GamePaused.instance ?? (GamePaused.instance = new GamePaused());
         }

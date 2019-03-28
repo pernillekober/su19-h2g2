@@ -20,7 +20,7 @@ public class Game : IGameEventProcessor<object> {
     public Game() {
         win = new Window("Galaga", 500, 500);
         gameTimer = new GameTimer(60, 60);
-        stateMachine = new StateMachine();
+        
         
         // EventHandling
         eventBus = GalagaBus.GetBus();
@@ -34,6 +34,8 @@ public class Game : IGameEventProcessor<object> {
         eventBus.Subscribe(GameEventType.GameStateEvent, this);
         eventBus.Subscribe(GameEventType.WindowEvent, this);
         eventBus.Subscribe(GameEventType.InputEvent, this);
+        
+        stateMachine = new StateMachine();
     }
     
     
@@ -64,12 +66,7 @@ public class Game : IGameEventProcessor<object> {
     // related to win, and hence Game.  
     public void ProcessEvent(GameEventType eventType,
         GameEvent<object> gameEvent) {
-        Console.WriteLine("Game.ProcessEvent");
         switch (eventType) {
-        case GameEventType.InputEvent:
-                stateMachine.ActiveState.HandleKeyEvent(gameEvent.Message,
-                    gameEvent.Parameter1);
-                break;
         case GameEventType.WindowEvent:
             switch (gameEvent.Message) {
             case "CLOSE_WINDOW":
