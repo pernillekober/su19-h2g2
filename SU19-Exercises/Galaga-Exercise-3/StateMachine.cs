@@ -5,7 +5,7 @@ using Galaga_Exercise_3.GalagaGame;
 using Galaga_Exercise_3.GalagaStates;
 using Galaga_Exercise_3.GalagaStateType;
 
-namespace Galaga_Exercise_3 {
+namespace Galaga_Exercise_3.GalagaStates {
     public class StateMachine : IGameEventProcessor<object> {
         public IGameState ActiveState { get; private set; }
 
