@@ -50,7 +50,8 @@ namespace GalagaGame.GalagaState {
             
         }
 
-        
+        //Singleton pattern to ensure only one instance of GameRunning object. If instance does not
+        //exist the create a new instance.
         public static MainMenu GetInstance() {
             return MainMenu.instance ?? (MainMenu.instance = new MainMenu());
         }
@@ -82,7 +83,7 @@ namespace GalagaGame.GalagaState {
             }
         }
         
- // Calls KeyPress or KeyRelease if button inputevent is registered.
+        // Calls KeyPress or KeyRelease if button inputevent is registered.
         public void HandleKeyEvent(string KeyValue, string keyAction) {
             switch (keyAction) {
             case "KEY_PRESS":
@@ -90,7 +91,13 @@ namespace GalagaGame.GalagaState {
                 break;
             }
         }
-
+        
+        /// <summary>
+        /// Performs the actions in the menu according to the KeyValue. Either navigating the
+        /// menubuttons or selecting the activeMenuButton and register GameStateEvent to eventBus
+        /// with relevant gameEvent.message. 
+        /// </summary>
+        /// <param name="KeyValue">string with value of key that triggered event</param>
         public void KeyPress(string KeyValue) {
             switch (KeyValue) {
             case "KEY_UP":

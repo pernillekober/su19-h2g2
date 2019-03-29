@@ -42,7 +42,7 @@ namespace Galaga_Exercise_3.GalagaStates {
         };
         
         public GameRunning() {
-            
+            //Instanciate background image
             backGroundImage = new Entity(new StationaryShape(new Vec2F(0.0f,0.0f),
                 new Vec2F(1.0f,1.0f) ),new Image(Path.Combine("Assets", "Images", "SpaceBackground.png"))); 
             
@@ -75,7 +75,7 @@ namespace Galaga_Exercise_3.GalagaStates {
                 Path.Combine("Assets", "Images", "Explosion.png"));
             explosions = new AnimationContainer(28);
             
-            
+            // instatiate playerhshot
             playerShots = new List<PlayerShot>();
         }
 
@@ -103,10 +103,8 @@ namespace Galaga_Exercise_3.GalagaStates {
                 new ImageStride(explosionLength / 8, explosionStrides));
         }
        
-        /// <summary>
-        ///     Here we check if the enemies are hit by a shot, and if they are we delete them.
-        /// </summary>
-
+        // Here we check if the enemies are hit by a shot, and if they are create an explosion, 
+        // delete the entities involved, and add points to the scoreTable.
         public void IterateShots() {
             var newShots = new List<PlayerShot>();
             foreach (var shot in playerShots) {
@@ -134,7 +132,8 @@ namespace Galaga_Exercise_3.GalagaStates {
             }
         }
         
-        // Spawns enemy formations(squadrons) 
+        // Spawns enemy formations(squadrons) and applies moveStrategies on the currently
+        // instantiated squadron.
         public void SpawnEnemies() {
             if (monsterList[i].Enemies.CountEntities() == 0) {
                 monsterList[i].Enemies.ClearContainer();
@@ -149,17 +148,22 @@ namespace Galaga_Exercise_3.GalagaStates {
             movesStrategies[i].MoveEnemies(monsterList[i].Enemies);
         }
         
+        //Singleton pattern to ensure only one instance of GameRunning object. If instance does not
+        //exist the create a new instance.
         public static GameRunning GetInstance() {
             return GameRunning.instance ?? (GameRunning.instance = new GameRunning());
         }
 
         public void GameLoop() { 
         }
-
+        
+        //Resets/deletes the instance. This is called when 'New Game'-button is selected in MainMenu
+        //before registering the events, in order to create new instantiation of GameRunning. 
         public void InitializeGameState() {
             GameRunning.instance = null;
         }
-
+        
+        // Updates the variables used by GameRunning. 
         public void UpdateGameLogic() {
             IterateShots();
             SpawnEnemies();
@@ -167,6 +171,7 @@ namespace Galaga_Exercise_3.GalagaStates {
         }
 
         public void RenderState() {
+            //Renders all instantiations related to GameRunning. Lists rendered with foreach-loops.
             backGroundImage.RenderEntity();
             player.Entity.RenderEntity();
             scoreTable.RenderScore();
@@ -179,7 +184,13 @@ namespace Galaga_Exercise_3.GalagaStates {
                 shot.RenderEntity();
             }
         }
-        
+        /// <summary>
+        /// HandleKeyEvent evaluates KeyAction to be either "KEY_PRESS" or "KEY_RELEASE" and calls
+        /// corresponding method KeyPress or KeyRelease with KeyValue.
+        /// If HandleKeyEvent evaluates KeyAction to be "KEY_PRESS" it calls KeyPress with KeyValue.
+        /// </summary>
+        /// <param name="keyValue">string with value of key that triggered event</param>
+        /// <param name="keyAction">type of InputEvent. Either KEY_PRESS or KEY_RELEASE</param>        
         public void HandleKeyEvent(string keyValue, string keyAction) {
             if (keyAction == "KEY_PRESS") {
                 KeyPress(keyValue);
@@ -187,7 +198,12 @@ namespace Galaga_Exercise_3.GalagaStates {
                 KeyRelease(keyValue);
             }
         }
-        
+        /// <summary>
+        /// Performs the actions in the menu according to the KeyValue. Either navigating the
+        /// menubuttons or selecting the activeMenuButton and register GameStateEvent to eventBus
+        /// with relevant gameEvent.message. 
+        /// </summary>
+        /// <param name="KeyValue">string with value of key that triggered event</param>
         public void KeyPress(string KeyValue) {
             switch (KeyValue) {
             case "KEY_ESCAPE":
@@ -220,6 +236,12 @@ namespace Galaga_Exercise_3.GalagaStates {
             }
         }
         
+        /// <summary>
+        /// Performs the actions in the menu according to the KeyValue. Either navigating the
+        /// menubuttons or selecting the activeMenuButton and register GameStateEvent to eventBus
+        /// with relevant gameEvent.message. 
+        /// </summary>
+        /// <param name="KeyValue">string with value of key that triggered event</param>
         public void KeyRelease(string KeyValue) {
             switch (KeyValue) {
             case "KEY_LEFT":

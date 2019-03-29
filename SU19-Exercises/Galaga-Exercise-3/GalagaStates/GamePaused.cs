@@ -44,7 +44,8 @@ namespace Galaga_Exercise_3.GalagaStates {
                     new Vec2F(1.0f, 1.0f)),
                 new Image(Path.Combine("Assets", "Images", "SpaceBackground.png")));
         }
-        
+        //Singleton pattern to ensure only one instance of GameRunning object. If instance does not
+        //exist the create a new instance.
         public static GamePaused GetInstance() {
             return GamePaused.instance ?? (GamePaused.instance = new GamePaused());
         }
@@ -62,9 +63,11 @@ namespace Galaga_Exercise_3.GalagaStates {
         public void RenderState() {
             backGroundImage.RenderEntity();
 
-            // render menubuttons and highligt selected menu button with colour 
+            // Renders menubuttons and highligt selected menu button with colour 
             pauseMenu[activeMenuButton].SetColor(Color.DarkViolet);
             pauseMenu[activeMenuButton].SetFontSize(70);
+            
+            //Renders button that are not activeMenuButton to update to original fontsize and color. 
             foreach (var button in pauseMenu) {
                 button.RenderText();
                 if (button != pauseMenu[activeMenuButton]    ) {
@@ -73,7 +76,11 @@ namespace Galaga_Exercise_3.GalagaStates {
                 }
             }
         }
-
+        /// <summary>
+        /// If HandleKeyEvent evaluates KeyAction to be "KEY_PRESS" it calls KeyPress with KeyValue.
+        /// </summary>
+        /// <param name="keyValue">string with value of key that triggered event</param>
+        /// <param name="keyAction">type of InputEvent. Either KEY_PRESS or KEY_RELEASE</param>
         public void HandleKeyEvent(string keyValue, string keyAction) {
             switch (keyAction) {
             case "KEY_PRESS":
@@ -81,7 +88,12 @@ namespace Galaga_Exercise_3.GalagaStates {
                 break;
             }
         }
-
+        /// <summary>
+        /// Performs the actions in the menu according to the KeyValue. Either navigating the
+        /// menubuttons or selecting the activeMenuButton and register GameStateEvent to eventBus
+        /// with relevant gameEvent.message. 
+        /// </summary>
+        /// <param name="KeyValue">string with value of key that triggered event</param>
         public void KeyPress(string KeyValue) {
             switch (KeyValue) {
             case "KEY_UP":

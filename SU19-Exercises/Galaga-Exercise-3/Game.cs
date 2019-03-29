@@ -18,6 +18,7 @@ public class Game : IGameEventProcessor<object> {
     
 
     public Game() {
+        // Instantiation of objects related to the game window and event handling. 
         win = new Window("Galaga", 500, 500);
         gameTimer = new GameTimer(60, 60);
         
@@ -36,6 +37,9 @@ public class Game : IGameEventProcessor<object> {
     }
     
     
+    // GameLoop controls what happens win is running. It connects the eventBus and calls all
+    // ProcessEvents methods to process the GameEvent information, and also updates the variables
+    // and renders instances of the ActiveState. 
     public void GameLoop() {
 
         while (win.IsRunning()) {
@@ -60,7 +64,16 @@ public class Game : IGameEventProcessor<object> {
     }
     
     // Checker for a windowevent. The decision of placing it in Game.cs is because it is directly
-    // related to win, and hence Game.  
+    // related to win, and hence Game. 
+    
+    /// <summary>
+    /// ProcessEvent is called from Game.Gameloop every time an event is registered. ProcessEvent
+    /// evaluates the eventType and calls the relevant method. Game.ProcessEvent processes
+    /// WindowEvents.
+    /// </summary>
+    /// <param name="eventType">enum to distinguish event system parts.</param>
+    /// <param name="gameEvent">information/encodign about event registered in the eventBus.
+    /// </param>
     public void ProcessEvent(GameEventType eventType,
         GameEvent<object> gameEvent) {
         switch (eventType) {

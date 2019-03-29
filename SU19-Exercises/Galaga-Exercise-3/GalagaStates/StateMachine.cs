@@ -15,7 +15,10 @@ namespace Galaga_Exercise_3.GalagaStates {
 
             ActiveState = MainMenu.GetInstance();
         }
-
+        /// <summary>
+        /// Returns a new ActiveState depending on the received StateType.
+        /// </summary>
+        /// <param name="stateType">enum to distinguish between types of states</param>
         private void SwitchState(GameStateType stateType) {
             switch (stateType) {
             case (GameStateType.GameRunning):
@@ -30,8 +33,17 @@ namespace Galaga_Exercise_3.GalagaStates {
             }    
         }
 
-        // if eventype = inputevent send information to Activestate.HandleKeyEvent and 
-        // GameRunning.HandleKeyEvent to check if relevant and process inputEvent further.
+       
+        /// <summary>
+        /// ProcessEvent is called from Game.Gameloop every time an event is registered. ProcessEvent
+        /// evaluates the eventType and calls the relevant method. In the case of a GamesStateEvent
+        /// it calls SwitchState to change the current ActiveState according to the gameEvent.message.
+        /// In the case of an InputEvent it calls the HandleKeyEvent with the gameEvent information
+        /// for further processing and action.  
+        /// </summary>
+        /// <param name="eventType">enum to distinguish event system parts.</param>
+        /// <param name="gameEvent">information/encodign about event registered in the eventBus.
+        /// </param>
         public void ProcessEvent(GameEventType eventType, GameEvent<object> gameEvent) {
             switch (eventType) {
             case GameEventType.GameStateEvent when gameEvent.Message == "CHANGE_STATE":
