@@ -101,7 +101,7 @@ namespace GalagaGame.GalagaState {
         public void KeyPress(string KeyValue) {
             switch (KeyValue) {
             case "KEY_UP":
-                if (activeMenuButton != maxMenuButtons - maxMenuButtons) {
+                if (activeMenuButton != maxMenuButtons - maxMenuButtons) {  
                     activeMenuButton -= 1;
                 }
                 break;
@@ -112,7 +112,7 @@ namespace GalagaGame.GalagaState {
                 break;
             case "KEY_ENTER":
                 if (activeMenuButton == 0) {
-                    GameRunning.GetInstance().InitializeGameState();
+                    GameRunning.GetInstance().InitializeGameState(); //'delete' GameRunning instance.
                     GalagaBus.GetBus().RegisterEvent(
                         GameEventFactory<object>.CreateGameEventForAllProcessors(
                             GameEventType.GameStateEvent,
