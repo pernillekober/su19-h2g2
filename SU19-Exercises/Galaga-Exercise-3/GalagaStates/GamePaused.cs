@@ -1,3 +1,4 @@
+using System;
 using DIKUArcade.Entities;
 using DIKUArcade.Math;
 using DIKUArcade.Graphics;
@@ -49,11 +50,9 @@ namespace Galaga_Exercise_3.GalagaStates {
         }
         
         public void GameLoop() {
-            throw new System.NotImplementedException();
         }
 
         public void InitializeGameState() {
-            throw new System.NotImplementedException();
         }
 
         public void UpdateGameLogic() {
